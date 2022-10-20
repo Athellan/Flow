@@ -53,7 +53,6 @@
 		636A545729016466009D7491 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
-				636A546D29016E2A009D7491 /* UserSettings */,
 				636A546C29016E0B009D7491 /* Models */,
 				636A546B29016DFB009D7491 /* Components */,
 				636A546A29016DE2009D7491 /* Screens */,
@@ -109,13 +108,6 @@
 			children = (
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		636A546D29016E2A009D7491 /* UserSettings */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UserSettings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
