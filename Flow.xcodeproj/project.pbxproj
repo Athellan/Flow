@@ -16,6 +16,7 @@
 		63CA89AF29017BBA006D9876 /* components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA89AE29017BBA006D9876 /* components.swift */; };
 		63CA89B129017BC6006D9876 /* screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA89B029017BC6006D9876 /* screens.swift */; };
 		63CA89B329017BE8006D9876 /* viewmodels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA89B229017BE8006D9876 /* viewmodels.swift */; };
+		63CA89B7290181F7006D9876 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA89B6290181F7006D9876 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		63CA89AE29017BBA006D9876 /* components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = components.swift; path = Flow/components/components.swift; sourceTree = SOURCE_ROOT; };
 		63CA89B029017BC6006D9876 /* screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = screens.swift; path = Flow/screens/screens.swift; sourceTree = SOURCE_ROOT; };
 		63CA89B229017BE8006D9876 /* viewmodels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = viewmodels.swift; path = Flow/viewmodels/viewmodels.swift; sourceTree = SOURCE_ROOT; };
+		63CA89B6290181F7006D9876 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Flow/screens/HomeView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				63CA89B029017BC6006D9876 /* screens.swift */,
+				63CA89B6290181F7006D9876 /* HomeView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				636A546829016B1C009D7491 /* data.swift in Sources */,
 				63CA89AF29017BBA006D9876 /* components.swift in Sources */,
 				636A545929016466009D7491 /* FlowApp.swift in Sources */,
+				63CA89B7290181F7006D9876 /* HomeView.swift in Sources */,
 				63CA89AD29017BB2006D9876 /* models.swift in Sources */,
 				63CA89B129017BC6006D9876 /* screens.swift in Sources */,
 			);

@@ -17,6 +17,7 @@ struct Film {
     let plateform: String
     let date: Date
     let actor: [Actor]
+    let isFavorited: Bool
 }
 
 struct Serie {
@@ -27,6 +28,7 @@ struct Serie {
     let plateform: String
     let date: Date
     let actor: [Actor]
+    let isFavorited: Bool
 }
 
 struct Episode {
