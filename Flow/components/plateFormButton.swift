@@ -12,7 +12,7 @@ struct plateFormButton: View {
         
         Image("Disney-logo")
             .resizable()
-            .frame(width: 80, height: 45)
+            .frame(width: 100, height: 50)
             .cornerRadius(7)
             .padding(5)
             .background(Color("buttonColor"))

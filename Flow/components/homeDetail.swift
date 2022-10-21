@@ -53,7 +53,6 @@ struct homeDetail: View {
                         .foregroundColor(Color("titleBackgroundColor"))
                 }
                 .padding()
-                .zIndex(1)
                 
                 HStack {
                     plateFormButton()
