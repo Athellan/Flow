@@ -7,7 +7,8 @@
 import Foundation
 
 
-struct Film {
+struct Film: Identifiable {
+    let id = UUID()
     let title: String
     let subname: String
     let cover: String
