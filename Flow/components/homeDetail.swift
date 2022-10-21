@@ -31,32 +31,36 @@ struct homeDetail: View {
                 .cornerRadius(10)
                 .shadow(color: Color("secondaryColor"), radius: 4, x: -3, y: 4)
                 .foregroundColor(Color("secondaryColor"))
-                Spacer()
+                .padding(.bottom, 15)
+                
                 Image("LSDA2T")
                     .resizable()
-                    .frame(width: 240, height: 350)
+                    .frame(width: 250, height: 370)
                     .cornerRadius(10)
                     .shadow(color: Color("secondaryColor"), radius: 4, x: -3, y: 4)
                 HStack {
                     Image(systemName: "multiply.circle.fill")
                         .resizable()
                         .frame(width: 32.0, height: 32.0)
-                    Image(systemName: "gobackward")
+                        .foregroundColor(Color("titleBackgroundColor"))
+                    Image(systemName: "greaterthan.circle.fill")
                         .resizable()
-                        .frame(width: 42.0, height: 42.0)
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(Color("titleBackgroundColor"))
                     Image(systemName: "checkmark.circle.fill")
                         .resizable()
                         .frame(width: 32.0, height: 32.0)
+                        .foregroundColor(Color("titleBackgroundColor"))
                 }
-                
-                Spacer()
+                .padding()
+                .zIndex(1)
                 
                 HStack {
                     plateFormButton()
                     plateFormButton()
                     plateFormButton()
                 }
-                Spacer()
+              
             }
         }
     }
