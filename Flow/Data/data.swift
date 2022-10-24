@@ -5,6 +5,7 @@
 //  Created by Apprenant 63 on 20/10/2022.
 //
 import Foundation
+import MapKit
 
 
 struct Film {
@@ -59,5 +60,7 @@ struct Event {
     let image: String
     let date: Date
 }
+
+
 
 // Enum pour Category

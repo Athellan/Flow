@@ -14,9 +14,8 @@
 		636A546829016B1C009D7491 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A546729016B1C009D7491 /* data.swift */; };
 		63CA89AD29017BB2006D9876 /* models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA89AC29017BB2006D9876 /* models.swift */; };
 		63CA89AF29017BBA006D9876 /* components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA89AE29017BBA006D9876 /* components.swift */; };
-		63CA89B129017BC6006D9876 /* screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA89B029017BC6006D9876 /* screens.swift */; };
-		63CA89B329017BE8006D9876 /* viewmodels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA89B229017BE8006D9876 /* viewmodels.swift */; };
-		63CA89B7290181F7006D9876 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA89B6290181F7006D9876 /* HomeView.swift */; };
+		63FC90CF29067C2400135CFB /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FC90CE29067C2400135CFB /* MapView.swift */; };
+		63FC90D52906954100135CFB /* viewmodels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FC90D42906954100135CFB /* viewmodels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,9 +27,8 @@
 		636A546729016B1C009D7491 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		63CA89AC29017BB2006D9876 /* models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = models.swift; path = Flow/models/models.swift; sourceTree = SOURCE_ROOT; };
 		63CA89AE29017BBA006D9876 /* components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = components.swift; path = Flow/components/components.swift; sourceTree = SOURCE_ROOT; };
-		63CA89B029017BC6006D9876 /* screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = screens.swift; path = Flow/screens/screens.swift; sourceTree = SOURCE_ROOT; };
-		63CA89B229017BE8006D9876 /* viewmodels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = viewmodels.swift; path = Flow/viewmodels/viewmodels.swift; sourceTree = SOURCE_ROOT; };
-		63CA89B6290181F7006D9876 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Flow/screens/HomeView.swift; sourceTree = SOURCE_ROOT; };
+		63FC90CE29067C2400135CFB /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapView.swift; path = Flow/screens/MapView.swift; sourceTree = SOURCE_ROOT; };
+		63FC90D42906954100135CFB /* viewmodels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = viewmodels.swift; path = Flow/viewmodels/viewmodels.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +93,7 @@
 		636A546929016DD1009D7491 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				63CA89B229017BE8006D9876 /* viewmodels.swift */,
+				63FC90D42906954100135CFB /* viewmodels.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -103,8 +101,7 @@
 		636A546A29016DE2009D7491 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				63CA89B029017BC6006D9876 /* screens.swift */,
-				63CA89B6290181F7006D9876 /* HomeView.swift */,
+				63FC90CE29067C2400135CFB /* MapView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -196,13 +193,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				636A545B29016466009D7491 /* ContentView.swift in Sources */,
-				63CA89B329017BE8006D9876 /* viewmodels.swift in Sources */,
+				63FC90D52906954100135CFB /* viewmodels.swift in Sources */,
+				63FC90CF29067C2400135CFB /* MapView.swift in Sources */,
 				636A546829016B1C009D7491 /* data.swift in Sources */,
 				63CA89AF29017BBA006D9876 /* components.swift in Sources */,
 				636A545929016466009D7491 /* FlowApp.swift in Sources */,
-				63CA89B7290181F7006D9876 /* HomeView.swift in Sources */,
 				63CA89AD29017BB2006D9876 /* models.swift in Sources */,
-				63CA89B129017BC6006D9876 /* screens.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
