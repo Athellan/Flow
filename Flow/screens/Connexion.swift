@@ -8,9 +8,6 @@
 import SwiftUI
 
 
-let userLogin = "Adel"
-let userPassword = "1234"
-
 struct Connexion: View {
     
     
@@ -30,6 +27,7 @@ struct Connexion: View {
                     Spacer()
                 }
                 VStack{
+                
                     TextField("Username", text: $username)
                         .padding()
                         .frame(width: 350,height: 40)
@@ -49,12 +47,14 @@ struct Connexion: View {
                             .frame(height: 50)
                     
                   
-
-                    
-                    if failedConnexion {
-                        Text("Erreur de saisi")
+                    if succedConnexion {
+                        Text("ok")
                     }
                     
+                    
+                      else if failedConnexion {
+                          Text("dddjd")
+                      }
                     
                     LoginButton(username: $username, succedConnexion: $succedConnexion, failedConnexion: $failedConnexion, password: $password )
                     
@@ -87,8 +87,6 @@ struct Connexion: View {
                             Image(systemName: "apple.logo")
                         }
                         
-                        
-                        
                         .font(.headline)
                         .foregroundColor(.black)
                         .frame(width: 268,height: 49)
@@ -96,6 +94,9 @@ struct Connexion: View {
                         .cornerRadius(100)
                        
                         
+                 
+                        
+                    
                     
                         
                 } // fin de la VSTACK
@@ -124,24 +125,30 @@ struct LoginButton: View {
     @Binding var failedConnexion : Bool
     @Binding var password : String
     
-    func authenticate(){
-        if username == userLogin &&  password == userPassword {
-            succedConnexion = true
+    func authenticate(username : String, password : String) {
+      
+        
+        if self.username == "Adel" {
+            self.succedConnexion = true
+    
+            self.failedConnexion = false
             
         }
         
-        else if username != userLogin && password != userPassword {
-            failedConnexion = true
-            
+        else if  self.username != "Adel" && self.password != "1234"{
+            self.failedConnexion = true
+            self.succedConnexion = false
         }
+  
         
     }
+    
     
     var body: some View {
         
         Button("Connexion") {
             
-            authenticate()
+            authenticate(username: username, password:password)
         }
         
         
