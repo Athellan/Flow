@@ -18,6 +18,7 @@
 		9C21CBFF2906781900F3BB26 /* ButtonConnexion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C21CBFE2906781900F3BB26 /* ButtonConnexion.swift */; };
 		9C21CC01290682A300F3BB26 /* ButtonInscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C21CC00290682A300F3BB26 /* ButtonInscription.swift */; };
 		9C21CC0329068B3000F3BB26 /* ContinuewithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C21CC0229068B3000F3BB26 /* ContinuewithApple.swift */; };
+		9C8357B42906C59C0066A725 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8357B32906C59C0066A725 /* Parameters.swift */; };
 		9CACF35029019A2300234452 /* Connexion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CACF34F29019A2300234452 /* Connexion.swift */; };
 		9CACF35229019EBB00234452 /* Inscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CACF35129019EBB00234452 /* Inscription.swift */; };
 /* End PBXBuildFile section */
@@ -35,6 +36,7 @@
 		9C21CBFE2906781900F3BB26 /* ButtonConnexion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonConnexion.swift; path = Flow/components/ButtonConnexion.swift; sourceTree = SOURCE_ROOT; };
 		9C21CC00290682A300F3BB26 /* ButtonInscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonInscription.swift; path = Flow/components/ButtonInscription.swift; sourceTree = SOURCE_ROOT; };
 		9C21CC0229068B3000F3BB26 /* ContinuewithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContinuewithApple.swift; path = Flow/components/ContinuewithApple.swift; sourceTree = SOURCE_ROOT; };
+		9C8357B32906C59C0066A725 /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Parameters.swift; path = Flow/screens/Parameters.swift; sourceTree = SOURCE_ROOT; };
 		9CACF34F29019A2300234452 /* Connexion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Connexion.swift; path = Flow/screens/Connexion.swift; sourceTree = SOURCE_ROOT; };
 		9CACF35129019EBB00234452 /* Inscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Inscription.swift; path = Flow/screens/Inscription.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 				9CACF35129019EBB00234452 /* Inscription.swift */,
 				9CACF34F29019A2300234452 /* Connexion.swift */,
 				63CA89B6290181F7006D9876 /* HomeView.swift */,
+				9C8357B32906C59C0066A725 /* Parameters.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				63CA89B7290181F7006D9876 /* HomeView.swift in Sources */,
 				9C21CC01290682A300F3BB26 /* ButtonInscription.swift in Sources */,
 				63CA89AD29017BB2006D9876 /* models.swift in Sources */,
+				9C8357B42906C59C0066A725 /* Parameters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
