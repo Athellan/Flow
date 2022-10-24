@@ -10,7 +10,7 @@ import Foundation
 func getBotResponse(message: String) -> String {
     let tempMessage = message.lowercased()
     
-    if tempMessage.contains("hello"){
+    if tempMessage.contains("hello") || tempMessage.contains("coucou") || tempMessage.contains("hi") || tempMessage.contains("bonjour"){
         return "Bonjour"
     } else if tempMessage.contains("au revoir"){
         return "Ciao a la revoyure"
