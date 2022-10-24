@@ -17,6 +17,7 @@
 		63CA89B329017BE8006D9876 /* viewmodels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA89B229017BE8006D9876 /* viewmodels.swift */; };
 		63FC90E12906C57B00135CFB /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FC90E02906C57B00135CFB /* ChatView.swift */; };
 		63FC90E42906C84000135CFB /* StreamChatSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 63FC90E32906C84000135CFB /* StreamChatSwiftUI */; };
+		63FC90E82906D02800135CFB /* BotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FC90E72906D02800135CFB /* BotResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		63CA89AE29017BBA006D9876 /* components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = components.swift; path = Flow/components/components.swift; sourceTree = SOURCE_ROOT; };
 		63CA89B229017BE8006D9876 /* viewmodels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = viewmodels.swift; path = Flow/viewmodels/viewmodels.swift; sourceTree = SOURCE_ROOT; };
 		63FC90E02906C57B00135CFB /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatView.swift; path = Flow/screens/ChatView.swift; sourceTree = SOURCE_ROOT; };
+		63FC90E72906D02800135CFB /* BotResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				636A546729016B1C009D7491 /* data.swift */,
+				63FC90E72906D02800135CFB /* BotResponse.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63FC90E82906D02800135CFB /* BotResponse.swift in Sources */,
 				636A545B29016466009D7491 /* ContentView.swift in Sources */,
 				63CA89B329017BE8006D9876 /* viewmodels.swift in Sources */,
 				636A546829016B1C009D7491 /* data.swift in Sources */,
