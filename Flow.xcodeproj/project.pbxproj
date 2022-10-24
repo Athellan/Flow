@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F807F712906D6F80002C5D9 /* LibraryComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F807F702906D6F80002C5D9 /* LibraryComp.swift */; };
+		5F807F732906D73F0002C5D9 /* DetailsComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F807F722906D73F0002C5D9 /* DetailsComp.swift */; };
+		5F807F752906D7580002C5D9 /* MapDetailsComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F807F742906D7580002C5D9 /* MapDetailsComp.swift */; };
+		5F807F772906D7680002C5D9 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F807F762906D7680002C5D9 /* LibraryView.swift */; };
+		5F807F792906D78E0002C5D9 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F807F782906D78E0002C5D9 /* DetailsView.swift */; };
+		5F807F7B2906D7A20002C5D9 /* MapDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F807F7A2906D7A20002C5D9 /* MapDetailsView.swift */; };
+		5F807F7D2906D7C20002C5D9 /* CastingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F807F7C2906D7C20002C5D9 /* CastingDetailsView.swift */; };
+		5F807F802906D7E50002C5D9 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F807F7F2906D7E50002C5D9 /* Styles.swift */; };
 		636A545929016466009D7491 /* FlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A545829016466009D7491 /* FlowApp.swift */; };
 		636A545B29016466009D7491 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A545A29016466009D7491 /* ContentView.swift */; };
 		636A545D29016467009D7491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 636A545C29016467009D7491 /* Assets.xcassets */; };
@@ -20,6 +28,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F807F702906D6F80002C5D9 /* LibraryComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LibraryComp.swift; path = Flow/components/LibraryComp.swift; sourceTree = SOURCE_ROOT; };
+		5F807F722906D73F0002C5D9 /* DetailsComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailsComp.swift; path = Flow/components/DetailsComp.swift; sourceTree = SOURCE_ROOT; };
+		5F807F742906D7580002C5D9 /* MapDetailsComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapDetailsComp.swift; path = Flow/components/MapDetailsComp.swift; sourceTree = SOURCE_ROOT; };
+		5F807F762906D7680002C5D9 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LibraryView.swift; path = Flow/screens/LibraryView.swift; sourceTree = SOURCE_ROOT; };
+		5F807F782906D78E0002C5D9 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailsView.swift; path = Flow/screens/DetailsView.swift; sourceTree = SOURCE_ROOT; };
+		5F807F7A2906D7A20002C5D9 /* MapDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapDetailsView.swift; path = Flow/screens/MapDetailsView.swift; sourceTree = SOURCE_ROOT; };
+		5F807F7C2906D7C20002C5D9 /* CastingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CastingDetailsView.swift; path = Flow/screens/CastingDetailsView.swift; sourceTree = SOURCE_ROOT; };
+		5F807F7F2906D7E50002C5D9 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		636A545529016466009D7491 /* Flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		636A545829016466009D7491 /* FlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowApp.swift; sourceTree = "<group>"; };
 		636A545A29016466009D7491 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				636A546729016B1C009D7491 /* data.swift */,
+				5F807F7F2906D7E50002C5D9 /* Styles.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -105,6 +122,10 @@
 			children = (
 				63CA89B029017BC6006D9876 /* screens.swift */,
 				63CA89B6290181F7006D9876 /* HomeView.swift */,
+				5F807F762906D7680002C5D9 /* LibraryView.swift */,
+				5F807F782906D78E0002C5D9 /* DetailsView.swift */,
+				5F807F7A2906D7A20002C5D9 /* MapDetailsView.swift */,
+				5F807F7C2906D7C20002C5D9 /* CastingDetailsView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -113,6 +134,9 @@
 			isa = PBXGroup;
 			children = (
 				63CA89AE29017BBA006D9876 /* components.swift */,
+				5F807F702906D6F80002C5D9 /* LibraryComp.swift */,
+				5F807F722906D73F0002C5D9 /* DetailsComp.swift */,
+				5F807F742906D7580002C5D9 /* MapDetailsComp.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -197,11 +221,19 @@
 			files = (
 				636A545B29016466009D7491 /* ContentView.swift in Sources */,
 				63CA89B329017BE8006D9876 /* viewmodels.swift in Sources */,
+				5F807F7B2906D7A20002C5D9 /* MapDetailsView.swift in Sources */,
 				636A546829016B1C009D7491 /* data.swift in Sources */,
 				63CA89AF29017BBA006D9876 /* components.swift in Sources */,
+				5F807F772906D7680002C5D9 /* LibraryView.swift in Sources */,
+				5F807F7D2906D7C20002C5D9 /* CastingDetailsView.swift in Sources */,
 				636A545929016466009D7491 /* FlowApp.swift in Sources */,
+				5F807F792906D78E0002C5D9 /* DetailsView.swift in Sources */,
+				5F807F732906D73F0002C5D9 /* DetailsComp.swift in Sources */,
+				5F807F752906D7580002C5D9 /* MapDetailsComp.swift in Sources */,
+				5F807F802906D7E50002C5D9 /* Styles.swift in Sources */,
 				63CA89B7290181F7006D9876 /* HomeView.swift in Sources */,
 				63CA89AD29017BB2006D9876 /* models.swift in Sources */,
+				5F807F712906D6F80002C5D9 /* LibraryComp.swift in Sources */,
 				63CA89B129017BC6006D9876 /* screens.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
