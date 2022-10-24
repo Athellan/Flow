@@ -27,14 +27,15 @@ struct DetailsImage: View {
     let image: String
     var body: some View {
         ZStack{
-            Image(systemName: image)
+            Image(image)
                 .resizable()
-                .scaledToFit()
                 .frame(width: 352, height: 196)
+                .cornerRadius(10)
                 .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+            
             HStack{
                 Spacer()
-                
+                VStack{
                 Button(action: {
                     isFavorited.toggle()
                 }, label: {
@@ -60,8 +61,8 @@ struct DetailsImage: View {
                         
                     }
                 })
-                .padding(.bottom, 200)
-                
+                    Spacer()
+                }
             }
         }
     }
@@ -232,6 +233,7 @@ struct OpenSafari: View {
 }
 
 struct DetailsInfosWithTrailer: View {
+    let image: String
     let description: String
     let url:String
     let urlName:String
@@ -256,42 +258,9 @@ struct DetailsInfosWithTrailer: View {
                     .lineSpacing(8)
                     .foregroundColor(Color("secondaryColor"))
                 
-                HStack{
-                    Button(action: {
-                        if let url = URL(string: url) {
-                            UIApplication.shared.open(url)
-                        }
-                    }, label: {
-                        ZStack(alignment: .bottomLeading){
-                            Image(systemName: "film")
-                                .font(.system(size: 85))
-                                .foregroundColor(Color.white)
-                            
-                            RoundedRectangle(cornerRadius: 10)
-                                .opacity(0.1)
-                                .foregroundColor(.black)
-                                .frame(width: 35, height: 20)
-                                .padding(5.5)
-                            
-                            Text(durationClip).foregroundColor(.black)
-                                .font(.system(size: 12))
-                                .padding(9)
-                            
-                        }.shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
-                    })
-                    VStack(alignment: .leading, spacing: 12){
-                        Text(urlName)
-                            .font(.system(size: 12))
-                            .bold()
-                            .foregroundColor(Color("secondaryColor"))
-                        
-                        Text(durationClip)
-                            .font(.system(size: 10))
-                            .foregroundColor(Color("secondaryColor"))
-                    }
-                }.frame(width: 390, height: 119)
+                SimpleVideoButton(image:image, durationClip: durationClip, url: url, urlName: urlName)
             }.padding(7)
-        }.scaledToFit()
+        }
     }
 }
 
@@ -396,6 +365,7 @@ struct initDetailsTitle: View {
 }
 
 struct DetailsInfos: View {
+    let title:String
     let description: String
     
     var body: some View {
@@ -405,7 +375,7 @@ struct DetailsInfos: View {
                 .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
             VStack{
                 HStack{
-                    Text("Informations supplémentaires")
+                    Text(title)
                         .foregroundColor(Color("secondaryColor"))
                         .bold()
                         .font(.system(size: 12))
@@ -419,5 +389,51 @@ struct DetailsInfos: View {
                     .foregroundColor(Color("secondaryColor"))
             }.padding(5)
         }
+    }
+}
+
+struct SimpleVideoButton: View {
+    let image: String
+    let durationClip: String
+    let url: String
+    let urlName: String
+    var body: some View {
+        HStack{
+            Button(action: {
+                if let url = URL(string: url) {
+                    UIApplication.shared.open(url)
+                }
+            }, label: {
+                ZStack(alignment: .bottomLeading){
+                    Image(image)
+                        .resizable()
+                        .frame(width: 155, height: 89)
+                        .cornerRadius(10)
+                        .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+                    
+                    RoundedRectangle(cornerRadius: 10)
+                        .opacity(0.2)
+                        .foregroundColor(.black)
+                        .frame(width: 35, height: 20)
+                        .padding(5.5)
+                    
+                    Text(durationClip)
+                        .font(.system(size: 12))
+                        .padding(9)
+                        .foregroundColor(.white)
+                    
+                }.shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+            })
+            VStack(alignment: .leading, spacing: 12){
+                Text(urlName)
+                    .font(.system(size: 12))
+                    .bold()
+                    .foregroundColor(Color("secondaryColor"))
+                
+                Text(durationClip)
+                    .font(.system(size: 10))
+                    .foregroundColor(Color("secondaryColor"))
+            }
+        }.frame(width: 380, height: 119)
     }
 }

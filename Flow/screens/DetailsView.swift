@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailsView: View {
-    var elementViewed = Film(title: "Le seigneur des anneaux", subname: "Les Deux Tours", cover: "doc.plaintext.fill", realisator: "Peter Jackson", description: "Le Seigneur des anneaux est une trilogie cinématographique américano-néo-zélandaise de fantasy réalisée par Peter Jackson et fondée sur le roman du même nom en trois volumes de J. R. R. Tolkien. Les films composant cette trilogie sont La Communauté de l'anneau, Les Deux Tours et Le Retour du roi.", rate: 3, plateform: "plateform?url tu veux dire?", actor: [Actor(name: "Thomas Holland", image: "sun.max.fill", role: "Cascadeur"), Actor(name: "Amel Bent", image: "sun.min.fill", role: "Chanteuse")], isFavorited: true, isSeen: true)
+    var elementViewed = Film(title: "Le seigneur des anneaux", subname: "Les Deux Tours", cover: "seigneurDesAnneaux2", realisator: "Peter Jackson", description: "Le Seigneur des anneaux est une trilogie cinématographique américano-néo-zélandaise de fantasy réalisée par Peter Jackson et fondée sur le roman du même nom en trois volumes de J. R. R. Tolkien. Les films composant cette trilogie sont La Communauté de l'anneau, Les Deux Tours et Le Retour du roi.", rate: 3, plateform: "plateform?url tu veux dire?", actor: [Actor(name: "Thomas Holland", image: "sun.max.fill", role: "Cascadeur"), Actor(name: "Amel Bent", image: "sun.min.fill", role: "Chanteuse")], isFavorited: true, isSeen: true)
     
     var body: some View {
      
@@ -20,15 +20,17 @@ struct DetailsView: View {
             ScrollView{
             VStack{
                 DetailsTitle(elementTitle: elementViewed.title, elementSubname: elementViewed.subname)
+                    .padding(4)
                 
                 DetailsImage(isFavorited: elementViewed.isFavorited, image: elementViewed.cover)
                 
-                DetailsBar(isSeen: true, date: "14 Oct. 2022", rate: 3).padding(8)
-                
+                DetailsBar(isSeen: true, date: "14 Oct. 2022", rate: 3)
+                    .padding(.bottom, 7)
                 HStack{
                     Text("À regarder sur")
                         .font(.system(size: 12))
                         .bold()
+                        .padding(.leading, 5)
                     
                     Spacer()
                 }
@@ -38,7 +40,7 @@ struct DetailsView: View {
                 }.padding(13)
                 
                 
-                DetailsInfosWithTrailer(description: elementViewed.description, url: "https://www.disneyplus.com/fr-fr", urlName: "Trailer \(elementViewed.title) : \(elementViewed.subname)", durationClip: "4:33")
+                DetailsInfosWithTrailer(image: "urlImage",description: elementViewed.description, url: "https://www.disneyplus.com/fr-fr", urlName: "Trailer \(elementViewed.title) : \(elementViewed.subname)", durationClip: "4:33")
                 
                 HStack{
                     Text("Casting")

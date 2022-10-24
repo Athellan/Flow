@@ -12,7 +12,8 @@ struct LibraryView: View {
     @State var searching: String = ""
     @State var isFav: Bool = true
     
-    let categories: [String] = ["Mes Favoris", "Mes Films", "Mes Séries"]
+    let categories: [String] = ["Mes Favoris", "Mes Films", "Mes Séries", "Mes Evenements"]
+    let cover: String = "seigneurDesAnneaux1"
     
     var body: some View {
         
@@ -23,26 +24,35 @@ struct LibraryView: View {
                 
                 VStack{
                     SearchbarLibrary()
+                    ScrollView{
                     ForEach(categories, id: \.self) { idx in
                         ZStack{
                             gradientRectangle()
                      
                             HStack{
-                                VStack{
+                                VStack(alignment: .leading, spacing: 5){
                                     Section(header: Text(idx).bold().font(.system(size: 17))){
                                         ScrollView(.horizontal, showsIndicators: false, content: {
-                                            Category(isFav: false)
+                                            HStack{
+                                                ForEach(categories, id: \.self){ idx in
+                                                    NavigationLink(destination: {
+                                                        DetailsView()
+                                                    }, label: {
+                                                        Category(isFav: true, image: cover)
+                                                    })
+                                                }
+                                            }
                                         })
                                         
                                     }
-                                }
+                                }.padding(10)
                             }
                         }
                     }
-                    
+                }
                 }.padding(10)
                 
-            }
+            }.navigationBarHidden(true)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

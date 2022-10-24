@@ -31,43 +31,34 @@ struct SearchbarLibrary: View {
     }
 }
 
+
 struct Category: View {
-    
     let isFav: Bool
-    let films: [String] = ["doc.plaintext.fill", "doc.plaintext.fill", "doc.plaintext.fill", "doc.plaintext.fill"]
- 
+    let image: String
     var body: some View {
-        HStack{
-            ForEach(films, id: \.self){ idx in
-                NavigationLink(destination: {
-                    DetailsView()
-                }, label: {
-                    ZStack{
-                        VStack(alignment: .trailing){
-                            HStack(alignment: .firstTextBaseline, spacing: -42){
-                                Image(systemName: "doc.plaintext.fill")
-                                    .foregroundColor(Color("secondaryColor"))
-                                    .font(.system(size: 130))
-                                
-                                HStack{
-                                    if(isFav){
-                                        Image(systemName: "checkmark.circle.fill")
-                                            .font(.system(size: 35))
-                                            .foregroundColor(.green)
-                                        
-                                    }else{
-                                        Image(systemName: "checkmark.circle.fill")
-                                            .font(.system(size: 35))
-                                            .foregroundColor(.white)
-                                        
-                                    }
-                                }
-                            }
-                        }.shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
-                        
-                    }.cornerRadius(20)
-                })
-            }
-        }
+        ZStack{
+            VStack(alignment: .trailing){
+                HStack(alignment: .firstTextBaseline, spacing: -42){
+                    Image(image)
+                        .resizable()
+                        .frame(width: 140, height: 194)
+                    
+                    HStack{
+                        if(isFav){
+                            Image(systemName: "checkmark.circle.fill")
+                                .font(.system(size: 35))
+                                .foregroundColor(.green)
+                            
+                        }else{
+                            Image(systemName: "checkmark.circle.fill")
+                                .font(.system(size: 35))
+                                .foregroundColor(.white)
+                            
+                        }
+                    }
+                }
+            }.shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+            
+        }.cornerRadius(20)
     }
 }

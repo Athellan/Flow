@@ -20,41 +20,25 @@ struct MapDetailsView: View {
             VStack{
                 DetailsTitle(elementTitle: elementViewed2.title, elementSubname: elementViewed2.adress)
                 
-                DetailsImage(isFavorited: false, image: "sun.max.fill")
+                DetailsImage(isFavorited: false, image: "goodGameImg")
                 
                 DetailsBar(isSeen: false, date: "14 Oct. 2022", rate: 5).padding(8)
                 
-                HStack{
-                    Text("À regarder sur")
-                        .font(.system(size: 12))
-                        .bold()
-                        .foregroundColor(Color("secondaryColor"))
+                DetailsInfos(title: "Informations sur le lieu", description: elementViewed2.description)
+                    .padding(.top)
+                
+                VStack(alignment: .leading){
                     
-                    Spacer()
+                    HStack{
+                Text("Évènements à venir")
+                    .bold()
+                    .foregroundColor(Color("secondaryColor"))
+                    .font(.system(size: 12))
+                    .padding(.top, 30)
+                    }
+                    MapDetailsVideoButton(url: "", durationClip: "4:33", image: "urlImage", title: "Le Louxor", subname: "Gran Torino, Clint EastWood", date: "14 octobre 2022", hours: "14h")
+                    MapDetailsVideoButton(url: "", durationClip: "4:33", image: "urlImage", title: "Le Louxor", subname: "Gran Torino, Clint EastWood", date: "14 octobre 2022", hours: "14h")
                 }
-                
-                
-                DetailsInfos(description: elementViewed2.description)
-                
-                HStack{
-                    Text("Casting")
-                        .bold()
-                        .font(.system(size: 12))
-                    Spacer()
-                    NavigationLink(destination: {
-                        CastingDetailsView()
-                    }, label: {
-                        Text("Voir tout")
-                            .underline()
-                            .font(.system(size: 12))
-                    })
-                    .navigationBarHidden(true)
-                }
-                HStack{
-                    DetailCasting( actorName1: "Elijah Wood", personnage1: "Frondon Sacquet", actorName2: "Sean Astin", personnage2: "Samsagace Gameji", actorName3: "Dominic Monaghan", personnage3: "Meladoc Brandebouc", actorName4: "Orlando Bloom", personnage4: "Legolas", actorName5: "Viggo Mortensen", personnage5: "Aragom", actorName6: "Ian McKellen", personnage6: "Gandalf")
-                
-                }
-                
             }.padding()
             }
         }.padding().ignoresSafeArea()

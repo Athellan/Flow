@@ -13,7 +13,7 @@ struct CastingDetailsView: View {
             Color("primaryColor")
                 .ignoresSafeArea()
             VStack{
-        Text("Ici sera la page de détail du casting")
+        Text("Ici sera la page de détail du casting, ou pas?")
             }
         }
     }
