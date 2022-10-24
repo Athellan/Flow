@@ -46,12 +46,12 @@ struct Category: View {
                     HStack{
                         if(isFav){
                             Image(systemName: "checkmark.circle.fill")
-                                .font(.system(size: 35))
+                                .font(.system(size: 27))
                                 .foregroundColor(.green)
                             
                         }else{
                             Image(systemName: "checkmark.circle.fill")
-                                .font(.system(size: 35))
+                                .font(.system(size: 27))
                                 .foregroundColor(.white)
                             
                         }
