@@ -37,7 +37,7 @@ struct homeDetail: View {
                     .resizable()
                     .frame(width: 250, height: 370)
                     .cornerRadius(10)
-                    .shadow(color: Color("secondaryColor"), radius: 4, x: -3, y: 4)
+                    .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
                 HStack {
                     Image(systemName: "multiply.circle.fill")
                         .resizable()
