@@ -22,19 +22,21 @@ struct Connexion: View {
         NavigationView{
             ZStack {
                 Color("primaryColor").ignoresSafeArea()
+            
+                
                 VStack{
                     Text("Bienvenue").font(.title)
                     Spacer()
                 }
-                VStack{
                 
+                VStack{
                     TextField("Username", text: $username)
                         .padding()
                         .frame(width: 350,height: 40)
                         .background(Color.black.opacity(0.05))
                         .cornerRadius(20)
-                        
-                        
+                    
+                    
                         .padding()
                     
                     SecureField("Password",text: $password)
@@ -43,71 +45,39 @@ struct Connexion: View {
                         .background(Color.black.opacity(0.05))
                         .cornerRadius(20)
                     
-                    Spacer()
-                            .frame(height: 50)
                     
-                  
-                    if succedConnexion {
-                        Text("ok")
+                    
+                    Spacer()
+                        .frame(height: 50)
+                    
+                    
+                    if failedConnexion {
+                        Text("erreur de saisi")
                     }
+                   
                     
+                    // mettre un navigateLink pour changer la direction du label ButtonConnexion avec un autre components pour pouvoir aller sur la page Parameterv1
                     
-                      else if failedConnexion {
-                          Text("dddjd")
-                      }
-                    
-                    LoginButton(username: $username, succedConnexion: $succedConnexion, failedConnexion: $failedConnexion, password: $password )
-                    
-                    
-                    
-                    
-                    NavigationLink(destination:Inscription(), label:{
-                        Text("Inscription")
-                    })
-                    
-                    
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .frame(width: 198,height: 32)
-                    .background(Color.black)
-                    .cornerRadius(20)
+                    ButtonConnexion(username: $username, succedConnexion: $succedConnexion, failedConnexion: $failedConnexion, password: $password )
+                   
+                    ButtonInscription()
                  
-                    
+                   
                 }
-                
-                VStack{
-                    Spacer()
-                        .frame(height: 500)
-                    
-                        Button {
-                            //
-                        }
-                        label : {
-                            Text("Continuer avec ")
-                            Image(systemName: "apple.logo")
-                        }
-                        
-                        .font(.headline)
-                        .foregroundColor(.black)
-                        .frame(width: 268,height: 49)
-                        .background(Color.white)
-                        .cornerRadius(100)
-                       
-                        
-                 
-                        
-                    
-                    
-                        
-                } // fin de la VSTACK
+             
                 
                 
-                }
+                
+                // fin de la VSTACK
+                
+                
             }
-            
         }
+        .navigationBarBackButtonHidden(true)
+        
     }
     
+}
 
 
 
@@ -119,47 +89,17 @@ struct Connexion_Previews: PreviewProvider {
 }
 
 
-struct LoginButton: View {
-    @Binding var username : String
-    @Binding var succedConnexion : Bool
-    @Binding var failedConnexion : Bool
-    @Binding var password : String
-    
-    func authenticate(username : String, password : String) {
-      
-        
-        if self.username == "Adel" {
-            self.succedConnexion = true
-    
-            self.failedConnexion = false
-            
-        }
-        
-        else if  self.username != "Adel" && self.password != "1234"{
-            self.failedConnexion = true
-            self.succedConnexion = false
-        }
-  
-        
-    }
-    
-    
-    var body: some View {
-        
-        Button("Connexion") {
-            
-            authenticate(username: username, password:password)
-        }
-        
-        
-        .font(.headline)
-        .foregroundColor(.white)
-        .frame(width: 198,height: 32)
-        .background(Color.black)
-        .cornerRadius(20)
-        .padding()
-        
-        
-        
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

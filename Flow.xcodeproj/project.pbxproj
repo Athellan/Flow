@@ -13,9 +13,11 @@
 		636A546029016467009D7491 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 636A545F29016467009D7491 /* Preview Assets.xcassets */; };
 		636A546829016B1C009D7491 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A546729016B1C009D7491 /* data.swift */; };
 		63CA89AD29017BB2006D9876 /* models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA89AC29017BB2006D9876 /* models.swift */; };
-		63CA89AF29017BBA006D9876 /* components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA89AE29017BBA006D9876 /* components.swift */; };
 		63CA89B329017BE8006D9876 /* viewmodels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA89B229017BE8006D9876 /* viewmodels.swift */; };
 		63CA89B7290181F7006D9876 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA89B6290181F7006D9876 /* HomeView.swift */; };
+		9C21CBFF2906781900F3BB26 /* ButtonConnexion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C21CBFE2906781900F3BB26 /* ButtonConnexion.swift */; };
+		9C21CC01290682A300F3BB26 /* ButtonInscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C21CC00290682A300F3BB26 /* ButtonInscription.swift */; };
+		9C21CC0329068B3000F3BB26 /* ContinuewithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C21CC0229068B3000F3BB26 /* ContinuewithApple.swift */; };
 		9CACF35029019A2300234452 /* Connexion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CACF34F29019A2300234452 /* Connexion.swift */; };
 		9CACF35229019EBB00234452 /* Inscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CACF35129019EBB00234452 /* Inscription.swift */; };
 /* End PBXBuildFile section */
@@ -28,9 +30,11 @@
 		636A545F29016467009D7491 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		636A546729016B1C009D7491 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		63CA89AC29017BB2006D9876 /* models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = models.swift; path = Flow/models/models.swift; sourceTree = SOURCE_ROOT; };
-		63CA89AE29017BBA006D9876 /* components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = components.swift; path = Flow/components/components.swift; sourceTree = SOURCE_ROOT; };
 		63CA89B229017BE8006D9876 /* viewmodels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = viewmodels.swift; path = Flow/viewmodels/viewmodels.swift; sourceTree = SOURCE_ROOT; };
 		63CA89B6290181F7006D9876 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Flow/screens/HomeView.swift; sourceTree = SOURCE_ROOT; };
+		9C21CBFE2906781900F3BB26 /* ButtonConnexion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonConnexion.swift; path = Flow/components/ButtonConnexion.swift; sourceTree = SOURCE_ROOT; };
+		9C21CC00290682A300F3BB26 /* ButtonInscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonInscription.swift; path = Flow/components/ButtonInscription.swift; sourceTree = SOURCE_ROOT; };
+		9C21CC0229068B3000F3BB26 /* ContinuewithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContinuewithApple.swift; path = Flow/components/ContinuewithApple.swift; sourceTree = SOURCE_ROOT; };
 		9CACF34F29019A2300234452 /* Connexion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Connexion.swift; path = Flow/screens/Connexion.swift; sourceTree = SOURCE_ROOT; };
 		9CACF35129019EBB00234452 /* Inscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Inscription.swift; path = Flow/screens/Inscription.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -115,7 +119,9 @@
 		636A546B29016DFB009D7491 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				63CA89AE29017BBA006D9876 /* components.swift */,
+				9C21CBFE2906781900F3BB26 /* ButtonConnexion.swift */,
+				9C21CC00290682A300F3BB26 /* ButtonInscription.swift */,
+				9C21CC0229068B3000F3BB26 /* ContinuewithApple.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -201,11 +207,13 @@
 				636A545B29016466009D7491 /* ContentView.swift in Sources */,
 				63CA89B329017BE8006D9876 /* viewmodels.swift in Sources */,
 				636A546829016B1C009D7491 /* data.swift in Sources */,
+				9C21CBFF2906781900F3BB26 /* ButtonConnexion.swift in Sources */,
 				9CACF35029019A2300234452 /* Connexion.swift in Sources */,
-				63CA89AF29017BBA006D9876 /* components.swift in Sources */,
 				636A545929016466009D7491 /* FlowApp.swift in Sources */,
 				9CACF35229019EBB00234452 /* Inscription.swift in Sources */,
+				9C21CC0329068B3000F3BB26 /* ContinuewithApple.swift in Sources */,
 				63CA89B7290181F7006D9876 /* HomeView.swift in Sources */,
+				9C21CC01290682A300F3BB26 /* ButtonInscription.swift in Sources */,
 				63CA89AD29017BB2006D9876 /* models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
