@@ -17,6 +17,7 @@ struct Film {
     let plateform: String
     let date: Date
     let actor: [Actor]
+    let isFavorited: Bool
 }
 
 struct Serie {
@@ -57,5 +58,7 @@ struct Event {
     let image: String
     let date: Date
 }
+
+
 
 // Enum pour Category
