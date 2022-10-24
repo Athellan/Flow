@@ -8,11 +8,6 @@
 import SwiftUI
 import MapKit
 
-struct City: Identifiable {
-    let id = UUID()
-    let name: String
-    let coordinate: CLLocationCoordinate2D
-}
 
 extension CLLocationCoordinate2D: Identifiable {
     public var id: String {
@@ -22,36 +17,47 @@ extension CLLocationCoordinate2D: Identifiable {
 
 struct MapView: View {
     
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))
+    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 48.8567, longitude: 2.3508), span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
     
     @State private var search: String = ""
     
-    let annotations = [
-        City(name: "London", coordinate: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275)),
-        City(name: "Paris", coordinate: CLLocationCoordinate2D(latitude: 48.8567, longitude: 2.3508)),
-        City(name: "Rome", coordinate: CLLocationCoordinate2D(latitude: 41.9, longitude: 12.5)),
-        City(name: "Washington DC", coordinate: CLLocationCoordinate2D(latitude: 38.895111, longitude: -77.036667))
-    ]
     
     var body: some View {
         ZStack {
             Color("primaryColor")
                 .ignoresSafeArea()
-                
-                TextField("Recherche", text: $search)
-                    .zIndex(1)
-                    .frame(width: 350,height: 40)
-                    .background(.white)
-                    .cornerRadius(20)
-                    .padding()
-                    .offset(y: -290)
+            
+            TextField("Recherche", text: $search)
+                .zIndex(1)
+                .frame(width: 350,height: 40)
+                .background(.white)
+                .cornerRadius(20)
+                .padding()
+                .offset(y: -290)
             
             VStack {
-                Map(coordinateRegion: $region, annotationItems: annotations) {
-                    MapMarker(coordinate: $0.coordinate)
-                }
+                Map(
+                   coordinateRegion: $region,
+                   interactionModes: MapInteractionModes.all,
+                   showsUserLocation: true,
+                   annotationItems: MapLocations,
+                   annotationContent: { location in
+                       MapAnnotation(
+                          coordinate: location.coordinate,
+                          content: {
+                              Button {
+                              } label: {
+                                  Image(systemName: "pin.circle.fill")
+                                      .foregroundColor(.red)
+                              }
+                             Text(location.name)
+                          }
+                       )
+                   }
+                )
                 .frame(width: 390, height: 650)
                 .cornerRadius(30)
+                
                 
                 
                 

@@ -16,6 +16,7 @@
 		63CA89AF29017BBA006D9876 /* components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA89AE29017BBA006D9876 /* components.swift */; };
 		63FC90CF29067C2400135CFB /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FC90CE29067C2400135CFB /* MapView.swift */; };
 		63FC90D52906954100135CFB /* viewmodels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FC90D42906954100135CFB /* viewmodels.swift */; };
+		63FC90DF2906BEE000135CFB /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FC90DE2906BEE000135CFB /* testView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		63CA89AE29017BBA006D9876 /* components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = components.swift; path = Flow/components/components.swift; sourceTree = SOURCE_ROOT; };
 		63FC90CE29067C2400135CFB /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapView.swift; path = Flow/screens/MapView.swift; sourceTree = SOURCE_ROOT; };
 		63FC90D42906954100135CFB /* viewmodels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = viewmodels.swift; path = Flow/viewmodels/viewmodels.swift; sourceTree = SOURCE_ROOT; };
+		63FC90DE2906BEE000135CFB /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = testView.swift; path = Flow/screens/testView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				63FC90CE29067C2400135CFB /* MapView.swift */,
+				63FC90DE2906BEE000135CFB /* testView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				63FC90D52906954100135CFB /* viewmodels.swift in Sources */,
 				63FC90CF29067C2400135CFB /* MapView.swift in Sources */,
 				636A546829016B1C009D7491 /* data.swift in Sources */,
+				63FC90DF2906BEE000135CFB /* testView.swift in Sources */,
 				63CA89AF29017BBA006D9876 /* components.swift in Sources */,
 				636A545929016466009D7491 /* FlowApp.swift in Sources */,
 				63CA89AD29017BB2006D9876 /* models.swift in Sources */,
