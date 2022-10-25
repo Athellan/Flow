@@ -17,11 +17,11 @@ struct ChatView: View {
                 .ignoresSafeArea()
             VStack {
                 HStack {
-                    Text("JBot")
-                        .font(.largeTitle)
-                        .bold()
-                        .foregroundColor(Color("secondaryColor"))
                     
+                    Text("JBot").bold()
+                        .frame(width: 350, height: 60)
+                        .font(.largeTitle)
+                        .foregroundColor(Color("secondaryColor"))
                     Image(systemName: "bubble.left.fill")
                         .font(.system(size: 26))
                         .foregroundColor(Color("secondaryColor"))
