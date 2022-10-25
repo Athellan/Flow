@@ -19,7 +19,7 @@ struct profileInfo: View {
                 .resizable()
                 .frame(width: 144, height: 144)
                 .cornerRadius(144)
-                .shadow(color: Color("secondaryColor"), radius: 4, x: -3, y: 4)
+                .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
                 .padding()
                 
             Text("\(name)")

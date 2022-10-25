@@ -30,24 +30,25 @@ struct Profile: View {
                         .frame(width: 352)
                         .padding(.vertical, 20)
                         
+                        
                         ZStack {
                             gradientRectangle()
                                 .frame(width: 352, height: 220)
                             profileEvents(eventImage: "serieMania", gradientRectangleTitle: "Mes évènements")
                         }
                         
+                        
                         ZStack {
                             gradientRectangle()
                                 .frame(width: 352, height: 280)
-                                
                             profilePreference(gradientRectangleTitle2: "Mes préférences")
                             //profile pref
                             
                         }.padding(.top, 10)
                     }.frame(width: 600)
                 }
-            } // fin VStack
-        } // fin ZStack
+            }
+        }
     }
 }
 

@@ -29,6 +29,7 @@ struct profileCategoryPreference: View {
             Image("\(movieCategory.image)")
                 .resizable()
                 .frame(width: 72, height: 72)
+                .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
         }
         .frame(width: 100, height: 100)
         .background(Color("highlightColor"))
