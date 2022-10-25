@@ -16,9 +16,11 @@ struct Film: Identifiable {
     let description: String
     let rate: Int
     let plateform: String
-//    let date: Date
-//    let actor: [Actor]
-    let isFavorited: Bool
+  //  let date: Date
+    let actor: [Actor]
+    var isFavorited: Bool
+    var isSeen: Bool
+
 }
 
 struct Serie {
@@ -56,9 +58,11 @@ struct Venue {
 
 struct Event {
     let title: String
+    let description: String
+    let adress: String
     let type: String
     let image: String
-    let date: Date
+   // let date: Date
 }
 
 // Enum pour Category
