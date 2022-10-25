@@ -16,7 +16,6 @@
 		63CA89AF29017BBA006D9876 /* components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA89AE29017BBA006D9876 /* components.swift */; };
 		63CA89B329017BE8006D9876 /* viewmodels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA89B229017BE8006D9876 /* viewmodels.swift */; };
 		63FC90E12906C57B00135CFB /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FC90E02906C57B00135CFB /* ChatView.swift */; };
-		63FC90E42906C84000135CFB /* StreamChatSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 63FC90E32906C84000135CFB /* StreamChatSwiftUI */; };
 		63FC90E82906D02800135CFB /* BotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FC90E72906D02800135CFB /* BotResponse.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +38,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63FC90E42906C84000135CFB /* StreamChatSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +142,6 @@
 			);
 			name = Flow;
 			packageProductDependencies = (
-				63FC90E32906C84000135CFB /* StreamChatSwiftUI */,
 			);
 			productName = Flow;
 			productReference = 636A545529016466009D7491 /* Flow.app */;
@@ -175,7 +172,6 @@
 			);
 			mainGroup = 636A544C29016466009D7491;
 			packageReferences = (
-				63FC90E22906C84000135CFB /* XCRemoteSwiftPackageReference "stream-chat-swiftui" */,
 			);
 			productRefGroup = 636A545629016466009D7491 /* Products */;
 			projectDirPath = "";
@@ -411,25 +407,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		63FC90E22906C84000135CFB /* XCRemoteSwiftPackageReference "stream-chat-swiftui" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/getstream/stream-chat-swiftui";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		63FC90E32906C84000135CFB /* StreamChatSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 63FC90E22906C84000135CFB /* XCRemoteSwiftPackageReference "stream-chat-swiftui" */;
-			productName = StreamChatSwiftUI;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 636A544D29016466009D7491 /* Project object */;
 }
