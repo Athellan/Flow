@@ -8,40 +8,35 @@
 import SwiftUI
 
 struct profilePreference: View {
-    var movieCategory: [String] = ["history", "horror", "sci-fi", "mystery"]
-//    = ["history", "horror", "sci-fi", "mystery"]
+    let rows = [
+            GridItem(.fixed(100)),
+            GridItem(.fixed(100))
+        ]
+    var gradientRectangleTitle2: String
+    
     var body: some View {
-        HStack {
-            Button {
-                // fonction bouton = ajouter préférence style film
-            } label: {
-                Image(systemName: "plus.circle.fill")
-                    .frame(width: 100, height: 100)
-                    .font(.largeTitle)
-                    .foregroundColor(.white)
-                    .background(Color("highlightColor"))
-                    .cornerRadius(10)
-            }
-            
-            VStack {
-                Image("\(movieCategory)")
-                    .resizable()
-                    .frame(width: 72, height: 72)
-                    .background(Color("highlightColor"))
+        VStack(alignment: .leading) {
+            Text("\(gradientRectangleTitle2)")
+                .fontWeight(.bold)
+                .font(.system(size: 17))
+                .foregroundColor(Color("secondaryColor"))
+                .padding(.top, 5)
+               
+            LazyHGrid(rows: rows, alignment: .center) {
+                profileAddPreference()
+                ForEach(movieCategories) { movieCategory in
+                    profileCategoryPreference(movieCategory: movieCategory)
                     
-            }
-            .frame(width: 100, height: 100)
-            .background(Color("highlightColor"))
-            .cornerRadius(10)
-            .padding(.leading, 5)
-            
-            
+                }
+            }.frame(height: 210)
         }
     }
 }
 
+
+
 struct profilePreference_Previews: PreviewProvider {
     static var previews: some View {
-        profilePreference(movieCategory: ["horror"])
+        profilePreference(gradientRectangleTitle2: "Plop")
     }
 }

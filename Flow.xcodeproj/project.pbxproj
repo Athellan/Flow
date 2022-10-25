@@ -21,6 +21,8 @@
 		C705501F2902C9AF006A316E /* gradientRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C705501E2902C9AF006A316E /* gradientRectangle.swift */; };
 		C7220D6929069D9200EF5278 /* profileEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7220D6829069D9200EF5278 /* profileEvents.swift */; };
 		C7220D6B2906B14E00EF5278 /* profilePreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7220D6A2906B14E00EF5278 /* profilePreference.swift */; };
+		C7220D6D2906C12500EF5278 /* profileAddPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7220D6C2906C12500EF5278 /* profileAddPreference.swift */; };
+		C7220D6F2906C1A100EF5278 /* profileCategoryPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7220D6E2906C1A100EF5278 /* profileCategoryPreference.swift */; };
 		C7FD1FB4290184BE001B5516 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FD1FB3290184BE001B5516 /* Profile.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,8 @@
 		C705501E2902C9AF006A316E /* gradientRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = gradientRectangle.swift; path = Flow/Components/gradientRectangle.swift; sourceTree = SOURCE_ROOT; };
 		C7220D6829069D9200EF5278 /* profileEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profileEvents.swift; path = Flow/components/profileEvents.swift; sourceTree = SOURCE_ROOT; };
 		C7220D6A2906B14E00EF5278 /* profilePreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profilePreference.swift; path = Flow/components/profilePreference.swift; sourceTree = SOURCE_ROOT; };
+		C7220D6C2906C12500EF5278 /* profileAddPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profileAddPreference.swift; path = Flow/components/profileAddPreference.swift; sourceTree = SOURCE_ROOT; };
+		C7220D6E2906C1A100EF5278 /* profileCategoryPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profileCategoryPreference.swift; path = Flow/components/profileCategoryPreference.swift; sourceTree = SOURCE_ROOT; };
 		C7FD1FB3290184BE001B5516 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = Flow/screens/Profile.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -128,6 +132,8 @@
 				C705501E2902C9AF006A316E /* gradientRectangle.swift */,
 				C7220D6829069D9200EF5278 /* profileEvents.swift */,
 				C7220D6A2906B14E00EF5278 /* profilePreference.swift */,
+				C7220D6E2906C1A100EF5278 /* profileCategoryPreference.swift */,
+				C7220D6C2906C12500EF5278 /* profileAddPreference.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -210,9 +216,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7220D6D2906C12500EF5278 /* profileAddPreference.swift in Sources */,
 				C7220D6929069D9200EF5278 /* profileEvents.swift in Sources */,
 				636A545B29016466009D7491 /* ContentView.swift in Sources */,
 				C705501B29029C02006A316E /* profileButton.swift in Sources */,
+				C7220D6F2906C1A100EF5278 /* profileCategoryPreference.swift in Sources */,
 				C705501F2902C9AF006A316E /* gradientRectangle.swift in Sources */,
 				C7FD1FB4290184BE001B5516 /* Profile.swift in Sources */,
 				63CA89B329017BE8006D9876 /* viewmodels.swift in Sources */,

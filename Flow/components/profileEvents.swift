@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct profileEvents: View {
-    var gradientRectangleImage: String
+    var eventImage: String
     var gradientRectangleTitle: String
     
     var body: some View {
@@ -35,7 +35,7 @@ struct profileEvents: View {
                             .cornerRadius(10)
                         }
                     
-                    Image("\(gradientRectangleImage)")
+                    Image("\(eventImage)")
                         .resizable()
                         .frame(width: 109, height: 156)
                         .cornerRadius(10)
@@ -52,6 +52,6 @@ struct profileEvents: View {
 
 struct profileEvents_Previews: PreviewProvider {
     static var previews: some View {
-        profileEvents(gradientRectangleImage: "serieMania", gradientRectangleTitle: "Mes évènements")
+        profileEvents(eventImage: "serieMania", gradientRectangleTitle: "Mes évènements")
     }
 }
