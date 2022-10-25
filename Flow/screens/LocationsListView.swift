@@ -20,9 +20,10 @@ struct LocationsListView: View {
                     listRowView(location: location)
                 }
                 .padding(.vertical, 4)
-                .listRowBackground(Color.clear)
+                .listRowBackground(Color("opacityColor"))
             }
         }
+        .background(Color("opacityColor"))
         .listStyle(PlainListStyle())
     }
 }
