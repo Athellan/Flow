@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct gradientRectangle: View {
+struct gradientRectangle2: View {
     var gradientTop: Color = Color(red: 0 / 255, green: 70 / 255, blue: 67 / 255)
     var gradientBottom: Color = Color(red: 149 / 255, green: 191 / 255, blue: 181 / 255)
 //    var title: String
@@ -34,8 +34,8 @@ struct gradientRectangle: View {
     }
 }
 
-struct gradientRectangle_Previews: PreviewProvider {
+struct gradientRectangle2_Previews: PreviewProvider {
     static var previews: some View {
-        gradientRectangle()
+        gradientRectangle2()
     }
 }

@@ -32,14 +32,14 @@ struct Profile: View {
                         
                         
                         ZStack {
-                            gradientRectangle()
+                            gradientRectangle2()
                                 .frame(width: 352, height: 220)
                             profileEvents(eventImage: "serieMania", gradientRectangleTitle: "Mes évènements")
                         }
                         
                         
                         ZStack {
-                            gradientRectangle()
+                            gradientRectangle2()
                                 .frame(width: 352, height: 280)
                             profilePreference(gradientRectangleTitle2: "Mes préférences")
                             //profile pref
