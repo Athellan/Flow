@@ -26,11 +26,12 @@ struct miniatureSerie: View {
                     Text(serie.title.uppercased())
                         .font(.system(size: 14))
                     HStack {
-                        Text("S0\(serie.season)  |")
-                        Text("E0\(serie.episodeNumber) ")
+                        Text("S0\(serie.season)  |").bold()
+                        Text("E0\(serie.episodeNumber) ").bold()
                     }
+                    
                     .font(.system(size: 18))
-                    .bold()
+                    
                     Text(serie.episodeName)
                 }
                 FavoriteButton(isFavorited: $isFavorited)
