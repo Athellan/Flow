@@ -27,6 +27,7 @@
 		6390790D2908095700FB8C02 /* LocationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6390790C2908095600FB8C02 /* LocationsListView.swift */; };
 		6390790F2908148A00FB8C02 /* LocationPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6390790E2908148A00FB8C02 /* LocationPreviewView.swift */; };
 		639079112908342C00FB8C02 /* LocationMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639079102908342C00FB8C02 /* LocationMapAnnotationView.swift */; };
+		63907913290838A100FB8C02 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63907912290838A100FB8C02 /* LocationDetailView.swift */; };
 		63CA89B329017BE8006D9876 /* viewmodels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA89B229017BE8006D9876 /* viewmodels.swift */; };
 		63CA89B7290181F7006D9876 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA89B6290181F7006D9876 /* HomeView.swift */; };
 		63FC90C12901966200135CFB /* miniatureFilm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FC90C02901966200135CFB /* miniatureFilm.swift */; };
@@ -71,6 +72,7 @@
 		6390790C2908095600FB8C02 /* LocationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationsListView.swift; path = Flow/screens/LocationsListView.swift; sourceTree = SOURCE_ROOT; };
 		6390790E2908148A00FB8C02 /* LocationPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationPreviewView.swift; path = Flow/screens/LocationPreviewView.swift; sourceTree = SOURCE_ROOT; };
 		639079102908342C00FB8C02 /* LocationMapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationMapAnnotationView.swift; path = Flow/screens/LocationMapAnnotationView.swift; sourceTree = SOURCE_ROOT; };
+		63907912290838A100FB8C02 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationDetailView.swift; path = Flow/screens/LocationDetailView.swift; sourceTree = SOURCE_ROOT; };
 		63CA89B229017BE8006D9876 /* viewmodels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = viewmodels.swift; path = Flow/viewmodels/viewmodels.swift; sourceTree = SOURCE_ROOT; };
 		63CA89B6290181F7006D9876 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Flow/screens/HomeView.swift; sourceTree = SOURCE_ROOT; };
 		63FC90C02901966200135CFB /* miniatureFilm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = miniatureFilm.swift; path = Flow/components/miniatureFilm.swift; sourceTree = SOURCE_ROOT; };
@@ -188,6 +190,7 @@
 				6390790C2908095600FB8C02 /* LocationsListView.swift */,
 				6390790E2908148A00FB8C02 /* LocationPreviewView.swift */,
 				639079102908342C00FB8C02 /* LocationMapAnnotationView.swift */,
+				63907912290838A100FB8C02 /* LocationDetailView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				C7220D6B2906B14E00EF5278 /* profilePreference.swift in Sources */,
 				5F807F772906D7680002C5D9 /* LibraryView.swift in Sources */,
 				5F807F7D2906D7C20002C5D9 /* CastingDetailsView.swift in Sources */,
+				63907913290838A100FB8C02 /* LocationDetailView.swift in Sources */,
 				6390790D2908095700FB8C02 /* LocationsListView.swift in Sources */,
 				636A545929016466009D7491 /* FlowApp.swift in Sources */,
 				5F807F792906D78E0002C5D9 /* DetailsView.swift in Sources */,
