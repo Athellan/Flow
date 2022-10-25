@@ -9,13 +9,7 @@ import SwiftUI
 
 struct ButtonContinueWithApple: View {
     var body: some View {
-        VStack{
-            ZStack {
-                Color("primaryColor").ignoresSafeArea()
-                
-                VStack{
-                    Spacer()
-                        .frame(height: 500)
+
                     
                     Button {
                         //
@@ -24,19 +18,20 @@ struct ButtonContinueWithApple: View {
                         Text("Continuer avec ")
                         Image(systemName: "apple.logo")
                     }
+       
                     
                     .font(.headline)
                     .foregroundColor(.black)
                     .frame(width: 268,height: 49)
                     .background(Color.white)
                     .cornerRadius(100)
+                    .padding()
                     
                     
                 }
             }
-        }
-    }
-}
+        
+    
 
 
 struct ButtonContinuewithApple_Previews: PreviewProvider {

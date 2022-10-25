@@ -16,13 +16,14 @@ struct Connexion: View {
     
     @State private var failedConnexion : Bool = false
     @State private var succedConnexion : Bool = false
+    @State private var showLoginScreen : Bool = false
     
     
     var body: some View {
         NavigationView{
             ZStack {
                 Color("primaryColor").ignoresSafeArea()
-            
+                
                 
                 VStack{
                     Text("Bienvenue").font(.title)
@@ -51,33 +52,45 @@ struct Connexion: View {
                         .frame(height: 50)
                     
                     
+                                        
                     if failedConnexion {
                         Text("erreur de saisi")
                     }
-                   
+                    
                     
                     // mettre un navigateLink pour changer la direction du label ButtonConnexion avec un autre components pour pouvoir aller sur la page Parameterv1
                     
-                    ButtonConnexion(username: $username, succedConnexion: $succedConnexion, failedConnexion: $failedConnexion, password: $password )
-                   
+                    
+                    
+                        ButtonConnexion(username: $username, succedConnexion: $succedConnexion, password: $password, failedConnexion: $failedConnexion,showLoginScreen: $showLoginScreen)
+                        
+                        
+                    NavigationLink(destination: Parameters(),   isActive: $showLoginScreen, label: {
+                                        Text("")
+                                    })
+                    
                     ButtonInscription()
-                 
                    
+                    
+                    
+                    
+                    
+                    ButtonContinueWithApple()
+                    
+                    
                 }
-             
-                
-                
-                
-                // fin de la VSTACK
-                
                 
             }
+            //fin Zstack
+            
         }
-        .navigationBarBackButtonHidden(true)
-        
-    }
+                
+            }
+            
+        }
     
-}
+    
+
 
 
 

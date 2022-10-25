@@ -12,6 +12,8 @@ struct Inscription: View {
     @State private var email = ""
     @State private var password = ""
     @State private var confirmedpassword = ""
+    @State private var showInscription = false
+    
     var body: some View {
         
         NavigationView{
@@ -23,27 +25,27 @@ struct Inscription: View {
                     Spacer()
                 }
                 VStack{
-                
+                    
                     TextField("Username", text: $username)
                         .padding()
                         .frame(width: 350,height: 40)
                         .background(Color.black.opacity(0.05))
                         .cornerRadius(20)
                         .padding()
-                      
+                    
                     TextField("Email", text: $email)
                         .padding()
                         .frame(width: 350,height: 40)
                         .background(Color.black.opacity(0.05))
                         .cornerRadius(20)
-                 
+                    
                     
                     SecureField("Password",text: $password)
                         .padding()
                         .frame(width: 350,height:40)
                         .background(Color.black.opacity(0.05))
                         .cornerRadius(20)
-                      
+                    
                         .padding()
                     
                     SecureField("Confirmer mot de passe ",text: $confirmedpassword)
@@ -51,22 +53,18 @@ struct Inscription: View {
                         .frame(width: 350,height:40)
                         .background(Color.black.opacity(0.05))
                         .cornerRadius(20)
-               
+                    
                     Spacer()
                         .frame(height: 50)
                     
-                    // mettre un navigateLink pour changer la direction du label s'inscrire avec un autre components pour pouvoir aller sur la page Parameterv1
-                    ButtonInscription()
-                   
                     
+                    ButtonInscriptionTwo(username: $username, email: $email, password: $password, confirmedpassword: $confirmedpassword,showInscription: $showInscription)
                     
-                       
-                        NavigationLink(destination:Connexion(), label:{
-                            Text("Retour")
-                                .foregroundColor(.black)
-                        })
+                    NavigationLink(destination: Parameters(), isActive: $showInscription, label: {
+                        Text("")
                     
-                } // fin de la VSTACK
+                })
+                }
                 
                 VStack{
                     Spacer()
@@ -76,14 +74,19 @@ struct Inscription: View {
                     
                 }
                 
-            }
+            
         }
-        .navigationBarBackButtonHidden(true)
+        
     }
+        
+    
 }
+       
+                                   }
 
 struct Inscription_Previews: PreviewProvider {
     static var previews: some View {
         Inscription()
     }
 }
+

@@ -11,33 +11,32 @@ struct ButtonConnexion: View {
     
     @Binding var username : String
     @Binding var succedConnexion : Bool
-    @Binding var failedConnexion : Bool
     @Binding var password : String
-    
-    func authenticate(username : String, password : String, succedConnexion: Bool , failedConnexion: Bool) {
-        
-        
-        if self.username == "Adel" {
-            self.succedConnexion = true
-            
-            self.failedConnexion = false
-            
-        }
-        
-        else if  self.username != "Adel" && self.password != "1234"{
-            self.failedConnexion = true
-            self.succedConnexion = false
-        }
-        
-        
-    }
+    @Binding var failedConnexion : Bool
+    @Binding var showLoginScreen : Bool
     
     var body: some View {
+        
+        
         
       
         Button("Connexion") {
             
-            authenticate(username: username, password:password,succedConnexion: succedConnexion, failedConnexion: failedConnexion)
+            
+            if username == "Adel" && password == "adel" {
+                succedConnexion = true
+                failedConnexion = false
+                showLoginScreen = true
+               
+                
+            }
+            
+            else {
+
+                failedConnexion = true
+                succedConnexion = false
+                showLoginScreen = false
+            }
         }
         
         .font(.headline)
@@ -53,9 +52,10 @@ struct ButtonConnexion: View {
 
 struct ButtonConnexion_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonConnexion(username: .constant(""), succedConnexion: .constant(false), failedConnexion: .constant(false), password: .constant(""))
+        ButtonConnexion(username: .constant(""), succedConnexion: .constant(false), password: .constant(""),failedConnexion: .constant(true),showLoginScreen: .constant(false))
     }
 }
+
 
 
 

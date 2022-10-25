@@ -12,6 +12,8 @@ import SwiftUI
 struct ButtonInscription: View {
     var body: some View {
         
+        
+        
            
             NavigationLink(destination:Inscription(), label:{
                 Text("S'inscrire")
