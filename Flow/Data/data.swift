@@ -7,7 +7,8 @@
 import Foundation
 
 
-struct Film {
+struct Film: Identifiable {
+    let id = UUID()
     let title: String
     let subname: String
     let cover: String
@@ -19,6 +20,7 @@ struct Film {
     let actor: [Actor]
     var isFavorited: Bool
     var isSeen: Bool
+
 }
 
 struct Serie {
