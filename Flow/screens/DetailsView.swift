@@ -26,6 +26,7 @@ struct DetailsView: View {
                 
                 DetailsBar(isSeen: true, date: "14 Oct. 2022", rate: 3)
                     .padding(.bottom, 7)
+                
                 HStack{
                     Text("À regarder sur")
                         .font(.system(size: 12))
@@ -57,8 +58,7 @@ struct DetailsView: View {
                     .navigationBarHidden(true)
                 }
                 HStack{
-                    DetailCasting( actorName1: "Elijah Wood", personnage1: "Frondon Sacquet", actorName2: "Sean Astin", personnage2: "Samsagace Gameji", actorName3: "Dominic Monaghan", personnage3: "Meladoc Brandebouc", actorName4: "Orlando Bloom", personnage4: "Legolas", actorName5: "Viggo Mortensen", personnage5: "Aragom", actorName6: "Ian McKellen", personnage6: "Gandalf")
-                
+                    DetailCasting(actorName1: "Elijah Wood", personnage1: "Frondon Sacquet", actorName2: "Sean Astin", personnage2: "Samsagace Gameji", actorName3: "Dominic Monaghan", personnage3: "Meladoc Brandebouc", actorName4: "Orlando Bloom", personnage4: "Legolas", actorName5: "Viggo Mortensen", personnage5: "Aragom", actorName6: "Ian McKellen", personnage6: "Gandalf")
                 }
                 
             }.padding()

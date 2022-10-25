@@ -19,13 +19,13 @@ struct MapDetailsView: View {
             ScrollView{
             VStack{
                 DetailsTitle(elementTitle: elementViewed2.title, elementSubname: elementViewed2.adress)
+                    .padding(4)
                 
                 DetailsImage(isFavorited: false, image: "goodGameImg")
                 
-                DetailsBar(isSeen: false, date: "14 Oct. 2022", rate: 5).padding(8)
+                DetailsBar(isSeen: false, date: "14 Oct. 2022", rate: 5).padding(.bottom, 7)
                 
                 DetailsInfos(title: "Informations sur le lieu", description: elementViewed2.description)
-                    .padding(.top)
                 
                 VStack(alignment: .leading){
                     
