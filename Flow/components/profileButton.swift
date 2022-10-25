@@ -19,9 +19,11 @@ import SwiftUI
                         .frame(width: 24, height: 24)
                         .foregroundColor(Color("buttonColor"))
                     Text("\(score)")
+                        .bold()
                         .foregroundColor(Color("buttonColor"))
                         .padding(.leading, 10)
-                        .fontWeight(.bold)
+                    
+                        
                     
                 }
                 .frame(width: 106, height: 41)
