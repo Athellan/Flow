@@ -5,6 +5,7 @@
 //  Created by Apprenant 63 on 20/10/2022.
 //
 import Foundation
+import MapKit
 
 
 struct Film: Identifiable {
@@ -65,4 +66,16 @@ struct Event {
    // let date: Date
 }
 
+struct MapLocation: Identifiable {
+    let id = UUID()
+    let name: String
+    let coordinate: CLLocationCoordinate2D
+}
+
+let MapLocations = [
+    MapLocation(name: "Le Louxor", coordinate: CLLocationCoordinate2D(latitude: 48.88396599940806, longitude: 2.3497290539689524)),
+    MapLocation(name: "Le Jardin Caché", coordinate: CLLocationCoordinate2D(latitude: 48.85917580900435, longitude: 2.2719680471923738)),
+    MapLocation(name: "Le Bistrot du cinéma", coordinate: CLLocationCoordinate2D(latitude: 48.88485815296238, longitude: 2.3268638)),
+    MapLocation(name: "Le cinéma du Panthéon", coordinate: CLLocationCoordinate2D(latitude: 48.85012542913354, longitude: 2.3434033858495242))
+]
 // Enum pour Category
