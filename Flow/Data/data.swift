@@ -8,7 +8,8 @@ import Foundation
 import MapKit
 
 
-struct Film {
+struct Film: Identifiable {
+    let id = UUID()
     let title: String
     let subname: String
     let cover: String
@@ -16,8 +17,8 @@ struct Film {
     let description: String
     let rate: Int
     let plateform: String
-    let date: Date
-    let actor: [Actor]
+//    let date: Date
+//    let actor: [Actor]
     let isFavorited: Bool
 }
 
