@@ -14,7 +14,7 @@ struct TabViewView: View {
         UITabBar.appearance().unselectedItemTintColor = UIColor(Color("secondaryColor"))
     }
     
-    @State var selectedTab: Int = 1
+    @State var selectedTab: Int = 0
     
     var body: some View {
          
@@ -33,7 +33,7 @@ struct TabViewView: View {
                 .tag(1)
             LibraryView()
                 .tabItem {
-                    Image(systemName: "heart.text.square.fill")
+                    Image(systemName: "star.bubble.fill")
                     Text("Bibliothèque")
                 }
                 .tag(2)
