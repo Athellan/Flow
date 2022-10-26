@@ -37,8 +37,8 @@ struct TabViewView: View {
                     Text("Bibliothèque")
                 }
                 .tag(2)
-            Text("Carte")
-            //Insérer la vue ici à la place de la ligne du dessus
+            testView()
+            //LocationsView()
                 .tabItem {
                     Image(systemName: "map.fill")
                     Text("Carte")

@@ -59,24 +59,24 @@ class LocationsDataService {
             name: "Le Louvre",
             cityName: "Paris",
             coordinates: CLLocationCoordinate2D(latitude: 48.8606, longitude: 2.3376),
-            description: "The Louvre, or the Louvre Museum, is the world's most-visited museum and a historic monument in Paris, France. It is the home of some of the best-known works of art, including the Mona Lisa and the Venus de Milo. A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement.",
+            description: "Le Louvre c'est cool",
             imagesNames: [
-                "paris-louvre-1",
-                "paris-louvre-2",
-                "paris-louvre-3",
+                "TODO",
+                "TODO",
+                "TODO",
             ],
-            link: "https://en.wikipedia.org/wiki/Louvre"),
+            link: "TODO"),
         Location(
             name: "Chez Moi",
             cityName: "Paris",
             coordinates: CLLocationCoordinate2D(latitude: 41.8902, longitude: 12.4922),
-            description: "The Colosseum is an oval amphitheatre in the centre of the city of Rome, Italy, just east of the Roman Forum. It is the largest ancient amphitheatre ever built, and is still the largest standing amphitheatre in the world today, despite its age.",
+            description: "Chez moi",
             imagesNames: [
-                "rome-colosseum-1",
-                "rome-colosseum-2",
-                "rome-colosseum-3",
+                "TODO",
+                "TODO",
+                "TODO",
             ],
-            link: "https://en.wikipedia.org/wiki/Colosseum"),
+            link: ""),
     ]
     
 }
