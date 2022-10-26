@@ -37,8 +37,8 @@ struct TabViewView: View {
                     Text("Bibliothèque")
                 }
                 .tag(2)
-            testView()
-            //LocationsView()
+//            testView()
+            LocationsView()
                 .tabItem {
                     Image(systemName: "map.fill")
                     Text("Carte")
@@ -53,6 +53,7 @@ struct TabViewView: View {
 struct TabViewView_Previews: PreviewProvider {
     static var previews: some View {
         TabViewView()
+        .environmentObject(LocationsViewModel())
     }
 }
 
