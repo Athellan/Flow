@@ -17,35 +17,23 @@ struct ButtonConnexion: View {
     
     var body: some View {
         
-        
-        
-      
         Button("Connexion") {
-            
             
             if username == "Adel" && password == "adel" {
                 succedConnexion = true
                 failedConnexion = false
                 showLoginScreen = true
-               
-                
-            }
-            
-            else {
-
+            } else {
                 failedConnexion = true
                 succedConnexion = false
                 showLoginScreen = false
             }
         }
-        
         .font(.headline)
         .foregroundColor(.white)
         .frame(width: 198,height: 32)
-        .background(Color.black)
+        .background(Color("buttonColor"))
         .cornerRadius(20)
-        .padding()
-        
     }
 }
 

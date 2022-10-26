@@ -33,14 +33,11 @@ struct  ButtonInscriptionTwo: View {
             else {
                 showInscription = true
             }
-            
-            
-            
         }
         .font(.headline)
         .foregroundColor(.white)
         .frame(width: 198,height: 32)
-        .background(Color.black)
+        .background(Color("buttonColor"))
         .cornerRadius(20)
     }
 }

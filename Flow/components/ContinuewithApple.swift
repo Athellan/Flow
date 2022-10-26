@@ -15,8 +15,9 @@ struct ButtonContinueWithApple: View {
                         //
                     }
                     label : {
-                        Text("Continuer avec ")
                         Image(systemName: "apple.logo")
+                        Text("Continuer avec Apple ")
+                      
                     }
        
                     
@@ -25,7 +26,7 @@ struct ButtonContinueWithApple: View {
                     .frame(width: 268,height: 49)
                     .background(Color.white)
                     .cornerRadius(100)
-                    .padding()
+                    .offset(x:0, y:150)
                     
                     
                 }
