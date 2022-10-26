@@ -20,8 +20,6 @@
 		636A545D29016467009D7491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 636A545C29016467009D7491 /* Assets.xcassets */; };
 		636A546029016467009D7491 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 636A545F29016467009D7491 /* Preview Assets.xcassets */; };
 		636A546829016B1C009D7491 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A546729016B1C009D7491 /* data.swift */; };
-
-		63CA89AD29017BB2006D9876 /* models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA89AC29017BB2006D9876 /* models.swift */; };
 		9C1B061B2907EA3000B68E3D /* VignetteFilm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B061A2907EA3000B68E3D /* VignetteFilm.swift */; };
 		9C1B061F2908302800B68E3D /* ButtonInscriptionTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B061E2908302800B68E3D /* ButtonInscriptionTwo.swift */; };
 		9C21CBFF2906781900F3BB26 /* ButtonConnexion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C21CBFE2906781900F3BB26 /* ButtonConnexion.swift */; };
@@ -69,8 +67,6 @@
 		636A545C29016467009D7491 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		636A545F29016467009D7491 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		636A546729016B1C009D7491 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
-
-		63CA89AC29017BB2006D9876 /* models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = models.swift; path = Flow/models/models.swift; sourceTree = SOURCE_ROOT; };
 		9C1B061A2907EA3000B68E3D /* VignetteFilm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VignetteFilm.swift; path = Flow/components/VignetteFilm.swift; sourceTree = SOURCE_ROOT; };
 		9C1B061E2908302800B68E3D /* ButtonInscriptionTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonInscriptionTwo.swift; path = Flow/components/ButtonInscriptionTwo.swift; sourceTree = SOURCE_ROOT; };
 		9C21CBFE2906781900F3BB26 /* ButtonConnexion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonConnexion.swift; path = Flow/components/ButtonConnexion.swift; sourceTree = SOURCE_ROOT; };
@@ -342,7 +338,6 @@
 				9C21CC0329068B3000F3BB26 /* ContinuewithApple.swift in Sources */,
 				63CA89B7290181F7006D9876 /* HomeView.swift in Sources */,
 				9C21CC01290682A300F3BB26 /* ButtonInscription.swift in Sources */,
-				63CA89AD29017BB2006D9876 /* models.swift in Sources */,
 				9C8357B42906C59C0066A725 /* Parameters.swift in Sources */,
 
 				63FC90E12906C57B00135CFB /* ChatView.swift in Sources */,
