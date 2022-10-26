@@ -9,53 +9,54 @@ import Foundation
 import MapKit
 
 class LocationsDataService {
-    
+
     static let locations: [Location] = [
         Location(
             name: "Le Louxor",
             cityName: "Paris",
-            coordinates: CLLocationCoordinate2D(latitude: 41.8902, longitude: 12.4922),
+            coordinates: CLLocationCoordinate2D(latitude: 48.88395188913936, longitude: 2.3496432232853004),
             description: "Tu l'as en tête la chanson ? « On adore regarder boire les gens, au bar du Louxooooooor. ». Après s'être installé tranquille sur les sièges rouges des balcons de la salle 1, on file boire un verre sur le rooftop du ciné. Là, on fume notre clope en surplombant Barbès avec vue sur Tati et le Sacré-Cœur, le mélange parfait entre cheap et chic. Un de nos spots préférés à Paris.",
             imagesNames: [
-                "rome-colosseum-1",
-                "rome-colosseum-2",
-                "rome-colosseum-3",
+                "image-louxor-1",
+                "image-louxor-2",
+                "image-louxor-3",
             ],
             link: "https://www.cinemalouxor.fr/"),
         Location(
-            name: "Pantheon",
-            cityName: "Rome",
-            coordinates: CLLocationCoordinate2D(latitude: 41.8986, longitude: 12.4769),
-            description: "The Pantheon is a former Roman temple and since the year 609 a Catholic church, in Rome, Italy, on the site of an earlier temple commissioned by Marcus Agrippa during the reign of Augustus.",
-            imagesNames: [
-                "rome-pantheon-1",
-                "rome-pantheon-2",
-                "rome-pantheon-3",
-            ],
-            link: "https://en.wikipedia.org/wiki/Pantheon,_Rome"),
-        Location(
-            name: "Trevi Fountain",
-            cityName: "Rome",
-            coordinates: CLLocationCoordinate2D(latitude: 41.9009, longitude: 12.4833),
-            description: "The Trevi Fountain is a fountain in the Trevi district in Rome, Italy, designed by Italian architect Nicola Salvi and completed by Giuseppe Pannini and several others. Standing 26.3 metres high and 49.15 metres wide, it is the largest Baroque fountain in the city and one of the most famous fountains in the world.",
-            imagesNames: [
-                "rome-trevifountain-1",
-                "rome-trevifountain-2",
-                "rome-trevifountain-3",
-            ],
-            link: "https://en.wikipedia.org/wiki/Trevi_Fountain"),
-        Location(
-            name: "Eiffel Tower",
+            name: "Le Reset Bar",
             cityName: "Paris",
-            coordinates: CLLocationCoordinate2D(latitude: 48.8584, longitude: 2.2945),
-            description: "The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower. Locally nicknamed 'La dame de fer', it was constructed from 1887 to 1889 as the centerpiece of the 1889 World's Fair and was initially criticized by some of France's leading artists and intellectuals for its design, but it has become a global cultural icon of France and one of the most recognizable structures in the world.",
+            coordinates: CLLocationCoordinate2D(latitude: 48.863651920743024, longitude: 2.3485082460288194),
+            description: "Idéal pour passer une soirée calme ou animée selon l'ambiance recherchée, le Reset Bar ouvre ses portes pour organiser vos soirées d'entreprise (afterwork atypique, pot de départ, événement corporate...) Mais également vos soirées d'anniversaire et verres entre amis.",
             imagesNames: [
-                "paris-eiffeltower-1",
-                "paris-eiffeltower-2",
+                "image-bar1-1",
+                "image-bar1-2",
+                "image-bar1-3",
             ],
-            link: "https://en.wikipedia.org/wiki/Eiffel_Tower"),
+            link: "https://www.reset.bar/"),
         Location(
-            name: "Louvre Museum",
+            name: "L'Hybride",
+            cityName: "Lille",
+            coordinates: CLLocationCoordinate2D(latitude: 50.62630096992986, longitude: 3.06604381534294),
+            description: "Lieu culturel dédié à l’audiovisuel, L’hybride a ouvert ses portes en 2007 dans le quartier Jean-Baptiste Lebas à Lille. Il propose 3 soirs par semaine une programmation dédiée au court métrage et aux formes audiovisuelles indépendantes : fiction, animation, expérimental, documentaire, transdisciplinaire.",
+            imagesNames: [
+                "image-barlille-1",
+                "image-barlille-2",
+                "image-barlille-3",
+            ],
+            link: "https://lhybride.org/"),
+        Location(
+            name: "Aquarium Ciné Café",
+            cityName: "Lyon",
+            coordinates: CLLocationCoordinate2D(latitude: 45.77719390323658, longitude: 4.83154983068588),
+            description: "Aquarium Ciné-Café est une association qui cherche à sa manière à renouveler la salle de cinéma en continuant à faire du 7ème art une expérience collective ! Aquarium regroupe en un seul et même lieu : 🎞 Une salle de projection pour explorer 120 ans de cinéma entre fiction, documentaire, court-métrage et clip. 📀 Un vidéo club avec plus de 10 000 films et séries disponibles à la location et des nouveautés toutes les semaines. 🎥 Des ateliers de réalisation, des stages vacances et des formations audiovisuelles.",
+            imagesNames: [
+                "image-barlyon-1",
+                "image-barlyon-2",
+                "image-barlyon-3"
+            ],
+            link: "https://aquarium-cine-cafe.fr/"),
+        Location(
+            name: "Le Louvre",
             cityName: "Paris",
             coordinates: CLLocationCoordinate2D(latitude: 48.8606, longitude: 2.3376),
             description: "The Louvre, or the Louvre Museum, is the world's most-visited museum and a historic monument in Paris, France. It is the home of some of the best-known works of art, including the Mona Lisa and the Venus de Milo. A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement.",
