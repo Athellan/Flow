@@ -23,7 +23,7 @@ struct ButtonInscription: View {
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 198,height: 32)
-            .background(Color.black)
+            .background(Color("buttonColor"))
             .cornerRadius(20)
         }
     }

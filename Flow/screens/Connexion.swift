@@ -23,77 +23,78 @@ struct Connexion: View {
         NavigationView{
             ZStack {
                 Color("primaryColor").ignoresSafeArea()
-                
-                
                 VStack{
-                    Text("Bienvenue").font(.title)
+                    Text("Bienvenue.").font(.title).foregroundColor(Color("secondaryColor"))
+                    
                     Spacer()
+                        .frame(height: 600)
                 }
                 
                 VStack{
-                    TextField("Username", text: $username)
-                        .padding()
-                        .frame(width: 350,height: 40)
-                        .background(Color.black.opacity(0.05))
-                        .cornerRadius(20)
+                    ZStack{
+                        Rectangle()
+                            .frame(width: 309, height: 26)
+                            .cornerRadius(25)
+                            .foregroundColor(Color("titleBackgroundColor"))
+                            .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+                        
+                        HStack {
+                            Image(systemName: "person.circle")
+                                .foregroundColor(Color("secondaryColor"))
+                            TextField("Identifiant", text: $username)
+                                .font(.system(size: 14))
+                                .foregroundColor(Color("secondaryColor"))
+                                .frame(width: 270)
+                        }
+                    }
+                    .padding()
                     
+                    ZStack{
+                        Rectangle()
+                            .frame(width: 309, height: 26)
+                            .cornerRadius(25)
+                            .foregroundColor(Color("titleBackgroundColor"))
+                            .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+                        
+                        HStack {
+                            Image(systemName: "lock.circle")
+                                .foregroundColor(Color("secondaryColor"))
+                            SecureField("Mot de passe ", text: $password)
+                                .font(.system(size: 14))
+                                .foregroundColor(Color("secondaryColor"))
+                                .frame(width: 270)
+                        }
+                    }
                     
-                        .padding()
-                    
-                    SecureField("Password",text: $password)
-                        .padding()
-                        .frame(width: 350,height:40)
-                        .background(Color.black.opacity(0.05))
-                        .cornerRadius(20)
-                    
-                    
+                    Text("Mot de passe oublié ? ").bold()
+                        .offset(x: 95, y: 10)
+                        .font(.system(size: 10))
+                        .foregroundColor(Color("secondaryColor"))
                     
                     Spacer()
                         .frame(height: 50)
                     
-                    
-                                        
                     if failedConnexion {
                         Text("erreur de saisi")
                     }
                     
+                    ButtonConnexion(username: $username, succedConnexion: $succedConnexion, password: $password, failedConnexion: $failedConnexion,showLoginScreen: $showLoginScreen)
                     
-                    // mettre un navigateLink pour changer la direction du label ButtonConnexion avec un autre components pour pouvoir aller sur la page Parameterv1
-                    
-                    
-                    
-                        ButtonConnexion(username: $username, succedConnexion: $succedConnexion, password: $password, failedConnexion: $failedConnexion,showLoginScreen: $showLoginScreen)
-                        
-                        
                     NavigationLink(destination: Parameters(),   isActive: $showLoginScreen, label: {
-                                        Text("")
-                                    })
+                        Text("")
+                    })
                     
                     ButtonInscription()
-                   
-                    
-                    
-                    
                     
                     ButtonContinueWithApple()
-                    
-                    
                 }
                 
             }
             //fin Zstack
-            
         }
-                
-            }
-            
-        }
-    
-    
-
-
-
-
+        .navigationBarBackButtonHidden(true)
+    }
+}
 
 struct Connexion_Previews: PreviewProvider {
     static var previews: some View {

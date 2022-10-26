@@ -9,47 +9,30 @@ import SwiftUI
 
 struct VignetteFilm: View {
     var body: some View {
-
+        
         ZStack{
-           
+            
             RoundedRectangle(cornerRadius: 10)
                 .frame(width: 352, height: 587)
                 .foregroundColor(Color("darkgreen"))
             VStack{
-                Text("Les plus regardés sur Netflix").font(.title2).offset(x: -20, y: 0)
-             
-                Text("Voir tout").offset(x: 115, y: 0)
+                Text("Les plus regardés sur Netflix").bold().font(.title2).offset(x: -20, y: 0)
+                    .foregroundColor(Color("secondaryColor"))
+                    .font(.system(size: 20))
+                Text("Voir tout")
+                    .offset(x: 115, y: 0)
+                    .foregroundColor(Color("secondaryColor"))
                     .padding(10)
                 
                 HStack{
-                    Image("younetflix")
-        
-                        .resizable()
-                        .frame(width: 97,height: 145)
-                        .cornerRadius(10)
-                    
-                    Image("younetflix")
-                        .resizable()
-                        .frame(width: 97,height: 145)
-                        .cornerRadius(10)
-                       
-                    
-                    Image("younetflix")
-                    
-                        .resizable()
-                        .frame(width: 97,height: 145)
-                        .cornerRadius(10)
+                    filmDetails
+                    filmDetails
+                    filmDetails
                 }
-                
-                
                 
                 Spacer()
                     .frame(height: 300)
-                
-                
             }
-            
-         
         }
     }
 }
@@ -60,4 +43,14 @@ struct VignetteFilm_Previews: PreviewProvider {
     }
 }
 
+extension VignetteFilm {
+    private var filmDetails : some View {
+        Image("younetflix")
+            .resizable()
+            .frame(width: 97,height: 145)
+            .cornerRadius(10)
+        
+    }
+    
+}
 
