@@ -59,8 +59,6 @@ struct MapView: View {
                 .cornerRadius(30)
                 
                 
-                
-                
                 HStack {
                     Button("Zoom -") {
                         region.span.latitudeDelta /= 0.9
@@ -73,6 +71,10 @@ struct MapView: View {
                 }
             }
         }
+    }
+    
+    func openMap() {
+        
     }
     
     struct MapView_Previews: PreviewProvider {

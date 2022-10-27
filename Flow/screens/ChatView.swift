@@ -21,7 +21,6 @@ struct ChatView: View {
                         .font(.largeTitle)
                         .bold()
                         .foregroundColor(Color("secondaryColor"))
-                    
                     Image(systemName: "bubble.left.fill")
                         .font(.system(size: 26))
                         .foregroundColor(Color("secondaryColor"))

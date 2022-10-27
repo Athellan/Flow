@@ -11,9 +11,12 @@ import SwiftUI
 @main
 struct FlowApp: App {
     
+    @StateObject private var vm = LocationsViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Connexion()
+                .environmentObject(vm)
         }
     }
 }
