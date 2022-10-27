@@ -14,12 +14,9 @@ struct ButtonInscription: View {
         
         
         
-           
-            NavigationLink(destination:Inscription(), label:{
+            NavigationLink(destination:InscriptionView(), label:{
                 Text("S'inscrire")
             })
-            
-            
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 198,height: 32)

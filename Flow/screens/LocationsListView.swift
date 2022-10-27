@@ -42,7 +42,7 @@ extension LocationsListView {
             if let imageName = location.imagesNames.first {
                 Image(imageName)
                     .resizable()
-                    .scaledToFit()
+                    .scaledToFill()
                     .frame(width: 45, height: 45)
                     .cornerRadius(10)
             }

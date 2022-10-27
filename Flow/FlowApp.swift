@@ -15,7 +15,7 @@ struct FlowApp: App {
     
     var body: some Scene {
         WindowGroup {
-            Connexion()
+            ConnexionView()
                 .environmentObject(vm)
         }
     }

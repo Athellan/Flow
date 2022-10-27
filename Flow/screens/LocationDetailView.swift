@@ -11,30 +11,38 @@ import MapKit
 struct LocationDetailView: View {
     
     @EnvironmentObject private var vm: LocationsViewModel
+    @State private var isShowingChatView = false
+    
     let location: Location
     
     var body: some View {
-        ScrollView {
-            VStack {
-                imageSection
-                    .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
-                
-                VStack(alignment: .leading, spacing: 16) {
-                    titleSection
-                    Divider()
-                    descriptionSection
-                    Divider()
-                    mapLayer
+        NavigationView {
+            ScrollView {
+                VStack {
+                    imageSection
+                        .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+                    
+                    VStack(alignment: .leading, spacing: 16) {
+                        titleSection
+                        Divider()
+                        descriptionSection
+                        Divider()
+                        mapLayer
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding()
+                    chatButton
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding()
             }
+            .ignoresSafeArea()
+            .background(Color("primaryColor"))
+            .overlay(backButton, alignment: .topLeading)
         }
-        .ignoresSafeArea()
-        .background(Color("primaryColor"))
-        .overlay(backButton, alignment: .topLeading)
     }
 }
+
+
+
 
 struct LocationDetailView_Previews: PreviewProvider {
     static var previews: some View {
@@ -80,7 +88,7 @@ extension LocationDetailView {
                 Link("+ sur \(location.name)", destination: url)
                     .font(.headline)
             }
-           
+            
         }
     }
     
@@ -112,6 +120,21 @@ extension LocationDetailView {
                 .shadow(radius: 4)
                 .padding()
         }
-
+    }
+    
+    private var chatButton: some View {
+        VStack {
+            NavigationLink(destination: ChatView(), isActive: $isShowingChatView) { EmptyView() }
+            Button {
+                isShowingChatView = true
+            } label: {
+                Image(systemName: "bubble.right.circle")
+                    .foregroundColor(Color("secondaryColor"))
+                    .cornerRadius(10)
+                    .shadow(radius: 4)
+                    .padding()
+            }
+        }
     }
 }
+

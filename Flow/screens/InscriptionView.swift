@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Inscription: View {
+struct InscriptionView: View {
     @State private var username = ""
     @State private var email = ""
     @State private var password = ""
@@ -105,12 +105,12 @@ struct Inscription: View {
                     
                     ButtonInscriptionTwo(username: $username, email: $email, password: $password, confirmedpassword: $confirmedpassword,showInscription: $showInscription)
                     
-                    NavigationLink(destination: Connexion(), label: {
+                    NavigationLink(destination: ConnexionView(), label: {
                         Text("Retour")
                             .foregroundColor(Color("secondaryColor")).bold()
                     })
                     
-                    NavigationLink(destination: Parameters(), isActive: $showInscription, label: {
+                    NavigationLink(destination: ParametersView(), isActive: $showInscription, label: {
                         Text("")
                     })
                 }
@@ -133,7 +133,7 @@ struct Inscription: View {
 
 struct Inscription_Previews: PreviewProvider {
     static var previews: some View {
-        Inscription()
+        InscriptionView()
     }
 }
 
