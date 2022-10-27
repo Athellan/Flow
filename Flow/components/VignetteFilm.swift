@@ -8,34 +8,52 @@
 import SwiftUI
 
 struct VignetteFilm: View {
+    
+    var gradientTop: Color = Color(red: 0 / 255, green: 70 / 255, blue: 67 / 255)
+    var gradientBottom: Color = Color(red: 149 / 255, green: 191 / 255, blue: 181 / 255)
+    
+    let columns = [
+        GridItem(.fixed(100)),
+        GridItem(.fixed(100)),
+        GridItem(.fixed(100))
+    ]
+    
+   
+    
     var body: some View {
         
-        ZStack{
-            
-            RoundedRectangle(cornerRadius: 10)
-                .frame(width: 352, height: 587)
-                .foregroundColor(Color("darkgreen"))
             VStack{
-                Text("Les plus regardés sur Netflix").bold().font(.title2).offset(x: -20, y: 0)
+                Text("Les plus regardés sur Netflix").bold().font(.title2).offset(x: -10, y: 0)
                     .foregroundColor(Color("secondaryColor"))
                     .font(.system(size: 20))
-                Text("Voir tout")
-                    .offset(x: 115, y: 0)
+                    .padding(.top, 15)
+                    .padding(.bottom, -40)
+                Text("Voir tout").underline()
+                    .offset(x: 120, y: 60)
                     .foregroundColor(Color("secondaryColor"))
-                    .padding(10)
+                    .padding(.bottom, 10)
                 
-                HStack{
-                    filmDetails
-                    filmDetails
-                    filmDetails
+                LazyVGrid(columns: columns){
+                    ForEach(films) { film in
+                        FilmDetails(film: film)
+                    }
                 }
-                
-                Spacer()
-                    .frame(height: 300)
+                .frame(width: 352, height: 560)
             }
+            .background(
+                Rectangle()
+                    .fill(LinearGradient(
+                        gradient: .init(colors: [self.gradientTop, self.gradientBottom]),
+                        startPoint: .init(x: 0.5, y: 0),
+                        endPoint: .init(x: 0.5, y: 0.9)
+                    ))
+                    .cornerRadius(10)
+                    .opacity(0.3)
+                    .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+            )
         }
     }
-}
+
 
 struct VignetteFilm_Previews: PreviewProvider {
     static var previews: some View {
@@ -43,14 +61,32 @@ struct VignetteFilm_Previews: PreviewProvider {
     }
 }
 
-extension VignetteFilm {
-    private var filmDetails : some View {
-        Image("younetflix")
-            .resizable()
-            .frame(width: 97,height: 145)
-            .cornerRadius(10)
+struct FilmDetails: View {
+    var film : FilmHome
+    @State private var isSelected = false
+    var body : some View {
+        ZStack(alignment: .bottomTrailing) {
+            Image(film.cover)
+                .resizable()
+                .frame(width: 97,height: 145)
+                .cornerRadius(10)
+                .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+                .padding(1)
+            SelectedButton(isSelected: $isSelected)
+        }
+    }
+}
+
+struct SelectedButton: View {
+    @Binding var isSelected: Bool
+    var body: some View {
+        Button {
+            isSelected.toggle()
+        } label: {
+            Image(systemName: isSelected ? "checkmark.circle.fill" : "checkmark.circle")
+                .font(.largeTitle)
+        }
         
     }
-    
 }
 

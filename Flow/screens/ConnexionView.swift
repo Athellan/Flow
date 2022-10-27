@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct Connexion: View {
+struct ConnexionView: View {
     
     
     @State private var username = ""
@@ -80,7 +80,7 @@ struct Connexion: View {
                     
                     ButtonConnexion(username: $username, succedConnexion: $succedConnexion, password: $password, failedConnexion: $failedConnexion,showLoginScreen: $showLoginScreen)
                     
-                    NavigationLink(destination: Parameters(),   isActive: $showLoginScreen, label: {
+                    NavigationLink(destination: ParametersView(),   isActive: $showLoginScreen, label: {
                         Text("")
                     })
                     
@@ -96,9 +96,9 @@ struct Connexion: View {
     }
 }
 
-struct Connexion_Previews: PreviewProvider {
+struct ConnexionView_Previews: PreviewProvider {
     static var previews: some View {
-        Connexion()
+        ConnexionView()
     }
 }
 
