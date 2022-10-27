@@ -15,13 +15,23 @@ struct miniatureFilm: View {
     
     var body: some View {
         ZStack {
+            
+            Rectangle()
+                .frame(width: 352, height: 84)
+                .foregroundColor(Color("opacityColor"))
+                .cornerRadius(10)
+                
+            
             HStack {
                 Image("LSDA2T")
                     .resizable()
                     .frame(width: 92, height: 92)
                     .cornerRadius(10)
+                    .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
             }
             .padding(.leading, -180)
+            
+            
             HStack(alignment: .bottom) {
                 VStack(alignment: .leading) {
                     Text(film.title.uppercased())
@@ -32,13 +42,16 @@ struct miniatureFilm: View {
                     Text(film.subTitle)
                         .font(.system(size: 14))
                 }
-                FavoriteButton(isFavorited: $isFavorited)
             }
-            .frame(width: 280, height: 84)
-            .background(Color("opacityColor"))
-            .cornerRadius(10)
-            .padding(.leading, 80)
-        }
+            .frame(height: 55)
+            .padding(.leading, 40)
+            
+            FavoriteButton(isFavorited: $isFavorited)
+                .padding(.leading, 290)
+                .padding(.top, 25)
+            
+        }.padding(.top, 7)
+            .frame(width: 400)
     }
 }
 

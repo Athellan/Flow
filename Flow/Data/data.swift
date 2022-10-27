@@ -17,9 +17,9 @@ struct Film: Identifiable {
     let realisator: String
     let description: String
     let rate: Int
-    let plateform: String
-  //  let date: Date
-    let actor: [Actor]
+//    let plateform: String
+//    let date: Date
+//    let actor: [Actor]
     var isFavorited: Bool
     var isSeen: Bool
 
@@ -30,9 +30,9 @@ struct Serie {
     let cover: String
     let description: String
     let rate: Int
-    let plateform: String
+//    let plateform: String
     let date: Date
-    let actor: [Actor]
+//    let actor: [Actor]
     let isFavorited: Bool
 }
 
@@ -44,11 +44,23 @@ struct Episode {
     let rate: Int
 }
 
-struct Actor {
-    let name: String
+struct Actor: Identifiable {
+    var id = UUID()
     let image: String
+    let name: String
     let role: String
+    
 }
+
+let actorComponents: [Actor] = [
+    Actor(image: "elijahWood", name: "Elijah Wood" , role: "Frondon Sacquet"),
+    Actor(image: "seanAstin", name: "Sean Astin" , role: "Samsagace Gamegie"),
+    Actor(image: "orlandoBloom", name: "Orlando Bloom" , role: "Legolas"),
+    Actor(image: "ianMcKellen", name: "Ian McKellen" , role: "Gandalf"),
+    Actor(image: "dominicMonaghan", name: "Dominic Monaghan" , role: "Meriadoc Brandebouc"),
+    Actor(image: "viggoMortensen", name: "Viggo Mortensen" , role: "Aragorn")
+]
+
 
 struct Venue {
     let name: String

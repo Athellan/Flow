@@ -12,7 +12,7 @@ struct LibraryView: View {
     @State var searching: String = ""
     @State var isFav: Bool = true
     
-    let categories: [String] = ["Mes Favoris", "Mes Films", "Mes Séries", "Mes Evenements"]
+    let categories: [String] = ["Mes Favoris", "Mes Films", "Mes Séries", "Mes Évènements"]
     let cover: String = "seigneurDesAnneaux1"
     
     var body: some View {
@@ -23,16 +23,26 @@ struct LibraryView: View {
                     .ignoresSafeArea()
                 
                 VStack{
-                    SearchbarLibrary()
-                    ScrollView{
+                    
+                    ScrollView(showsIndicators: false){
+                        VStack {
+                            SearchbarLibrary()
+                        }
+                        
+                        
                     ForEach(categories, id: \.self) { idx in
                         ZStack{
                             gradientRectangle()
+                                .frame(width: 352, height: 209)
                      
                             HStack{
                                 VStack(alignment: .leading, spacing: 5){
-                                    Section(header: Text(idx).bold().font(.system(size: 17))){
+                                    
+                                    Section(header: Text(idx).bold().font(.system(size: 17)).foregroundColor(Color("secondaryColor")).padding(.leading, 15).padding(.vertical, 8)){
+                                        
+                                        
                                         ScrollView(.horizontal, showsIndicators: false, content: {
+                                            
                                             HStack{
                                                 ForEach(categories, id: \.self){ idx in
                                                     NavigationLink(destination: {
@@ -41,16 +51,18 @@ struct LibraryView: View {
                                                         Category(isFav: true, image: cover)
                                                     })
                                                 }
-                                            }
-                                        })
+                                            }.padding(.leading, 10)
+                                        }).frame(width: 352)
                                         
-                                    }.padding(4)
-                                }.padding(10)
+                                    }
+                                }
                             }
                         }
+                    }.frame(width: 480)
+                            .padding(.bottom, 10)
                     }
                 }
-                }.padding(10)
+                   
                 
             }.navigationBarHidden(true)
         }.navigationViewStyle(StackNavigationViewStyle())
