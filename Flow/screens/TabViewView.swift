@@ -25,7 +25,7 @@ struct TabViewView: View {
                     Text("Suggestions")
                 }
                 .tag(0)
-            Profile()
+            ProfileView()
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("Profil")

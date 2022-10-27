@@ -8,17 +8,34 @@
 import SwiftUI
 
 struct SearchbarLibrary: View {
+    
     @State var searching: String = ""
+    
     var body: some View {
         VStack{
-            Text("Ma bibliothèque")
+            Text("Ma Bibliothèque")
                 .font(.system(size: 18))
-                .bold()
-                .shadow(radius: 15)
-            
-            TextField("Une idée ?", text: $searching)
-                .textFieldStyle(OvalTextFieldStyle(cornerRadius: 25))
-                .padding(20)
+                .foregroundColor(Color("secondaryColor"))
+                .padding(.top, 50)
+                .padding(.bottom, 20)
+                
+            ZStack{
+                Rectangle()
+                    .frame(width: 309, height: 26)
+                    .cornerRadius(25)
+                    .foregroundColor(Color("titleBackgroundColor"))
+                    .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+                
+                HStack {
+                    Image(systemName: "magnifyingglass.circle")
+                        .foregroundColor(Color("secondaryColor"))
+                    TextField("Que cherchez-vous ?", text: $searching)
+                        .font(.system(size: 14))
+                        .foregroundColor(Color("secondaryColor"))
+                        .frame(width: 270)
+                }
+            }
+                
             
             Button(action: {
                 //
@@ -26,7 +43,7 @@ struct SearchbarLibrary: View {
                 Image(systemName: "plus.circle.fill")
                     .font(.system(size: 30))
                     .foregroundColor(.white)
-            }).padding(20)
+            }).padding(40)
         }
     }
 }
@@ -37,28 +54,35 @@ struct Category: View {
     let image: String
     var body: some View {
         ZStack{
-            VStack(alignment: .trailing){
-                HStack(alignment: .firstTextBaseline, spacing: -42){
-                    Image(image)
-                        .resizable()
-                        .frame(width: 140, height: 194)
+            
+                Image(image)
+                    .resizable()
+                    .scaledToFit()
+                    .cornerRadius(10)
+                    .frame(width: 100, height: 154)
+                    .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+            
                     
-                    HStack{
                         if(isFav){
                             Image(systemName: "checkmark.circle.fill")
                                 .font(.system(size: 27))
-                                .foregroundColor(.green)
+                                .foregroundColor(Color("secondaryColor"))
+                                .padding(.top, 100)
+                                .padding(.leading, 60)
                             
                         }else{
                             Image(systemName: "checkmark.circle.fill")
                                 .font(.system(size: 27))
-                                .foregroundColor(.white)
-                            
-                        }
-                    }
-                }
-            }.shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
-            
-        }.cornerRadius(20)
+                                .foregroundColor(Color("titleBackgroundColor"))
+                                .padding(.top, 100)
+                                .padding(.leading, 60)
+            }
+        }
+    }
+}
+
+struct LibraryComp_Previews: PreviewProvider {
+    static var previews: some View {
+        LibraryView()
     }
 }
