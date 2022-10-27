@@ -52,7 +52,7 @@
 		C7220D6B2906B14E00EF5278 /* profilePreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7220D6A2906B14E00EF5278 /* profilePreference.swift */; };
 		C7220D6D2906C12500EF5278 /* profileAddPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7220D6C2906C12500EF5278 /* profileAddPreference.swift */; };
 		C7220D6F2906C1A100EF5278 /* profileCategoryPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7220D6E2906C1A100EF5278 /* profileCategoryPreference.swift */; };
-		C7FD1FB4290184BE001B5516 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FD1FB3290184BE001B5516 /* Profile.swift */; };
+		C7FD1FB4290184BE001B5516 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FD1FB3290184BE001B5516 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,7 +102,7 @@
 		C7220D6A2906B14E00EF5278 /* profilePreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profilePreference.swift; path = Flow/components/profilePreference.swift; sourceTree = SOURCE_ROOT; };
 		C7220D6C2906C12500EF5278 /* profileAddPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profileAddPreference.swift; path = Flow/components/profileAddPreference.swift; sourceTree = SOURCE_ROOT; };
 		C7220D6E2906C1A100EF5278 /* profileCategoryPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profileCategoryPreference.swift; path = Flow/components/profileCategoryPreference.swift; sourceTree = SOURCE_ROOT; };
-		C7FD1FB3290184BE001B5516 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = Flow/screens/Profile.swift; sourceTree = SOURCE_ROOT; };
+		C7FD1FB3290184BE001B5516 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = Flow/screens/ProfileView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,7 +189,7 @@
 				9CACF34F29019A2300234452 /* ConnexionView.swift */,
 				9C8357B32906C59C0066A725 /* ParametersView.swift */,
 				63FC90E02906C57B00135CFB /* ChatView.swift */,
-				C7FD1FB3290184BE001B5516 /* Profile.swift */,
+				C7FD1FB3290184BE001B5516 /* ProfileView.swift */,
 				63CA89B6290181F7006D9876 /* HomeView.swift */,
 				5F807F762906D7680002C5D9 /* LibraryView.swift */,
 				5F807F782906D78E0002C5D9 /* DetailsView.swift */,
@@ -323,7 +323,7 @@
 				C705501B29029C02006A316E /* profileButton.swift in Sources */,
 				C7220D6F2906C1A100EF5278 /* profileCategoryPreference.swift in Sources */,
 				C705501F2902C9AF006A316E /* gradientRectangle.swift in Sources */,
-				C7FD1FB4290184BE001B5516 /* Profile.swift in Sources */,
+				C7FD1FB4290184BE001B5516 /* ProfileView.swift in Sources */,
 				6390790F2908148A00FB8C02 /* LocationPreviewView.swift in Sources */,
 				639079092907FEB400FB8C02 /* LocationsView.swift in Sources */,
 				63FC90C32901968800135CFB /* miniatureSerie.swift in Sources */,

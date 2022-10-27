@@ -50,7 +50,7 @@ extension LocationPreviewView {
             if let imageName = location.imagesNames.first {
                 Image(imageName)
                     .resizable()
-                    .scaledToFit()
+                    .scaledToFill()
                     .frame(width: 100, height: 100)
                     .cornerRadius(10)
             }
