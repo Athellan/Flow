@@ -29,12 +29,12 @@ struct DetailsImage: View {
         ZStack{
             Image(image)
                 .resizable()
-                .frame(width: 352, height: 196)
+                .scaledToFit()
                 .cornerRadius(10)
+                .frame(width: 352, height: 196)
                 .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
             
             HStack{
-                Spacer()
                 VStack{
                 Button(action: {
                     isFavorited.toggle()
@@ -43,7 +43,7 @@ struct DetailsImage: View {
                         ZStack{
                             Circle()
                                 .foregroundColor(.white)
-                                .frame(width: 40, height: 39)
+                                .frame(width: 40, height: 40)
                             if isFavorited{
                                 Image(systemName: "star.fill")
                                     .resizable().scaledToFit()
@@ -58,12 +58,13 @@ struct DetailsImage: View {
                                     .padding(10)
                             }
                         }
-                        
-                    }
+                    }.padding(.bottom, 190)
                 })
-                    Spacer()
+
                 }
-            }
+            }.padding(.leading, 330)
+                
+
         }
     }
 }
@@ -77,22 +78,27 @@ struct DetailsBar: View {
             if isSeen{
                 Image(systemName: "eye.circle.fill")
                     .resizable()
+                    .foregroundColor(Color("buttonColor"))
                     .frame(width: 28, height: 28, alignment: .leading)
             }else{
                 Image(systemName: "eye.slash.circle.fill")
                     .resizable()
+                    .foregroundColor(Color("buttonColor"))
                     .frame(width: 28, height: 28, alignment: .leading)
             }
             VStack(alignment: .leading){
                 Text(date)
                     .font(.system(size: 10))
+                    .foregroundColor(Color("secondaryColor"))
                 if isSeen{
                     Text("Visionné")
                         .font(.system(size: 10))
+                        .foregroundColor(Color("secondaryColor"))
                         .bold()
                 }else{
                     Text("Non-visionné")
                         .font(.system(size: 10))
+                        .foregroundColor(Color("secondaryColor"))
                         .bold()
                 }
                 
@@ -207,7 +213,8 @@ struct DetailsBar: View {
                     .frame(width: 17, height: 18)
                     .foregroundColor(.gray)
             }
-        }.padding(5)
+        }.frame(width: 330)
+            .padding(.bottom, 20)
     }
 }
 
@@ -244,22 +251,27 @@ struct DetailsInfosWithTrailer: View {
         ZStack{
             gradientRectangle()
                 .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
-            VStack{
-                HStack{
+                .frame(width: 352, height: 300)
+            
+            VStack(alignment: .leading){
+                
                     Text("Informations supplémentaires")
                         .bold()
                         .font(.system(size: 12))
+                        .padding(.bottom, 10)
+                        .padding(.top, 10)
                         .foregroundColor(Color("secondaryColor"))
-                    Spacer()
-                }
+                    
+                
                 Text(description)
                     .font(.system(size: 11))
-                    .frame(width: 380, height: 119, alignment: .top)
+                    .frame(width: 300)
                     .lineSpacing(8)
                     .foregroundColor(Color("secondaryColor"))
                 
                 SimpleVideoButton(image:image, durationClip: durationClip, url: url, urlName: urlName)
-            }.padding(7)
+                
+            }.frame(width: 352)
         }
     }
 }
@@ -411,12 +423,6 @@ struct SimpleVideoButton: View {
                         .cornerRadius(10)
                         .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
                     
-                    RoundedRectangle(cornerRadius: 10)
-                        .opacity(0.2)
-                        .foregroundColor(.black)
-                        .frame(width: 35, height: 20)
-                        .padding(5.5)
-                    
                     Text(durationClip)
                         .font(.system(size: 12))
                         .padding(9)
@@ -434,6 +440,6 @@ struct SimpleVideoButton: View {
                     .font(.system(size: 10))
                     .foregroundColor(Color("secondaryColor"))
             }
-        }.frame(width: 380, height: 119)
+        }.frame(width: 320, height: 119)
     }
 }

@@ -14,33 +14,45 @@ struct miniatureSerie: View {
     
     var body: some View {
         ZStack {
+            
+            Rectangle()
+                .frame(width: 352, height: 84)
+                .foregroundColor(Color("opacityColor"))
+                .cornerRadius(10)
+            
             HStack {
                 Image("ST")
                     .resizable()
                     .frame(width: 92, height: 92)
                     .cornerRadius(10)
+                    .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
             }
             .padding(.leading, -180)
+            
+            
             HStack(alignment: .bottom) {
+                
                 VStack(alignment: .leading) {
                     Text(serie.title.uppercased())
                         .font(.system(size: 14))
+                    
                     HStack {
                         Text("S0\(serie.season)  |").bold()
                         Text("E0\(serie.episodeNumber) ").bold()
-                    }
-                    
-                    .font(.system(size: 18))
+                    }.font(.system(size: 18))
                     
                     Text(serie.episodeName)
-                }
-                FavoriteButton(isFavorited: $isFavorited)
+                }.font(.system(size: 14))
+
             }
-            .frame(width: 280, height: 84)
-            .background(Color("opacityColor"))
-            .cornerRadius(10)
-            .padding(.leading, 80)
-        }
+            .frame(height: 55)
+            .padding(.leading, 15)
+            
+            FavoriteButton(isFavorited: $isFavorited)
+                .padding(.leading, 290)
+                .padding(.top, 25)
+            
+        }.padding(.top, 7)
     }
 }
 
