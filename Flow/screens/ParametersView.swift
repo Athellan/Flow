@@ -15,11 +15,14 @@ struct ParametersView: View {
         ScrollView {
             ZStack {
                 Color("primaryColor")
+                    
+                
                 VStack{
                     VStack{
                         VStack{
                             Text("Dites nous ce que vous aimez").font(.title)
                                 .foregroundColor(Color("secondaryColor"))
+                                
                         }
                         .padding(.top, 50)
                         VStack{

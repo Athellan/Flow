@@ -108,6 +108,7 @@ struct InscriptionView: View {
                     NavigationLink(destination: ConnexionView(), label: {
                         Text("Retour")
                             .foregroundColor(Color("secondaryColor")).bold()
+                            .padding(.top, 10)
                     })
                     
                     NavigationLink(destination: ParametersView(), isActive: $showInscription, label: {

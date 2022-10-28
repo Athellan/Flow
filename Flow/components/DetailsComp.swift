@@ -31,8 +31,9 @@ struct DetailsImage: View {
                 .resizable()
                 .scaledToFit()
                 .cornerRadius(10)
+                .shadow(color: Color("secondaryColor").opacity(0.4), radius: 4, x: -3, y: 4)
                 .frame(width: 352, height: 196)
-                .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+                
             
             HStack{
                 VStack{
@@ -276,90 +277,7 @@ struct DetailsInfosWithTrailer: View {
     }
 }
 
-struct DetailCasting: View {
-    let actorName1:String
-    let personnage1:String
-    let actorName2:String
-    let personnage2:String
-    let actorName3:String
-    let personnage3:String
-    let actorName4:String
-    let personnage4:String
-    let actorName5:String
-    let personnage5:String
-    let actorName6:String
-    let personnage6:String
-    var body: some View {
-        VStack{
-            
-            HStack{
-                VStack{
-                    RoundedRectangle(cornerRadius: 20)
-                        .frame(width: 100, height: 100)
-                        .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
-                    Text(actorName1)
-                        .bold()
-                        .font(.system(size: 11))
-                    Text(personnage2)
-                        .font(.system(size: 10))
-                }
-                VStack{
-                    RoundedRectangle(cornerRadius: 20)
-                        .frame(width: 100, height: 100)
-                        .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
-                    Text(actorName2)
-                        .bold()
-                        .font(.system(size: 11))
-                    Text(personnage2)
-                        .font(.system(size: 10))
-                }.padding()
-                VStack{
-                    RoundedRectangle(cornerRadius: 20)
-                        .frame(width: 100, height: 100)
-                        .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
-                    Text(actorName3)
-                        .bold()
-                        .font(.system(size: 11))
-                    Text(personnage3)
-                        .font(.system(size: 10))
-                }
-            }
-            HStack{
-                VStack{
-                    RoundedRectangle(cornerRadius: 20)
-                        .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
-                        .frame(width: 100, height: 100)
-                    Text(actorName1)
-                        .bold()
-                        .font(.system(size: 11))
-                    Text(personnage2)
-                        .font(.system(size: 10))
-                }
-                VStack{
-                    RoundedRectangle(cornerRadius: 20)
-                        .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
-                        .frame(width: 100, height: 100)
-                    Text(actorName2)
-                        .bold()
-                        .font(.system(size: 11))
-                    Text(personnage2)
-                        .font(.system(size: 10))
-                }.padding()
-                VStack{
-                    RoundedRectangle(cornerRadius: 20)
-                        .frame(width: 100, height: 100)
-                        .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
-                    Text(actorName3)
-                        .bold()
-                        .font(.system(size: 11))
-                    Text(personnage3)
-                        .font(.system(size: 10))
-                }
-            }
-            
-        }
-    }
-}
+
 
 struct initDetailsTitle: View {
     let elementTitle: String
@@ -388,9 +306,9 @@ struct DetailsInfos: View {
             VStack{
                 HStack{
                     Text(title)
-                        .foregroundColor(Color("secondaryColor"))
                         .bold()
                         .font(.system(size: 12))
+                        .foregroundColor(Color("secondaryColor"))
                     
                     Spacer()
                 }
@@ -428,7 +346,7 @@ struct SimpleVideoButton: View {
                         .padding(9)
                         .foregroundColor(.white)
                     
-                }.shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+                }
             })
             VStack(alignment: .leading, spacing: 12){
                 Text(urlName)

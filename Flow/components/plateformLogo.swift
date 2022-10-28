@@ -33,7 +33,7 @@ struct plateFormButton: View {
             .padding(5)
             .background(Color("buttonColor"))
             .cornerRadius(50)
-            .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+            .shadow(color: Color("secondaryColor").opacity(0.7), radius: 3, x: -2, y: 2)
     }
 }
 

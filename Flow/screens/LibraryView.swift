@@ -11,7 +11,7 @@ struct LibraryView: View {
     
     @State var searching: String = ""
     @State var isFav: Bool = true
-    
+    let film : FilmHome
     let categories: [String] = ["Mes Favoris", "Mes Films", "Mes Séries", "Mes Évènements"]
     let cover: String = "seigneurDesAnneaux1"
     
@@ -33,12 +33,12 @@ struct LibraryView: View {
                     ForEach(categories, id: \.self) { idx in
                         ZStack{
                             gradientRectangle()
-                                .frame(width: 352, height: 209)
+                                .frame(width: 352, height: 210)
                      
                             HStack{
-                                VStack(alignment: .leading, spacing: 5){
+                                VStack(alignment: .leading, spacing: 2){
                                     
-                                    Section(header: Text(idx).bold().font(.system(size: 17)).foregroundColor(Color("secondaryColor")).padding(.leading, 15).padding(.vertical, 8)){
+                                    Section(header: Text(idx).bold().font(.system(size: 17)).foregroundColor(Color("secondaryColor")).padding(.leading, 15).padding(.vertical, 7)){
                                         
                                         
                                         ScrollView(.horizontal, showsIndicators: false, content: {
@@ -46,7 +46,7 @@ struct LibraryView: View {
                                             HStack{
                                                 ForEach(categories, id: \.self){ idx in
                                                     NavigationLink(destination: {
-                                                        DetailsView()
+                                                        DetailsView(film: film)
                                                     }, label: {
                                                         Category(isFav: true, image: cover)
                                                     })
@@ -58,10 +58,9 @@ struct LibraryView: View {
                                 }
                             }
                         }
-                    }.frame(width: 480)
-                            .padding(.bottom, 10)
                     }
                 }
+            }
                    
                 
             }.navigationBarHidden(true)
@@ -71,6 +70,6 @@ struct LibraryView: View {
 
 struct LibraryView_Previews: PreviewProvider {
     static var previews: some View {
-        LibraryView()
+        LibraryView(film: FilmHome(title: "Le seigneur des Toto", subTitle: "rbvdfvfvfe", opus: "fbfvbrtbr", cover: "seigneurDesAnneaux2"))
     }
 }
