@@ -22,16 +22,26 @@ struct LocationDetailView: View {
                     imageSection
                         .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
                     
-                    VStack(alignment: .leading, spacing: 16) {
+                    VStack {
                         titleSection
                         Divider()
                         descriptionSection
+                            .padding(.vertical, 20)
                         Divider()
+                    }.frame(width: 352)
+                    
+                    
+                    ZStack{
                         mapLayer
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
-                    chatButton
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal, 20)
+                        chatButton
+                            .padding(.leading, 250)
+                            .padding(.top, 250)
+                    }.padding(.top, 20)
+                        .padding(.bottom, 50)
+                    
+                    
                 }
             }
             .ignoresSafeArea()
@@ -68,25 +78,37 @@ extension LocationDetailView {
     }
     
     private var titleSection: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(location.name)
-                .font(.largeTitle)
-                .fontWeight(.semibold)
-                .foregroundColor(Color("secondaryColor"))
-            Text(location.cityName)
-                .font(.title3)
-                .foregroundColor(Color("secondaryColor"))
+            VStack {
+                HStack {
+                    VStack {
+                        Text(location.name)
+                            .bold()
+                            .font(.system(size: 17))
+                        Text(location.cityName)
+                            .font(.system(size: 17))
+                    }
+                    .foregroundColor(Color("secondaryColor"))
+                }
+                .background(RoundedRectangle(cornerRadius: 50)
+                    .frame(width: 354, height: 60)
+                    .foregroundColor(Color("titleBackgroundColor"))
+                    .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4))
+                .padding(.top, 30)
+                .padding(.bottom, 30)
+            }
         }
-    }
     
     private var descriptionSection: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text(location.description)
-                .font(.subheadline)
+                .font(.system(size: 11))
+                .lineSpacing(8)
+                .foregroundColor(Color("secondaryColor"))
             
             if let url = URL(string: location.link) {
-                Link("+ sur \(location.name)", destination: url)
-                    .font(.headline)
+                Link("**+ sur \(location.name)**", destination: url)
+                    .font(.system(size: 11))
+                    
             }
             
         }
@@ -129,9 +151,12 @@ extension LocationDetailView {
                 isShowingChatView = true
             } label: {
                 Image(systemName: "bubble.right.circle")
+                    .resizable()
+                    .frame(width: 80, height: 80)
+                    .background(Color("opacityColor"))
                     .foregroundColor(Color("secondaryColor"))
-                    .cornerRadius(10)
-                    .shadow(radius: 4)
+                    .cornerRadius(50)
+//                    .shadow(radius: 4)
                     .padding()
             }
         }

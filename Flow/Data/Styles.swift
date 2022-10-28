@@ -66,7 +66,7 @@ struct gradientRectangle: View {
                   ))
             .cornerRadius(10)
             .opacity(0.3)
-            .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+//            .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
     }
 }
 
