@@ -35,7 +35,7 @@ struct miniatureSerie: View {
                 VStack(alignment: .leading) {
                     Text(serie.title.uppercased())
                         .font(.system(size: 14))
-                    
+                        
                     HStack {
                         Text("S0\(serie.season)  |").bold()
                         Text("E0\(serie.episodeNumber) ").bold()
@@ -43,7 +43,7 @@ struct miniatureSerie: View {
                     
                     Text(serie.episodeName)
                 }.font(.system(size: 14))
-
+                    .foregroundColor(Color("secondaryColor"))
             }
             .frame(height: 55)
             .padding(.leading, 15)

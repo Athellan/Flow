@@ -43,6 +43,7 @@ struct miniatureFilm: View {
                         .font(.system(size: 14))
                 }
             }
+            .foregroundColor(Color("secondaryColor"))
             .frame(height: 55)
             .padding(.leading, 40)
             

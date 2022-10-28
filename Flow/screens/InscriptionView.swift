@@ -113,7 +113,7 @@ struct InscriptionView: View {
                             .padding(10)
                     })
                     
-                    NavigationLink(destination: ParametersView(), isActive: $showInscription, label: {
+                    NavigationLink(destination: ParametersView(film: FilmHome(title: "", subTitle: "", opus: "", cover: "")), isActive: $showInscription, label: {
                         Text("")
                     })
                 }

@@ -77,12 +77,14 @@ struct ConnexionView: View {
                         .frame(height: 50)
                     
                     if failedConnexion {
-                        Text("erreur de saisi")
+                        Text("Erreur de saisie")
+                            .foregroundColor(Color("secondaryColor"))
+                            .font(.system(size: 15))
                     }
                     
                     ButtonConnexion(username: $username, succedConnexion: $succedConnexion, password: $password, failedConnexion: $failedConnexion,showLoginScreen: $showLoginScreen)
                     
-                    NavigationLink(destination: ParametersView(),   isActive: $showLoginScreen, label: {
+                    NavigationLink(destination: ParametersView(film: FilmHome(title: "", subTitle: "", opus: "", cover: "")),   isActive: $showLoginScreen, label: {
                         Text("")
                     })
                     
