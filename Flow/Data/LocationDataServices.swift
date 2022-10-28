@@ -56,10 +56,10 @@ class LocationsDataService {
             ],
             link: "https://aquarium-cine-cafe.fr/"),
         Location(
-            name: "Le Louvre",
+            name: "Chez Inès",
             cityName: "Paris",
             coordinates: CLLocationCoordinate2D(latitude: 48.8606, longitude: 2.3376),
-            description: "Le Louvre c'est cool",
+            description: "Ankama House",
             imagesNames: [
                 "TODO",
                 "TODO",

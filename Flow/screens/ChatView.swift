@@ -11,20 +11,27 @@ struct ChatView: View {
     @State private var messageText = ""
     @State var messages : [String] = ["Bienvenue sur le JBot ! 😄"]
     
+    let film: FilmHome
+    
     var body: some View {
         ZStack {
             Color("primaryColor")
                 .ignoresSafeArea()
             VStack {
                 HStack {
-                    Text("FlowBot")
-                        .font(.largeTitle)
-                        .bold()
-                        .foregroundColor(Color("secondaryColor"))
-                    Image(systemName: "bubble.left.fill")
-                        .font(.system(size: 26))
-                        .foregroundColor(Color("secondaryColor"))
-                }.padding(.top, 15)
+                    VStack {
+                        Text(film.title)
+                            .bold()
+                            .font(.system(size: 20))
+                        Text(film.subTitle)
+                    }
+                    .foregroundColor(Color("secondaryColor"))
+                }
+                .background(RoundedRectangle(cornerRadius: 50)
+                    .frame(width: 354, height: 60)
+                    .foregroundColor(Color.white)
+                    .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4))
+                .padding(.top, 15)
                 
                 ScrollView {
                     ForEach(messages, id: \.self) {message in
@@ -35,7 +42,7 @@ struct ChatView: View {
                                 Spacer()
                                 Text(newMessage)
                                     .padding()
-                                    .foregroundColor(Color("titleBackgroundColor"))
+                                    .foregroundColor(Color.white)
                                     .background(Color("secondaryColor").opacity(0.7))
                                     .cornerRadius(30)
                                     .padding(.horizontal, 16)
@@ -68,6 +75,7 @@ struct ChatView: View {
                     ZStack {
                         TextField("Ton message", text: $messageText)
                             .padding()
+                            .foregroundColor(Color("secondaryColor"))
                             .background(Color("secondaryColor").opacity(0.1))
                             .cornerRadius(30)
                             .onSubmit {
@@ -103,6 +111,6 @@ struct ChatView: View {
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView()
+        ChatView(film: FilmHome(title: "Le Seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "", cover: ""))
     }
 }

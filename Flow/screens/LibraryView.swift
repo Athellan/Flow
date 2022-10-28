@@ -10,10 +10,11 @@ import SwiftUI
 struct LibraryView: View {
     
     @State var searching: String = ""
-    @State var isFav: Bool = true
-    let film : FilmHome
+    
     let categories: [String] = ["Mes Favoris", "Mes Films", "Mes Séries", "Mes Évènements"]
     let cover: String = "seigneurDesAnneaux1"
+    
+    let film: FilmHome
     
     var body: some View {
         
@@ -23,22 +24,17 @@ struct LibraryView: View {
                     .ignoresSafeArea()
                 
                 VStack{
-                    
                     ScrollView(showsIndicators: false){
-                        VStack {
-                            SearchbarLibrary()
-                        }
+                        SearchbarLibrary()
                         
-                        
-                    ForEach(categories, id: \.self) { idx in
-                        ZStack{
-                            gradientRectangle()
-                                .frame(width: 352, height: 210)
-                     
-                            HStack{
-                                VStack(alignment: .leading, spacing: 2){
+                        ForEach(categories, id: \.self) { idx in
+                            ZStack{
+                                gradientRectangle()
+                                    .frame(width: 352, height: 209)
+                                
+                                VStack(alignment: .leading, spacing: 5){
                                     
-                                    Section(header: Text(idx).bold().font(.system(size: 17)).foregroundColor(Color("secondaryColor")).padding(.leading, 15).padding(.vertical, 7)){
+                                    Section(header: Text(idx).bold().font(.system(size: 17)).foregroundColor(Color("secondaryColor")).padding(.leading, 15).padding(.vertical, 8)){
                                         
                                         
                                         ScrollView(.horizontal, showsIndicators: false, content: {
@@ -48,20 +44,22 @@ struct LibraryView: View {
                                                     NavigationLink(destination: {
                                                         DetailsView(film: film)
                                                     }, label: {
-                                                        Category(isFav: true, image: cover)
+                                                        Category(image: cover)
                                                     })
                                                 }
                                             }.padding(.leading, 10)
                                         }).frame(width: 352)
+                                            
+                                        
                                         
                                     }
                                 }
                             }
-                        }
+                        }.frame(width: 480)
+                            .padding(.bottom, 10)
                     }
                 }
-            }
-                   
+                
                 
             }.navigationBarHidden(true)
         }.navigationViewStyle(StackNavigationViewStyle())
@@ -70,6 +68,6 @@ struct LibraryView: View {
 
 struct LibraryView_Previews: PreviewProvider {
     static var previews: some View {
-        LibraryView(film: FilmHome(title: "Le seigneur des Toto", subTitle: "rbvdfvfvfe", opus: "fbfvbrtbr", cover: "seigneurDesAnneaux2"))
+        LibraryView(film: FilmHome(title: "Le Seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "", cover: ""))
     }
 }
