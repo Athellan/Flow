@@ -11,23 +11,43 @@ struct HomeView: View {
     
     @State private var isDiscoverMode = false
     @State private var isFavorited = false
-    
     let film : FilmHome
     
     var body: some View {
-        VStack (spacing : 00) {
+        
+        VStack(spacing : 00) {
+            PickerView()
+                .padding(.top, 30)
+            
+    }.background(Color("primaryColor"))
+}
+
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView(film: FilmHome(title: "", subTitle: "", opus: "", cover: ""))
+    }
+}
+
+struct PickerView: View {
+
+     @State private var isDiscoverMode = false
+
+    init() {
+        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(red: 0/255, green: 70/255, blue: 67/255, alpha: 1) ], for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(red: 0/255, green: 70/255, blue: 67/255, alpha: 1) ], for: .normal)
+    }
+
+    var body: some View {
+        VStack{
             Picker(selection: $isDiscoverMode, label: EmptyView()) {
                 Text("A découvrir")
-                    .background(Color("primaryColor"))
-                    .foregroundColor(Color("secondaryColor"))
                     .tag(true)
                 Text("Ce soir je regarde")
                     .tag(false)
-                    .foregroundColor(Color("secondaryColor"))
-            }.pickerStyle(SegmentedPickerStyle())                    .padding(.top, 30)
-               
-                
-            VStack {
+            }.pickerStyle(SegmentedPickerStyle()).background(Color("primaryColor"))
+            
+            VStack{
                 ScrollView {
                     
                     if isDiscoverMode == true {
@@ -38,16 +58,13 @@ struct HomeView: View {
                     }
                     
                     
-                }.background(Color("primaryColor"))
-                    
+                }
                 
-            }
-        }.background(Color("primaryColor"))
+                .navigationBarBackButtonHidden(true)
+                
+                }
+            }.background(Color("primaryColor"))
+        }
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView(film: FilmHome(title: "Le Seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "VOL2", cover: ""))
-    }
-}

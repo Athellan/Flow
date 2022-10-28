@@ -1,13 +1,13 @@
 //
-//  VignetteFilm.swift
+//  VignetteSerie.swift
 //  Flow
 //
-//  Created by Adel Djelti on 25/10/2022.
+//  Created by Apprenant97 on 28/10/2022.
 //
 
 import SwiftUI
 
-struct VignetteFilm: View {
+struct VignetteSerie: View {
     
     var gradientTop: Color = Color(red: 0 / 255, green: 70 / 255, blue: 67 / 255)
     var gradientBottom: Color = Color(red: 149 / 255, green: 191 / 255, blue: 181 / 255)
@@ -23,18 +23,20 @@ struct VignetteFilm: View {
     var body: some View {
         
         VStack(alignment: .leading){
-                Text("Les plus regardés sur Netflix").bold().font(.title2).offset(x: -10, y: 0)
+                Text("Les séries tendances").bold().font(.title2).offset(x: -10, y: 0)
                     .foregroundColor(Color("secondaryColor"))
                     .font(.system(size: 20))
                     .padding(.leading, 30)
+                   
 
+                
                 LazyVGrid(columns: columns){
                     ForEach(films) { film in
-                        FilmDetails(film: film)
+                        SerieDetails(film: film)
                     }
                 }
                 .frame(width: 352, height: 480)
-            }.padding(.top, 20)
+        }.padding(.top, 20)
             .background(
                 Rectangle()
                     .fill(LinearGradient(
@@ -51,13 +53,13 @@ struct VignetteFilm: View {
     }
 
 
-struct VignetteFilm_Previews: PreviewProvider {
+struct VignetteSerie_Previews: PreviewProvider {
     static var previews: some View {
-        VignetteFilm()
+        VignetteSerie()
     }
 }
 
-struct FilmDetails: View {
+struct SerieDetails: View {
     var film : FilmHome
     @State private var isSelected = false
     var body : some View {
@@ -68,12 +70,12 @@ struct FilmDetails: View {
                 .cornerRadius(10)
                 .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
                 .padding(1)
-            SelectedButton(isSelected: $isSelected)
+            SelectedButton2(isSelected: $isSelected)
         }
     }
 }
 
-struct SelectedButton: View {
+struct SelectedButton2: View {
     @Binding var isSelected: Bool
     var body: some View {
         Button {
