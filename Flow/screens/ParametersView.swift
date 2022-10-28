@@ -11,6 +11,7 @@ struct ParametersView: View {
     
     @State private var searchText = ""
     
+    
     var body: some View {
         ScrollView {
             ZStack {
@@ -18,16 +19,18 @@ struct ParametersView: View {
                 VStack{
                     VStack{
                         VStack{
-                            Text("Dites nous ce que vous aimez").font(.title)
+                            Text("Dites nous ce que vous aimez")
+                                .font(.system(size: 25))
                                 .foregroundColor(Color("secondaryColor"))
+                            
                         }
-                        .padding(.top, 50)
+                        .padding(.top, 115)
                         VStack{
                             Text("Pour que nous puissions créer votre page personnalisée et améliorer vos recommandations")
                                 .foregroundColor(Color("secondaryColor"))
                                 .multilineTextAlignment(.center)
                         }
-                        .frame(height: 90)
+                        .frame(width: 300, height: 90)
                         .offset(x: 0, y:-20)
                         
                         ZStack{
@@ -55,11 +58,10 @@ struct ParametersView: View {
                                 .padding(.bottom, 5)
                             
                         }
-                        .offset(x:85, y:0 )
+                        .offset(x:85, y:0)
                         .font(.system(size: 15))
                         .foregroundColor(Color("secondaryColor"))
                     }
-                    // fin vstack
                     .padding(.horizontal)
                     
                     VignetteFilm()
@@ -69,6 +71,7 @@ struct ParametersView: View {
                     VignetteFilm()
                 }
             }
+            .ignoresSafeArea()
             .navigationBarBackButtonHidden(true)
         }.ignoresSafeArea()
     }
@@ -79,5 +82,20 @@ struct ParametersView_Previews: PreviewProvider {
         ParametersView()
     }
 }
+
+extension ParametersView {
+    private var goButton: some View {
+        NavigationView{
+//            NavigationLink(destination: HomeView(film: film)) {
+                Button("C'est parti") {
+                }
+                .font(.headline)
+                .foregroundColor(.white)
+                .frame(width: 198,height: 32)
+                .background(Color("buttonColor"))
+                .cornerRadius(20)
+            }
+        }
+    }
 
 

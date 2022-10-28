@@ -50,39 +50,22 @@ struct SearchbarLibrary: View {
 
 
 struct Category: View {
-    let isFav: Bool
+    
     let image: String
     var body: some View {
         ZStack{
-            
                 Image(image)
                     .resizable()
                     .scaledToFit()
                     .cornerRadius(10)
                     .frame(width: 100, height: 154)
-                    .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
-            
-                    
-                        if(isFav){
-                            Image(systemName: "checkmark.circle.fill")
-                                .font(.system(size: 27))
-                                .foregroundColor(Color("secondaryColor"))
-                                .padding(.top, 100)
-                                .padding(.leading, 60)
-                            
-                        }else{
-                            Image(systemName: "checkmark.circle.fill")
-                                .font(.system(size: 27))
-                                .foregroundColor(Color("titleBackgroundColor"))
-                                .padding(.top, 100)
-                                .padding(.leading, 60)
-            }
+                    .shadow(color: Color("secondaryColor").opacity(0.7), radius: 2, x: -2, y: 2)
         }
     }
 }
 
 struct LibraryComp_Previews: PreviewProvider {
     static var previews: some View {
-        LibraryView()
+        LibraryView(film: FilmHome(title: "", subTitle: "", opus: "", cover: ""))
     }
 }

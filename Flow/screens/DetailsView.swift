@@ -13,6 +13,8 @@ struct DetailsView: View {
         GridItem(.fixed(47))
     ]
     
+    let film : FilmHome
+    
     var elementViewed = Film(title: "Le seigneur des anneaux", subname: "Les Deux Tours", cover: "seigneurDesAnneaux2", realisator: "Peter Jackson", description: "Le Seigneur des anneaux est une trilogie cinématographique américano-néo-zélandaise de fantasy réalisée par Peter Jackson et fondée sur le roman du même nom en trois volumes de J. R. R. Tolkien. Les films composant cette trilogie sont La Communauté de l'anneau, Les Deux Tours et Le Retour du roi.", rate: 3, isFavorited: true, isSeen: true)
     
     var body: some View {
@@ -24,7 +26,7 @@ struct DetailsView: View {
                 
                 ScrollView(showsIndicators: false){
                     VStack{
-                        DetailsTitle(elementTitle: elementViewed.title, elementSubname: elementViewed.subname)
+                        titleComponent(film: film)
                             .padding(.top, 40)
                         
                         DetailsImage(isFavorited: elementViewed.isFavorited, image: elementViewed.cover)
@@ -37,7 +39,7 @@ struct DetailsView: View {
                                 .font(.system(size: 12))
                                 .bold()
                                 .foregroundColor(Color("secondaryColor"))
-                                .padding(.leading, 10)
+                                .padding(.leading, 15)
                                 .padding(.bottom, 20)
                             
                             
@@ -74,6 +76,6 @@ struct DetailsView: View {
 }
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView()
+        DetailsView(film: FilmHome(title: "Le seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "fbfvbrtbr", cover: "seigneurDesAnneaux2"))
     }
 }

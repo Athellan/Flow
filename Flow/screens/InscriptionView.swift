@@ -21,7 +21,8 @@ struct InscriptionView: View {
                 Color("primaryColor").ignoresSafeArea()
                 
                 VStack{
-                    Text("C'est parti !").font(.title)
+                    Text("C'est parti !")
+                        .font(.system(size: 25))
                         .foregroundColor(Color("secondaryColor"))
                     Spacer()
                         .frame(height: 600)
@@ -108,6 +109,8 @@ struct InscriptionView: View {
                     NavigationLink(destination: ConnexionView(), label: {
                         Text("Retour")
                             .foregroundColor(Color("secondaryColor")).bold()
+                            .font(.system(size: 10))
+                            .padding(10)
                     })
                     
                     NavigationLink(destination: ParametersView(), isActive: $showInscription, label: {
@@ -119,12 +122,12 @@ struct InscriptionView: View {
                     Spacer()
                         .frame(height: 500)
                     
-                    Text("En continuant, vous acceptez les Conditions d’utilisation et la Politique de confidentialité de l’application.")
+                    Text("En continuant, vous acceptez les **Conditions d’utilisation** et la **Politique de confidentialité** de l’application.")
                         .multilineTextAlignment(.center)
                 }
-                .font(.system(size: 15))
+                .font(.system(size: 10))
                 .foregroundColor(Color("secondaryColor"))
-                .padding(.horizontal)
+                .frame(width: 300)
             }
         }
         .navigationBarBackButtonHidden(true)

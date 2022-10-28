@@ -27,12 +27,12 @@ struct LocationPreviewView: View {
         }
         .padding(20)
         .background(
-        RoundedRectangle(cornerRadius: 10)
+        RoundedRectangle(cornerRadius: 30)
 //            .fill(Color("opacityColor"))
             .fill(.ultraThinMaterial)
             .offset(y: 65)
         )
-        .cornerRadius(10)
+        .cornerRadius(20)
         .padding(6)
     }
 }
@@ -84,7 +84,7 @@ extension LocationPreviewView {
         .padding(8)
         .foregroundColor(Color("secondaryColor"))
         .background(Color("opacityColor"))
-        .cornerRadius(10)
+        .cornerRadius(50)
     }
     
     private var nextButton: some View {
@@ -98,7 +98,7 @@ extension LocationPreviewView {
         .padding(8)
         .foregroundColor(Color("secondaryColor"))
         .background(Color("opacityColor"))
-        .cornerRadius(10)
+        .cornerRadius(50)
     }
 }
 

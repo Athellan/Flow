@@ -24,7 +24,9 @@ struct ConnexionView: View {
             ZStack {
                 Color("primaryColor").ignoresSafeArea()
                 VStack{
-                    Text("Bienvenue.").font(.title).foregroundColor(Color("secondaryColor"))
+                    Text("Bienvenue.")
+                        .font(.system(size: 25))
+                        .foregroundColor(Color("secondaryColor"))
                     
                     Spacer()
                         .frame(height: 600)

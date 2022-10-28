@@ -20,12 +20,11 @@ struct titleComponent: View {
             .padding()
             .cornerRadius(7)
             .frame(width: 352, height: 60)
-            .padding(5)
             .background(Color("titleBackgroundColor"))
             .cornerRadius(50)
             .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
             .foregroundColor(Color("secondaryColor"))
-            .padding(.bottom, 20)
+//            .padding(.bottom, 10)
         
     }
 }

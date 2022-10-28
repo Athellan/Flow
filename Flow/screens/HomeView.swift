@@ -27,9 +27,6 @@ struct HomeView: View {
             }.pickerStyle(SegmentedPickerStyle())                    .padding(.top, 30)
                
                 
-                
-                
-            
             VStack {
                 ScrollView {
                     
