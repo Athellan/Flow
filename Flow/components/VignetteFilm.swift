@@ -9,6 +9,8 @@ import SwiftUI
 
 struct VignetteFilm: View {
     
+    @ObservedObject var viewModel = FilmViewModel()
+    
     var gradientTop: Color = Color(red: 0 / 255, green: 70 / 255, blue: 67 / 255)
     var gradientBottom: Color = Color(red: 149 / 255, green: 191 / 255, blue: 181 / 255)
     
@@ -18,8 +20,7 @@ struct VignetteFilm: View {
         GridItem(.fixed(100))
     ]
     
-   
-    
+
     var body: some View {
         
             VStack{
@@ -34,11 +35,16 @@ struct VignetteFilm: View {
                     .padding(.bottom, 10)
                 
                 LazyVGrid(columns: columns){
-                    ForEach(films) { film in
-                        FilmDetails(film: film)
+                    List(viewModel.films) { film in
+                        AsyncImage(url: URL(string: film.poster))
                     }
                 }
                 .frame(width: 352, height: 560)
+                .onAppear {
+                    Task {
+                        await viewModel.fetchUsers()
+                    }
+                }
             }
             .background(
                 Rectangle()
@@ -62,12 +68,11 @@ struct VignetteFilm_Previews: PreviewProvider {
 }
 
 struct FilmDetails: View {
-    var film : FilmHome
+    var film : FilmTest
     @State private var isSelected = false
     var body : some View {
         ZStack(alignment: .bottomTrailing) {
-            Image(film.cover)
-                .resizable()
+            AsyncImage(url: URL(string: film.poster))
                 .frame(width: 97,height: 145)
                 .cornerRadius(10)
                 .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)

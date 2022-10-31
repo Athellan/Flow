@@ -86,3 +86,9 @@ struct MapLocation: Identifiable {
 }
 
 // Enum pour Category
+
+struct FilmTest: Identifiable {
+    let id = UUID()
+    let title: String
+    let poster: String
+}
