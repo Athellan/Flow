@@ -65,8 +65,8 @@ struct ParametersView: View {
                     
                     VignetteTrending()
                         .padding()
-//                    VignetteFilm()
-//                        .padding()
+                    VignetteFilm()
+                        .padding()
 //                    VignetteFilm()
                 }
             }

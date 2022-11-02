@@ -16,6 +16,9 @@
 		6300A123290FC57100193738 /* TrendingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6300A122290FC57000193738 /* TrendingViewModel.swift */; };
 		6300A126290FC60000193738 /* ResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6300A125290FC60000193738 /* ResponseDto.swift */; };
 		636A43C029125F4A0032D4F5 /* VignetteTrending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A43BF29125F4A0032D4F5 /* VignetteTrending.swift */; };
+		636A43C229127F660032D4F5 /* TrendingParamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A43C129127F660032D4F5 /* TrendingParamModel.swift */; };
+		636A43C42912857B0032D4F5 /* FilmParamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A43C32912857B0032D4F5 /* FilmParamModel.swift */; };
+		636A43C6291286340032D4F5 /* FilmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A43C5291286340032D4F5 /* FilmViewModel.swift */; };
 		636A545929016466009D7491 /* FlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A545829016466009D7491 /* FlowApp.swift */; };
 		636A545D29016467009D7491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 636A545C29016467009D7491 /* Assets.xcassets */; };
 		636A546029016467009D7491 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 636A545F29016467009D7491 /* Preview Assets.xcassets */; };
@@ -70,6 +73,9 @@
 		6300A122290FC57000193738 /* TrendingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TrendingViewModel.swift; path = Flow/viewmodels/TrendingViewModel.swift; sourceTree = SOURCE_ROOT; };
 		6300A125290FC60000193738 /* ResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDto.swift; sourceTree = "<group>"; };
 		636A43BF29125F4A0032D4F5 /* VignetteTrending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VignetteTrending.swift; path = Flow/components/VignetteTrending.swift; sourceTree = SOURCE_ROOT; };
+		636A43C129127F660032D4F5 /* TrendingParamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TrendingParamModel.swift; path = Flow/models/TrendingParamModel.swift; sourceTree = SOURCE_ROOT; };
+		636A43C32912857B0032D4F5 /* FilmParamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilmParamModel.swift; path = Flow/models/FilmParamModel.swift; sourceTree = SOURCE_ROOT; };
+		636A43C5291286340032D4F5 /* FilmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilmViewModel.swift; path = Flow/viewmodels/FilmViewModel.swift; sourceTree = SOURCE_ROOT; };
 		636A545529016466009D7491 /* Flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		636A545829016466009D7491 /* FlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowApp.swift; sourceTree = "<group>"; };
 		636A545C29016467009D7491 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -198,6 +204,7 @@
 			children = (
 				6390790A2908011700FB8C02 /* LocationsViewModel.swift */,
 				6300A122290FC57000193738 /* TrendingViewModel.swift */,
+				636A43C5291286340032D4F5 /* FilmViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -260,6 +267,8 @@
 				63FC90C42901973B00135CFB /* filmHome.swift */,
 				63FC90C62901974800135CFB /* serieHome.swift */,
 				639079042907FCF800FB8C02 /* Location.swift */,
+				636A43C129127F660032D4F5 /* TrendingParamModel.swift */,
+				636A43C32912857B0032D4F5 /* FilmParamModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -365,10 +374,12 @@
 				9CACF35229019EBB00234452 /* InscriptionView.swift in Sources */,
 				9C21CC0329068B3000F3BB26 /* ContinuewithApple.swift in Sources */,
 				63CA89B7290181F7006D9876 /* HomeView.swift in Sources */,
+				636A43C6291286340032D4F5 /* FilmViewModel.swift in Sources */,
 				9C21CC01290682A300F3BB26 /* ButtonInscription.swift in Sources */,
 				9C8357B42906C59C0066A725 /* ParametersView.swift in Sources */,
 				63FC90E12906C57B00135CFB /* ChatView.swift in Sources */,
 				636A43C029125F4A0032D4F5 /* VignetteTrending.swift in Sources */,
+				636A43C42912857B0032D4F5 /* FilmParamModel.swift in Sources */,
 				C705501D2902BBDF006A316E /* profileInfo.swift in Sources */,
 				C7220D6B2906B14E00EF5278 /* profilePreference.swift in Sources */,
 				5F807F772906D7680002C5D9 /* LibraryView.swift in Sources */,
@@ -385,6 +396,7 @@
 				6390791729092B2900FB8C02 /* TabViewView.swift in Sources */,
 				5F807F712906D6F80002C5D9 /* LibraryComp.swift in Sources */,
 				63FC90C72901974800135CFB /* serieHome.swift in Sources */,
+				636A43C229127F660032D4F5 /* TrendingParamModel.swift in Sources */,
 				63FC90CD2902939700135CFB /* plateformLogo.swift in Sources */,
 				63FC90CB290282ED00135CFB /* homeDetail.swift in Sources */,
 				63FC90C52901973B00135CFB /* filmHome.swift in Sources */,

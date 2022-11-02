@@ -1,9 +1,4 @@
-//
-//  VignetteFilm.swift
-//  Flow
-//
-//  Created by Adel Djelti on 25/10/2022.
-//
+
 
 import SwiftUI
 
@@ -20,8 +15,6 @@ struct VignetteTrending: View {
         GridItem(.fixed(100))
     ]
     
-    @State private var isSelected = false
-    
     var body: some View {
         
         VStack{
@@ -30,10 +23,7 @@ struct VignetteTrending: View {
                 .font(.system(size: 20))
                 .padding(.top, 30)
                 .padding(.bottom, -20)
-//            Text("Voir tout").underline()
-//                .offset(x: 120, y: 60)
-//                .foregroundColor(Color("secondaryColor"))
-//                .padding(.bottom, 10)
+
             
             ZStack {
                 LazyVGrid(columns: columns) {
@@ -80,27 +70,11 @@ struct VignetteTrending: View {
     }
 }
 
-
 struct VignetteTrending_Previews: PreviewProvider {
     static var previews: some View {
         VignetteTrending()
     }
 }
-
-//struct FilmDetails: View {
-//    var trendings : Trending
-//    @State private var isSelected = false
-//    var body : some View {
-//        ZStack(alignment: .bottomTrailing) {
-//            AsyncImage(url: URL(string: trendings.image ?? "test"))
-//                .frame(width: 97,height: 145)
-//                .cornerRadius(10)
-//                .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
-//                .padding(1)
-//            SelectedButton(isSelected: $isSelected)
-//        }
-//    }
-//}
 
 struct SelectedButton: View {
     @ObservedObject var trending : Trending
