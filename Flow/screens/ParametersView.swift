@@ -67,7 +67,8 @@ struct ParametersView: View {
                         .padding()
                     VignetteFilm()
                         .padding()
-//                    VignetteFilm()
+                    VignetteSerie()
+                        .padding()
                 }
             }
             .ignoresSafeArea()

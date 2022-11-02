@@ -19,6 +19,9 @@
 		636A43C229127F660032D4F5 /* TrendingParamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A43C129127F660032D4F5 /* TrendingParamModel.swift */; };
 		636A43C42912857B0032D4F5 /* FilmParamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A43C32912857B0032D4F5 /* FilmParamModel.swift */; };
 		636A43C6291286340032D4F5 /* FilmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A43C5291286340032D4F5 /* FilmViewModel.swift */; };
+		636A43C829128D5F0032D4F5 /* SerieParamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A43C729128D5F0032D4F5 /* SerieParamModel.swift */; };
+		636A43CA29128DAB0032D4F5 /* VignetteSerie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A43C929128DAB0032D4F5 /* VignetteSerie.swift */; };
+		636A43CC29128DD90032D4F5 /* SerieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A43CB29128DD90032D4F5 /* SerieViewModel.swift */; };
 		636A545929016466009D7491 /* FlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A545829016466009D7491 /* FlowApp.swift */; };
 		636A545D29016467009D7491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 636A545C29016467009D7491 /* Assets.xcassets */; };
 		636A546029016467009D7491 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 636A545F29016467009D7491 /* Preview Assets.xcassets */; };
@@ -76,6 +79,9 @@
 		636A43C129127F660032D4F5 /* TrendingParamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TrendingParamModel.swift; path = Flow/models/TrendingParamModel.swift; sourceTree = SOURCE_ROOT; };
 		636A43C32912857B0032D4F5 /* FilmParamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilmParamModel.swift; path = Flow/models/FilmParamModel.swift; sourceTree = SOURCE_ROOT; };
 		636A43C5291286340032D4F5 /* FilmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilmViewModel.swift; path = Flow/viewmodels/FilmViewModel.swift; sourceTree = SOURCE_ROOT; };
+		636A43C729128D5F0032D4F5 /* SerieParamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SerieParamModel.swift; path = Flow/models/SerieParamModel.swift; sourceTree = SOURCE_ROOT; };
+		636A43C929128DAB0032D4F5 /* VignetteSerie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VignetteSerie.swift; path = Flow/components/VignetteSerie.swift; sourceTree = SOURCE_ROOT; };
+		636A43CB29128DD90032D4F5 /* SerieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SerieViewModel.swift; path = Flow/viewmodels/SerieViewModel.swift; sourceTree = SOURCE_ROOT; };
 		636A545529016466009D7491 /* Flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		636A545829016466009D7491 /* FlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowApp.swift; sourceTree = "<group>"; };
 		636A545C29016467009D7491 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -205,6 +211,7 @@
 				6390790A2908011700FB8C02 /* LocationsViewModel.swift */,
 				6300A122290FC57000193738 /* TrendingViewModel.swift */,
 				636A43C5291286340032D4F5 /* FilmViewModel.swift */,
+				636A43CB29128DD90032D4F5 /* SerieViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -241,6 +248,7 @@
 				9C21CC0229068B3000F3BB26 /* ContinuewithApple.swift */,
 				9C1B061A2907EA3000B68E3D /* VignetteFilm.swift */,
 				636A43BF29125F4A0032D4F5 /* VignetteTrending.swift */,
+				636A43C929128DAB0032D4F5 /* VignetteSerie.swift */,
 				9C1B061E2908302800B68E3D /* ButtonInscriptionTwo.swift */,
 				C705501A29029C02006A316E /* profileButton.swift */,
 				C705501C2902BBDF006A316E /* profileInfo.swift */,
@@ -269,6 +277,7 @@
 				639079042907FCF800FB8C02 /* Location.swift */,
 				636A43C129127F660032D4F5 /* TrendingParamModel.swift */,
 				636A43C32912857B0032D4F5 /* FilmParamModel.swift */,
+				636A43C729128D5F0032D4F5 /* SerieParamModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -349,6 +358,7 @@
 			files = (
 				63FC90E82906D02800135CFB /* BotResponse.swift in Sources */,
 				C7F8344A290A6E870003B3EB /* actorInfo.swift in Sources */,
+				636A43C829128D5F0032D4F5 /* SerieParamModel.swift in Sources */,
 				6300A126290FC60000193738 /* ResponseDto.swift in Sources */,
 				C7220D6D2906C12500EF5278 /* profileAddPreference.swift in Sources */,
 				C7F8344C290A7B7D0003B3EB /* actorInfoGrid.swift in Sources */,
@@ -377,6 +387,7 @@
 				636A43C6291286340032D4F5 /* FilmViewModel.swift in Sources */,
 				9C21CC01290682A300F3BB26 /* ButtonInscription.swift in Sources */,
 				9C8357B42906C59C0066A725 /* ParametersView.swift in Sources */,
+				636A43CA29128DAB0032D4F5 /* VignetteSerie.swift in Sources */,
 				63FC90E12906C57B00135CFB /* ChatView.swift in Sources */,
 				636A43C029125F4A0032D4F5 /* VignetteTrending.swift in Sources */,
 				636A43C42912857B0032D4F5 /* FilmParamModel.swift in Sources */,
@@ -394,6 +405,7 @@
 				5F807F802906D7E50002C5D9 /* Styles.swift in Sources */,
 				63CA89B7290181F7006D9876 /* HomeView.swift in Sources */,
 				6390791729092B2900FB8C02 /* TabViewView.swift in Sources */,
+				636A43CC29128DD90032D4F5 /* SerieViewModel.swift in Sources */,
 				5F807F712906D6F80002C5D9 /* LibraryComp.swift in Sources */,
 				63FC90C72901974800135CFB /* serieHome.swift in Sources */,
 				636A43C229127F660032D4F5 /* TrendingParamModel.swift in Sources */,
