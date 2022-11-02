@@ -73,7 +73,6 @@ struct Event {
     let adress: String
     let type: String
     let image: String
-   // let date: Date
 }
 
 struct MapLocation: Identifiable {
@@ -82,7 +81,6 @@ struct MapLocation: Identifiable {
     let coordinate: CLLocationCoordinate2D
 }
 
-// Enum pour Category
 
 struct FilmTest: Identifiable {
     let id = UUID()
@@ -91,8 +89,14 @@ struct FilmTest: Identifiable {
 }
 
 
-struct Trending: Identifiable {
+class Trending: Identifiable, ObservableObject {
     let id = UUID()
     let title: String?
     let image: String?
+    @Published var isSelected: Bool
+    init(title: String?, image: String?, isSelected: Bool = false) {
+        self.title = title
+        self.image = image
+        self.isSelected = isSelected
+    }
 }

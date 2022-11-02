@@ -11,7 +11,6 @@ struct ParametersView: View {
     
     @State private var searchText = ""
     
-    
     var body: some View {
         ScrollView {
             ZStack {

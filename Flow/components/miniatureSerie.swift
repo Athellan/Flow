@@ -30,8 +30,7 @@ struct miniatureSerie: View {
             .padding(.leading, -180)
             
             
-            HStack(alignment: .bottom) {
-                
+//            HStack(alignment: .bottom) {
                 VStack(alignment: .leading) {
                     Text(serie.title.uppercased())
                         .font(.system(size: 14))
@@ -43,9 +42,9 @@ struct miniatureSerie: View {
                     
                     Text(serie.episodeName)
                 }.font(.system(size: 14))
-
-            }
-            .frame(height: 55)
+                
+//            }
+                .frame(width: 300, height: 55)
             .padding(.leading, 15)
             
             FavoriteButton(isFavorited: $isFavorited)
@@ -59,6 +58,6 @@ struct miniatureSerie: View {
 
 struct miniatureSerie_Previews: PreviewProvider {
     static var previews: some View {
-        miniatureSerie(serie: SerieHome(title: "Strangers Things", cover: "ST", episodeName: "Chapitre 1: La disparition", episodeNumber: 01, season: 01))
+        miniatureSerie(serie: SerieHome(title: "You", cover: "younetflix", episodeName: "Chapitre 1: La disparition", episodeNumber: 01, season: 01))
     }
 }

@@ -31,8 +31,14 @@ struct HomeView: View {
                 ScrollView {
                     if isDiscoverMode == true {
                         miniatureFilm(film: FilmHome(title: "Le Seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "VOL2", cover: "LSDA2T"))
-                        miniatureSerie(serie: SerieHome(title: "You", cover: "younetflix", episodeName: "L'obsession", episodeNumber: 01, season: 01))
-                        miniatureSerie(serie: SerieHome(title: "Strangers Things", cover: "ST", episodeName: "Chapitre 1: La disparition", episodeNumber: 01, season: 01))
+                        miniatureSerie(serie: SerieHome(title: "You", cover: "younetflix", episodeName: "Episode 1: Obsession       ", episodeNumber: 01, season: 01))
+                        miniatureSerie(serie: SerieHome(title: "Stranger Things", cover: "ST", episodeName: "Chapitre 1: La disparition", episodeNumber: 01, season: 01))
+                        miniatureFilm(film: FilmHome(title: "Gran Torino", subTitle: "Walt Kowalski est un ancien..", opus: "VOL 1", cover: "grantorino"))
+                        miniatureSerie(serie: SerieHome(title: "Wicked", cover: "wicked", episodeName: "Chapitre 1: La disparition", episodeNumber: 01, season: 01))
+                        miniatureSerie(serie: SerieHome(title: "Breaking Bad", cover: "breakingbad", episodeName: "Chute libre                      ", episodeNumber: 01, season: 01))
+                        miniatureSerie(serie: SerieHome(title: "Game of Throne", cover: "got", episodeName: "Winter is Coming          ", episodeNumber: 01, season: 01))
+                        miniatureSerie(serie: SerieHome(title: "Arcane", cover: "arcane", episodeName:"Welcome to the ...        ", episodeNumber: 01, season: 01))
+                        
                     } else {
                         homeDetail()
                     }

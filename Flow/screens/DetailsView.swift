@@ -24,7 +24,9 @@ struct DetailsView: View {
             ZStack{
                 Color("primaryColor")
                     .ignoresSafeArea()
-                
+                chatButton
+                    .position(x: 330, y: 735)
+                    .zIndex(1)
                 ScrollView(showsIndicators: false){
                     VStack{
                         titleComponent(film: film)
@@ -69,10 +71,9 @@ struct DetailsView: View {
                             
                         }.padding(.top, 20)
                             .padding(.bottom, 40)
-                        chatButton
-                            .padding(.leading, 250)
                     }
                 }
+               
             }
         }
     }
