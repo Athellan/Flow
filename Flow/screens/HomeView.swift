@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct HomeView: View {
-    
     @State private var isDiscoverMode = false
     @State private var isFavorited = false
     let film : FilmHome

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ParametersView: View {
-    
+    @Binding var showConnexion: Bool
     @State private var searchText = ""
     @State private var isShowingParametersView = false
     let film: FilmHome
@@ -84,7 +84,7 @@ struct ParametersView: View {
                     .navigationBarBackButtonHidden(true)
                     
                 }
-                
+//        peut-etre truc ici fin stack
             }
 //            .background(Color("primaryColor"))
         }
@@ -92,7 +92,7 @@ struct ParametersView: View {
 
 struct ParametersView_Previews: PreviewProvider {
     static var previews: some View {
-        ParametersView(film: FilmHome(title: "", subTitle: "", opus: "", cover: ""))
+        ParametersView(showConnexion: .constant(false), film: FilmHome(title: "", subTitle: "", opus: "", cover: ""))
     }
 }
 
@@ -101,15 +101,20 @@ extension ParametersView {
     private var goButton: some View {
         VStack{
             NavigationLink(destination: HomeView(film: film), isActive : $isShowingParametersView){
+//                .navigationBarBackButtonHidden(true)
+//                .navigationBarHidden(true)
                 EmptyView()}
                 Button("C'est parti") {
                     isShowingParametersView = true
+                    showConnexion = true
                 }
                 .font(.headline)
                 .foregroundColor(.white)
                 .frame(width: 198,height: 32)
                 .background(Color("buttonColor"))
                 .cornerRadius(20)
+                
+
             }
         }
 
@@ -120,6 +125,7 @@ private var goButton2: some View {
             EmptyView()}
             Button("Passer à cette étape") {
                 isShowingParametersView = true
+                showConnexion = true
             }
             .font(.system(size: 11))
             .foregroundColor(Color("secondaryColor"))

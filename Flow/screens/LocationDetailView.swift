@@ -28,6 +28,11 @@ struct LocationDetailView: View {
                         descriptionSection
                             .padding(.vertical, 20)
                         Divider()
+                        miniatureEvent(event: Event(title: "Stranger Things", description: "Exposition miniatures", date: "29 nov. 2022"))
+                            .padding(.top, 10)
+                        miniatureEvent(event: Event(title: "Stranger Things", description: "Projection making-off", date: "30 nov. 2022"))
+                            .padding(.vertical, 10)
+                        Divider()
                     }.frame(width: 352)
                     
                     
@@ -47,6 +52,7 @@ struct LocationDetailView: View {
             .ignoresSafeArea()
             .background(Color("primaryColor"))
             .overlay(backButton, alignment: .topLeading)
+            
         }
     }
 }
@@ -107,7 +113,8 @@ extension LocationDetailView {
             
             if let url = URL(string: location.link) {
                 Link("**+ sur \(location.name)**", destination: url)
-                    .font(.system(size: 11))
+                    .font(.system(size: 11)).foregroundColor(Color("secondaryColor"))
+                    
                     
             }
             

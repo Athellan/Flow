@@ -52,6 +52,8 @@
 		C7220D6F2906C1A100EF5278 /* profileCategoryPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7220D6E2906C1A100EF5278 /* profileCategoryPreference.swift */; };
 		C7366BF7290BF2E900E3F20A /* VignetteSerie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7366BF6290BF2E900E3F20A /* VignetteSerie.swift */; };
 		C7C0B2022907FD2F00094B26 /* titleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C0B2012907FD2F00094B26 /* titleComponent.swift */; };
+		C7E0355D29100FCC0077E977 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E0355C29100FCC0077E977 /* ContentView.swift */; };
+		C7E0355F2910237D0077E977 /* miniatureEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E0355E2910237D0077E977 /* miniatureEvent.swift */; };
 		C7F8344A290A6E870003B3EB /* actorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F83449290A6E870003B3EB /* actorInfo.swift */; };
 		C7F8344C290A7B7D0003B3EB /* actorInfoGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F8344B290A7B7D0003B3EB /* actorInfoGrid.swift */; };
 		C7FD1FB4290184BE001B5516 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FD1FB3290184BE001B5516 /* ProfileView.swift */; };
@@ -104,6 +106,8 @@
 		C7220D6E2906C1A100EF5278 /* profileCategoryPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profileCategoryPreference.swift; path = Flow/components/profileCategoryPreference.swift; sourceTree = SOURCE_ROOT; };
 		C7366BF6290BF2E900E3F20A /* VignetteSerie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VignetteSerie.swift; path = Flow/components/VignetteSerie.swift; sourceTree = SOURCE_ROOT; };
 		C7C0B2012907FD2F00094B26 /* titleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = titleComponent.swift; path = Flow/components/titleComponent.swift; sourceTree = SOURCE_ROOT; };
+		C7E0355C29100FCC0077E977 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Flow/ContentView.swift; sourceTree = SOURCE_ROOT; };
+		C7E0355E2910237D0077E977 /* miniatureEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = miniatureEvent.swift; path = Flow/components/miniatureEvent.swift; sourceTree = SOURCE_ROOT; };
 		C7F83449290A6E870003B3EB /* actorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = actorInfo.swift; path = Flow/Components/actorInfo.swift; sourceTree = SOURCE_ROOT; };
 		C7F8344B290A7B7D0003B3EB /* actorInfoGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = actorInfoGrid.swift; path = Flow/components/actorInfoGrid.swift; sourceTree = SOURCE_ROOT; };
 		C7FD1FB3290184BE001B5516 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = Flow/screens/ProfileView.swift; sourceTree = SOURCE_ROOT; };
@@ -153,6 +157,7 @@
 				636A546929016DD1009D7491 /* ViewModels */,
 				636A546629016B0E009D7491 /* Data */,
 				636A545829016466009D7491 /* FlowApp.swift */,
+				C7E0355C29100FCC0077E977 /* ContentView.swift */,
 				636A545C29016467009D7491 /* Assets.xcassets */,
 				636A545E29016467009D7491 /* Preview Content */,
 			);
@@ -230,6 +235,7 @@
 				5F807F742906D7580002C5D9 /* MapDetailsComp.swift */,
 				63FC90C02901966200135CFB /* miniatureFilm.swift */,
 				63FC90C22901968800135CFB /* miniatureSerie.swift */,
+				C7E0355E2910237D0077E977 /* miniatureEvent.swift */,
 				63FC90CA290282ED00135CFB /* homeDetail.swift */,
 				63FC90CC2902939700135CFB /* plateformLogo.swift */,
 				C7C0B2012907FD2F00094B26 /* titleComponent.swift */,
@@ -323,6 +329,7 @@
 			files = (
 				63FC90E82906D02800135CFB /* BotResponse.swift in Sources */,
 				C7F8344A290A6E870003B3EB /* actorInfo.swift in Sources */,
+				C7E0355F2910237D0077E977 /* miniatureEvent.swift in Sources */,
 				C7220D6D2906C12500EF5278 /* profileAddPreference.swift in Sources */,
 				C7F8344C290A7B7D0003B3EB /* actorInfoGrid.swift in Sources */,
 				C7220D6929069D9200EF5278 /* profileEvents.swift in Sources */,
@@ -347,6 +354,7 @@
 				9C21CC0329068B3000F3BB26 /* ContinuewithApple.swift in Sources */,
 				63CA89B7290181F7006D9876 /* HomeView.swift in Sources */,
 				9C21CC01290682A300F3BB26 /* ButtonInscription.swift in Sources */,
+				C7E0355D29100FCC0077E977 /* ContentView.swift in Sources */,
 				9C8357B42906C59C0066A725 /* ParametersView.swift in Sources */,
 				63FC90E12906C57B00135CFB /* ChatView.swift in Sources */,
 				C705501D2902BBDF006A316E /* profileInfo.swift in Sources */,

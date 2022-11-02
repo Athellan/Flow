@@ -10,10 +10,10 @@ import SwiftUI
 
 struct ConnexionView: View {
     
-    
+
     @State private var username = ""
     @State private var password = ""
-    
+    @Binding var showConnexion: Bool
     @State private var failedConnexion : Bool = false
     @State private var succedConnexion : Bool = false
     @State private var showLoginScreen : Bool = false
@@ -82,9 +82,9 @@ struct ConnexionView: View {
                             .font(.system(size: 15))
                     }
                     
-                    ButtonConnexion(username: $username, succedConnexion: $succedConnexion, password: $password, failedConnexion: $failedConnexion,showLoginScreen: $showLoginScreen)
+                    ButtonConnexion(username: $username, succedConnexion: $succedConnexion, password: $password, failedConnexion: $failedConnexion,showLoginScreen: $showConnexion)
                     
-                    NavigationLink(destination: ParametersView(film: FilmHome(title: "", subTitle: "", opus: "", cover: "")),   isActive: $showLoginScreen, label: {
+                    NavigationLink(destination: ParametersView(showConnexion: $showConnexion, film: FilmHome(title: "", subTitle: "", opus: "", cover: "")),   isActive: $showConnexion, label: {
                         Text("")
                     })
                     
@@ -102,7 +102,7 @@ struct ConnexionView: View {
 
 struct ConnexionView_Previews: PreviewProvider {
     static var previews: some View {
-        ConnexionView()
+        ConnexionView(showConnexion: .constant(false))
     }
 }
 
