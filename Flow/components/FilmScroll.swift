@@ -2,18 +2,16 @@
 
 import SwiftUI
 
-struct FavoriteScroll: View {
+struct FilmScroll: View {
     
-    @ObservedObject var viewModelFavorite = FavoriteViewModel()
-    
-    
+    @ObservedObject var viewModelFilmAdded = FilmAddedViewModel()
     
     var gradientTop: Color = Color(red: 0 / 255, green: 70 / 255, blue: 67 / 255)
     var gradientBottom: Color = Color(red: 149 / 255, green: 191 / 255, blue: 181 / 255)
     
     var body: some View {
         VStack(alignment: .leading){
-            Text("Mes Favoris").bold().font(.title2).offset(x: -10, y: 0)
+            Text("Films").bold().font(.title2).offset(x: -10, y: 0)
                 .foregroundColor(Color("secondaryColor"))
                 .font(.system(size: 20))
                 .padding()
@@ -22,9 +20,9 @@ struct FavoriteScroll: View {
             ZStack {
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack {
-                        ForEach(viewModelFavorite.favorites) { favorite in
+                        ForEach(viewModelFilmAdded.filmsAdded) { filmAdded in
                             ZStack(alignment: .bottomTrailing) {
-                                Image(favorite.image ?? "test")
+                                Image(filmAdded.image ?? "test")
                                     .resizable()
                                     .frame(width: 110, height: 165)
                                     .cornerRadius(15)
@@ -37,7 +35,7 @@ struct FavoriteScroll: View {
                 }
                 .onAppear {
                     Task {
-                        await viewModelFavorite.fetchUsers()
+                        await viewModelFilmAdded.fetchUsers()
                     }
                 }
             }
@@ -57,9 +55,9 @@ struct FavoriteScroll: View {
     }
 }
 
-struct FavoriteScroll_Previews: PreviewProvider {
+struct FilmScroll_Previews: PreviewProvider {
     static var previews: some View {
-        FavoriteScroll()
+        FilmScroll()
     }
 }
 
