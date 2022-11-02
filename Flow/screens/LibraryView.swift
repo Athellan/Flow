@@ -49,7 +49,7 @@ struct LibraryView: View {
                                                 }
                                             }.padding(.leading, 10)
                                         }).frame(width: 352)
-                                            
+                                        
                                         
                                         
                                     }

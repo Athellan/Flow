@@ -19,7 +19,7 @@ struct ButtonConnexion: View {
         
         Button("Connexion") {
             
-            if username == "user" && password == "user" {
+            if username == "User" && password == "user" {
                 succedConnexion = true
                 failedConnexion = false
                 showLoginScreen = true
