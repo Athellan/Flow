@@ -16,14 +16,14 @@ struct FilmHome: Identifiable {
     let isLibraryAdded: Bool = false
 }
 
-var films = [
-    FilmHome(title: "You", subTitle: "You", opus: "", cover: "younetflix"),
-    FilmHome(title: "I", subTitle: "You", opus: "", cover: "younetflix"),
-    FilmHome(title: "Us", subTitle: "You", opus: "", cover: "younetflix"),
-    FilmHome(title: "They", subTitle: "You", opus: "", cover: "younetflix"),
-    FilmHome(title: "They", subTitle: "You", opus: "", cover: "younetflix"),
-    FilmHome(title: "They", subTitle: "You", opus: "", cover: "younetflix"),
-    FilmHome(title: "They", subTitle: "You", opus: "", cover: "younetflix"),
-    FilmHome(title: "They", subTitle: "You", opus: "", cover: "younetflix"),
-    FilmHome(title: "They", subTitle: "You", opus: "", cover: "younetflix")
-]
+//var films = [
+//    FilmHome(title: "You", subTitle: "You", opus: "", cover: "younetflix"),
+//    FilmHome(title: "I", subTitle: "You", opus: "", cover: "younetflix"),
+//    FilmHome(title: "Us", subTitle: "You", opus: "", cover: "younetflix"),
+//    FilmHome(title: "They", subTitle: "You", opus: "", cover: "younetflix"),
+//    FilmHome(title: "They", subTitle: "You", opus: "", cover: "younetflix"),
+//    FilmHome(title: "They", subTitle: "You", opus: "", cover: "younetflix"),
+//    FilmHome(title: "They", subTitle: "You", opus: "", cover: "younetflix"),
+//    FilmHome(title: "They", subTitle: "You", opus: "", cover: "younetflix"),
+//    FilmHome(title: "They", subTitle: "You", opus: "", cover: "younetflix")
+//]

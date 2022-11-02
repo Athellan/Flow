@@ -40,7 +40,7 @@ struct HomeView: View {
                         miniatureSerie(serie: SerieHome(title: "Arcane", cover: "arcane", episodeName:"Welcome to the ...        ", episodeNumber: 01, season: 01))
                         
                     } else {
-                        homeDetail()
+                        homeDetail(currentCard: Card(title: "Hunter", subtitle: "HxH", image: "hxh"))
                     }
                     
                     

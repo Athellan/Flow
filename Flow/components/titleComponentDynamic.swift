@@ -1,14 +1,14 @@
 
 import SwiftUI
 
-struct titleComponent: View {
-    let film : FilmHome
+struct titleComponentDynamic: View {
+    let film : Card
     var body: some View {
             VStack {
                 Text(film.title)
                     .bold()
                     .font(.system(size: 17))
-                Text(film.subTitle)
+                Text(film.subtitle)
                     .font(.system(size: 17))
             }
             .padding()
@@ -24,7 +24,7 @@ struct titleComponent: View {
 }
     
 
-struct titleComponent_Previews: PreviewProvider {
+struct titleComponentDynamic_Previews: PreviewProvider {
     static var previews: some View {
         titleComponent(film: FilmHome(title: "Le Seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "", cover: "LSDA2T"))
     }

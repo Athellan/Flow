@@ -8,10 +8,26 @@
 import SwiftUI
 
 struct homeDetail: View {
+    @State var currentCard:Card
+    
     let rows = [
             GridItem(.fixed(47)),
             GridItem(.fixed(47))
         ]
+    
+    var shows: [Card] = [
+        Card(title: "Dexter", subtitle: "Saison 1", image: "dexter"),
+        Card(title: "Breaking Bad", subtitle: "Saison 1", image: "breakingbad"),
+        Card(title: "Hunter X Hunter", subtitle: "Saison1", image: "hxh"),
+        Card(title: "Vikings", subtitle: "Saison 1", image: "vikings"),
+        Card(title: "Sherlock", subtitle: "Saison 1", image: "sherlock"),
+        Card(title: "Peaky Blinders", subtitle: "Saison 1", image: "peakyblinders"),
+        Card(title: "Arcane", subtitle: "Saison 1", image: "arcane"),
+        Card(title: "Le Jeu de Dames", subtitle: "Mini Série", image: "queensgambit"),
+        Card(title: "Game of Throne", subtitle: "Saison 1", image: "got"),
+        Card(title: "Gran Torino", subtitle: "Clint Eastwood", image: "grantorino"),
+        Card(title: "Athena", subtitle: "Romain Gravas", image: "athena")
+    ]
    
     var body: some View {
         ZStack {
@@ -19,14 +35,11 @@ struct homeDetail: View {
                 .ignoresSafeArea()
             VStack {
                 
-                titleComponent(film: FilmHome(title: "Le Seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "", cover: "LSDA2T"))
+                titleComponentDynamic(film: currentCard)
                     
                 ZStack {
-                    Image("LSDA2T")
-                        .resizable()
-                        .frame(width: 250, height: 350)
-                        .cornerRadius(10)
-                        .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+                    ForEach(shows) {show in CardView(show: show, currentCard: $currentCard)
+                    }
                     
                     HStack {
                         Image(systemName: "multiply.circle.fill")
@@ -41,7 +54,7 @@ struct homeDetail: View {
                             .resizable()
                             .frame(width: 32.0, height: 32.0)
                             .foregroundColor(Color("titleBackgroundColor"))
-                    }.padding(.top, 340)
+                    }.padding(.top, 370)
                 }
                 
                 VStack{
@@ -51,8 +64,7 @@ struct homeDetail: View {
                         }
                     }.frame(height: 47)
                 }.padding(.top, 60)
-                    
-                
+
             }.padding(.top, 20)
         }
     }
@@ -60,6 +72,6 @@ struct homeDetail: View {
 
 struct homeDetail_Previews: PreviewProvider {
     static var previews: some View {
-        homeDetail()
+        homeDetail(currentCard: Card(title: "Hunter", subtitle: "Hunter X Hunter", image: "hxh"))
     }
 }
