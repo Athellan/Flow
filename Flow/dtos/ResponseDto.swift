@@ -1,17 +1,24 @@
 //
 //  ResponseDto.swift
-//  Flow
+//  WelcomeBack
 //
-//  Created by Apprenant 63 on 31/10/2022.
+//  Created by Sengsathit SILALAK on 21/10/2022.
 //
 
 import Foundation
 
 struct ResponseDto: Decodable {
-    let Search: [searchItem]
+    let records: [RecordDto]
+    
+    struct RecordDto: Decodable {
+        let id: String
+        let createdTime: String
+        let fields: FieldsDto
     }
-
-struct searchItem: Decodable {
-    let Title: String
-    let Poster: String
+    
+    struct FieldsDto: Decodable {
+        let title: String?
+        let image: String?
+    }
+    
 }

@@ -1,21 +1,14 @@
-//
-//  FilmViewModel.swift
-//  Flow
-//
-//  Created by Apprenant 63 on 31/10/2022.
-//
-
 import Foundation
 
-class FilmViewModel: ObservableObject {
+class TrendingViewModel: ObservableObject {
     
     
-    @Published var films = [FilmTest]()
+    @Published var trendings = [Trending]()
     
     func fetchUsers() async {
         
         // 1 - Url to fetch
-        guard let url = URL(string: "https://omdbapi.com/?apikey=1c85a0a8&s=Batman&page=2") else {
+        guard let url = URL(string: "https://api.airtable.com/v0/appMl82aryE3VlpSx/Series") else {
             return
         }
         
@@ -23,6 +16,11 @@ class FilmViewModel: ObservableObject {
         var request = URLRequest(url: url)
         // 2.1 - Set the request method
         request.httpMethod = "GET"
+        // 2.2 - Set the request header : authorization token
+        request.setValue(
+            "Bearer keyh00pZb5jOfRRj0",
+            forHTTPHeaderField: "Authorization"
+        )
         
         // 3 - Create the task to run
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -41,24 +39,21 @@ class FilmViewModel: ObservableObject {
                     
                     // Empty data before filling it again
                     DispatchQueue.main.async {
-                        self.films = []
+                        self.trendings = []
                     }
                     
                     // Map dto to country and send it to main thread
-                    DispatchQueue.main.async {
-                        for film in response.Search {
-                            self.films.append(
-                                FilmTest(title: film.Title,
-                                     poster: film.Poster)
+                    for record in response.records {
+                        DispatchQueue.main.async {
+                            self.trendings.append(
+                                Trending(title:record.fields.title, image: String(record.fields.image ?? "test"))
                             )
                         }
                     }
-                    
                 } catch {
                     // Handle error
                     print(error)
                 }
-                
             }
         }
         
@@ -66,5 +61,5 @@ class FilmViewModel: ObservableObject {
         task.resume()
         
     }
-    
+
 }

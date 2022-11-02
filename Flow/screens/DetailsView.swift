@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DetailsView: View {
+    @State private var isShowingChatView = false
     let rows = [
         GridItem(.fixed(47)),
         GridItem(.fixed(47))
@@ -68,6 +69,8 @@ struct DetailsView: View {
                             
                         }.padding(.top, 20)
                             .padding(.bottom, 40)
+                        chatButton
+                            .padding(.leading, 250)
                     }
                 }
             }
@@ -77,5 +80,26 @@ struct DetailsView: View {
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
         DetailsView(film: FilmHome(title: "Le seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "fbfvbrtbr", cover: "seigneurDesAnneaux2"))
+    }
+}
+
+extension DetailsView {
+    
+    private var chatButton: some View {
+        VStack {
+            NavigationLink(destination: ChatView(film: FilmHome(title: "Le Seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "", cover: "")), isActive: $isShowingChatView) { EmptyView() }
+            Button {
+                isShowingChatView = true
+            } label: {
+                Image(systemName: "bubble.right.circle")
+                    .resizable()
+                    .frame(width: 80, height: 80)
+                    .background(Color("opacityColor"))
+                    .foregroundColor(Color("secondaryColor"))
+                    .cornerRadius(50)
+//                    .shadow(radius: 4)
+                    .padding()
+            }
+        }
     }
 }

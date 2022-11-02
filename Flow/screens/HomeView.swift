@@ -29,10 +29,10 @@ struct HomeView: View {
                 
             VStack {
                 ScrollView {
-                    
                     if isDiscoverMode == true {
-                        miniatureFilm(film: FilmHome(title: "Le Seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "VOL2", cover: ""))
-                        miniatureSerie(serie: SerieHome(title: "Strangers Things", cover: "", episodeName: "Chapitre 1: La disparition", episodeNumber: 01, season: 01))
+                        miniatureFilm(film: FilmHome(title: "Le Seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "VOL2", cover: "LSDA2T"))
+                        miniatureSerie(serie: SerieHome(title: "You", cover: "younetflix", episodeName: "L'obsession", episodeNumber: 01, season: 01))
+                        miniatureSerie(serie: SerieHome(title: "Strangers Things", cover: "ST", episodeName: "Chapitre 1: La disparition", episodeNumber: 01, season: 01))
                     } else {
                         homeDetail()
                     }

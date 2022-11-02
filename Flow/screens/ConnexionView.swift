@@ -77,7 +77,7 @@ struct ConnexionView: View {
                         .frame(height: 50)
                     
                     if failedConnexion {
-                        Text("erreur de saisi")
+                        Text("erreur de saisie")
                     }
                     
                     ButtonConnexion(username: $username, succedConnexion: $succedConnexion, password: $password, failedConnexion: $failedConnexion,showLoginScreen: $showLoginScreen)

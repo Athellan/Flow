@@ -65,9 +65,6 @@ let actorComponents: [Actor] = [
 struct Venue {
     let name: String
     let adress: String
-    let rate: Int
-    let nextEvent: String
-    let event: [Event]
 }
 
 struct Event {
@@ -91,4 +88,11 @@ struct FilmTest: Identifiable {
     let id = UUID()
     let title: String
     let poster: String
+}
+
+
+struct Trending: Identifiable {
+    let id = UUID()
+    let title: String?
+    let image: String?
 }

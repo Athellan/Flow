@@ -13,6 +13,7 @@ struct InscriptionView: View {
     @State private var password = ""
     @State private var confirmedpassword = ""
     @State private var showInscription = false
+    @State private var isGoingOnParam = false
     
     var body: some View {
         
@@ -104,17 +105,13 @@ struct InscriptionView: View {
                     Spacer()
                         .frame(height: 50)
                     
-                    ButtonInscriptionTwo(username: $username, email: $email, password: $password, confirmedpassword: $confirmedpassword,showInscription: $showInscription)
+                    signButton
                     
                     NavigationLink(destination: ConnexionView(), label: {
                         Text("Retour")
                             .foregroundColor(Color("secondaryColor")).bold()
                             .font(.system(size: 10))
                             .padding(10)
-                    })
-                    
-                    NavigationLink(destination: ParametersView(), isActive: $showInscription, label: {
-                        Text("")
                     })
                 }
                 // stack text de fin
@@ -140,3 +137,20 @@ struct Inscription_Previews: PreviewProvider {
     }
 }
 
+extension InscriptionView {
+    private var signButton: some View {
+        VStack {
+            NavigationLink(destination: ParametersView(), isActive: $isGoingOnParam) { EmptyView() }
+            Button {
+                isGoingOnParam = true
+            } label: {
+                Text("S'inscrire")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(width: 198,height: 32)
+                    .background(Color("buttonColor"))
+                    .cornerRadius(20)
+            }
+        }
+    }
+}

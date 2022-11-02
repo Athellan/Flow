@@ -146,7 +146,7 @@ extension LocationDetailView {
     
     private var chatButton: some View {
         VStack {
-            NavigationLink(destination: ChatView(film: FilmHome(title: "", subTitle: "", opus: "", cover: "")), isActive: $isShowingChatView) { EmptyView() }
+            NavigationLink(destination: ChatVenueView(venue: Venue(name: location.name, adress: location.cityName)), isActive: $isShowingChatView) { EmptyView() }
             Button {
                 isShowingChatView = true
             } label: {

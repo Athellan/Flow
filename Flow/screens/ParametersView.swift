@@ -64,11 +64,11 @@ struct ParametersView: View {
                     }
                     .padding(.horizontal)
                     
-                    VignetteFilm()
+                    VignetteTrending()
                         .padding()
-                    VignetteFilm()
-                        .padding()
-                    VignetteFilm()
+//                    VignetteFilm()
+//                        .padding()
+//                    VignetteFilm()
                 }
             }
             .ignoresSafeArea()
