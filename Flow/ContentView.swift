@@ -9,19 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var showConnexion = false
+    @State var isConnected = false
     
     var body: some View {
-            if showConnexion == false {
-
-                ConnexionView(showConnexion: $showConnexion)
+        if !isConnected {
+            
+            ConnexionView(isConnected: $isConnected)
             
         } else {
-                TabViewView()
-                
-            }
+            TabViewView()
+            
         }
     }
+}
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

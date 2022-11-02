@@ -106,14 +106,14 @@ struct InscriptionView: View {
                     
                     ButtonInscriptionTwo(username: $username, email: $email, password: $password, confirmedpassword: $confirmedpassword,showInscription: $showInscription)
                     
-                    NavigationLink(destination: ConnexionView(showConnexion: .constant(false)), label: {
+                    NavigationLink(destination: ConnexionView(isConnected: .constant(false)), label: {
                         Text("Retour")
                             .foregroundColor(Color("secondaryColor")).bold()
                             .font(.system(size: 10))
                             .padding(10)
                     })
                     
-                    NavigationLink(destination: ParametersView(showConnexion: .constant(false), film: FilmHome(title: "", subTitle: "", opus: "", cover: "")), isActive: $showInscription, label: {
+                    NavigationLink(destination: ParametersView(isConnected: .constant(false), film: FilmHome(title: "", subTitle: "", opus: "", cover: "")), isActive: $showInscription, label: {
                         Text("")
                     })
                 }

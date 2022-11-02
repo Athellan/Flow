@@ -13,10 +13,10 @@ struct ConnexionView: View {
 
     @State private var username = ""
     @State private var password = ""
-    @Binding var showConnexion: Bool
+    @Binding var isConnected: Bool
     @State private var failedConnexion : Bool = false
     @State private var succedConnexion : Bool = false
-    @State private var showLoginScreen : Bool = false
+    @State private var showParametersScreen : Bool = false
     
     
     var body: some View {
@@ -81,12 +81,20 @@ struct ConnexionView: View {
                             .foregroundColor(Color("secondaryColor"))
                             .font(.system(size: 15))
                     }
-                    
-                    ButtonConnexion(username: $username, succedConnexion: $succedConnexion, password: $password, failedConnexion: $failedConnexion,showLoginScreen: $showConnexion)
-                    
-                    NavigationLink(destination: ParametersView(showConnexion: $showConnexion, film: FilmHome(title: "", subTitle: "", opus: "", cover: "")),   isActive: $showConnexion, label: {
-                        Text("")
+
+                   
+                    NavigationLink(destination: ParametersView(
+                        isConnected: $isConnected,
+                        film: FilmHome(title: "", subTitle: "", opus: "", cover: "")),
+                                   label: {
+                        Text("Connexion")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .frame(width: 198,height: 32)
+                            .background(Color("buttonColor"))
+                            .cornerRadius(20)
                     })
+                
                     
                     ButtonInscription()
                     
@@ -102,7 +110,7 @@ struct ConnexionView: View {
 
 struct ConnexionView_Previews: PreviewProvider {
     static var previews: some View {
-        ConnexionView(showConnexion: .constant(false))
+        ConnexionView(isConnected: .constant(false))
     }
 }
 
