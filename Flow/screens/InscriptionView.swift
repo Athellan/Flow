@@ -75,7 +75,7 @@ struct InscriptionView: View {
                         HStack {
                             Image(systemName: "lock.circle")
                                 .foregroundColor(Color("secondaryColor"))
-                            TextField("Mot de passe", text: $password)
+                            SecureField("Mot de passe", text: $password)
                                 .font(.system(size: 14))
                                 .foregroundColor(Color("secondaryColor"))
                                 .frame(width: 270)
@@ -93,7 +93,7 @@ struct InscriptionView: View {
                         HStack {
                             Image(systemName: "lock.circle.fill")
                                 .foregroundColor(Color("secondaryColor"))
-                            TextField("Confirmer mot de passe", text: $password)
+                            SecureField("Confirmer mot de passe", text: $confirmedpassword)
                                 .font(.system(size: 14))
                                 .foregroundColor(Color("secondaryColor"))
                                 .frame(width: 270)
@@ -106,6 +106,10 @@ struct InscriptionView: View {
                     
                     ButtonInscriptionTwo(username: $username, email: $email, password: $password, confirmedpassword: $confirmedpassword,showInscription: $showInscription)
                     
+                  
+                    
+                    
+                    
                     NavigationLink(destination: ConnexionView(), label: {
                         Text("Retour")
                             .foregroundColor(Color("secondaryColor")).bold()
@@ -116,6 +120,7 @@ struct InscriptionView: View {
                     NavigationLink(destination: ParametersView(), isActive: $showInscription, label: {
                         Text("")
                     })
+                  
                 }
                 // stack text de fin
                 VStack{
