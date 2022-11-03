@@ -112,8 +112,6 @@ struct InscriptionView: View {
                     
                     else {
                         
-                        
-                                        
                         Button("S'inscrire"){
                             
                         }
@@ -124,9 +122,8 @@ struct InscriptionView: View {
                         .background(Color("buttonColor"))
                         .cornerRadius(20)
                     }
-                    
+
                   
-                    
                     
                     
                     NavigationLink(destination: ConnexionView(), label: {

@@ -17,43 +17,30 @@ struct  ButtonInscriptionTwo: View {
     @ObservedObject var viewModel : UserSignUpViewModel
     var body: some View {
         
-        
-        
         Button("S'inscrire"){
-            
-            
+           
             if !username.isEmpty && !password.isEmpty && !email.isEmpty {
-                
-               
                     
                     showInscription = true
                     viewModel.nameEnter = username
                     viewModel.emailEnter = email
-                    viewModel.passwordEnter = password
-                    
+                viewModel.passwordEnter = password
                 
             }
-                
+            
             Task {
                 await viewModel.suscription()
             }
             
         }
-        
-       
         .font(.headline)
         .foregroundColor(.white)
         .frame(width: 198,height: 32)
         .background(Color("buttonColor"))
         .cornerRadius(20)
-        
-       
 }
       
     }
-
-
-
 
 struct ButtonInscriptionTwo_Previews: PreviewProvider {
     static var previews: some View {
