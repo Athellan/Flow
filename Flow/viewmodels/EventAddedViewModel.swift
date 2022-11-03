@@ -54,11 +54,8 @@ class EventAddedViewModel: ObservableObject {
                     // Handle error
                     print(error)
                 }
-
             }
-            
         }
-        
         // 4 - Launch the task
         task.resume()
         

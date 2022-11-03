@@ -31,7 +31,7 @@ struct TabViewView: View {
                     Text("Profil")
                 }
                 .tag(1)
-            LibraryView(film: FilmHome(title: "Le seigneur des Toto", subTitle: "rbvdfvfvfe", opus: "fbfvbrtbr", cover: "seigneurDesAnneaux2"))
+            LibraryView()
                 .tabItem {
                     Image(systemName: "star.bubble.fill")
                     Text("Bibliothèque")

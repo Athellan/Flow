@@ -16,17 +16,17 @@ struct homeDetail: View {
         ]
     
     var shows: [Card] = [
-        Card(title: "Dexter", subtitle: "Saison 1", image: "dexter"),
-        Card(title: "Breaking Bad", subtitle: "Saison 1", image: "breakingbad"),
-        Card(title: "Hunter X Hunter", subtitle: "Saison1", image: "hxh"),
-        Card(title: "Vikings", subtitle: "Saison 1", image: "vikings"),
-        Card(title: "Sherlock", subtitle: "Saison 1", image: "sherlock"),
-        Card(title: "Peaky Blinders", subtitle: "Saison 1", image: "peakyblinders"),
-        Card(title: "Arcane", subtitle: "Saison 1", image: "arcane"),
-        Card(title: "Le Jeu de Dames", subtitle: "Mini Série", image: "queensgambit"),
-        Card(title: "Game of Throne", subtitle: "Saison 1", image: "got"),
-        Card(title: "Gran Torino", subtitle: "Clint Eastwood", image: "grantorino"),
-        Card(title: "Athena", subtitle: "Romain Gravas", image: "athena")
+        Card(title: "", subtitle: "", image: "dexter"),
+        Card(title: "Dexter", subtitle: "Saison 1", image: "breakingbad"),
+        Card(title: "Breaking Bad", subtitle: "Saison1", image: "hxh"),
+        Card(title: "Hunter X Hunter", subtitle: "Saison 1", image: "vikings"),
+        Card(title: "Vikings", subtitle: "Saison 1", image: "sherlock"),
+        Card(title: "Sherlock", subtitle: "Saison 1", image: "peakyblinders"),
+        Card(title: "Peaky Blinders", subtitle: "Saison 1", image: "arcane"),
+        Card(title: "Arcane", subtitle: "Saison 1", image: "queensgambit"),
+        Card(title: "Le Jeu de Dames", subtitle: "Mini Série", image: "got"),
+        Card(title: "Game of Throne", subtitle: "Saison 1", image: "grantorino"),
+        Card(title: "Gran Torino", subtitle: "Clint Eastwood", image: "athena")
     ]
    
     var body: some View {
@@ -72,6 +72,6 @@ struct homeDetail: View {
 
 struct homeDetail_Previews: PreviewProvider {
     static var previews: some View {
-        homeDetail(currentCard: Card(title: "Hunter", subtitle: "Hunter X Hunter", image: "hxh"))
+        homeDetail(currentCard: Card(title: "Athena", subtitle: "Romain Gravas", image: "hxh"))
     }
 }
