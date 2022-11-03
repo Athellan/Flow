@@ -1,16 +1,8 @@
-//
-//  miniatureFilm.swift
-//  Flow
-//
-//  Created by Apprenant 63 on 20/10/2022.
-//
-
 import SwiftUI
 
 struct miniatureFilm: View {
     
     let film : FilmHome
-    
     @State private var isFavorited = false
     
     var body: some View {
@@ -43,6 +35,7 @@ struct miniatureFilm: View {
                         .font(.system(size: 14))
                 }
             }
+            .foregroundColor(Color("secondaryColor"))
             .frame(height: 55)
             .padding(.leading, 40)
             

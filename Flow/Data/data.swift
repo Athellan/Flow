@@ -68,6 +68,8 @@ struct Event {
     let adress: String
     let type: String
     let image: String
+    let date: String
+
 }
 
 struct MapLocation: Identifiable {

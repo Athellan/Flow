@@ -1,8 +1,15 @@
+//
+//  miniatureEvent.swift
+//  Flow
+//
+//  Created by Apprenant97 on 31/10/2022.
+//
+
 import SwiftUI
 
-struct miniatureSerie: View {
+struct miniatureEvent: View {
     
-    let serie : SerieHome
+    let event : Event
     @State private var isFavorited = false
     
     var body: some View {
@@ -14,7 +21,7 @@ struct miniatureSerie: View {
                 .cornerRadius(10)
             
             HStack {
-                Image(serie.cover)
+                Image(event.image)
                     .resizable()
                     .frame(width: 92, height: 92)
                     .cornerRadius(10)
@@ -24,39 +31,31 @@ struct miniatureSerie: View {
             
             
             HStack(alignment: .bottom) {
-                VStack(alignment: .leading) {
-                    Text(serie.title.uppercased())
-                        .font(.system(size: 14))
-                    HStack {
-                        Text("S0\(serie.season)  |").bold()
-                        Text("E0\(serie.episodeNumber) ").bold()
-                    }.font(.system(size: 18))
-                    
-                    Text(serie.episodeName)
-                }.font(.system(size: 14))
                 
+                VStack(alignment: .leading) {
+                    Text(event.title.uppercased())
+                        .font(.system(size: 14))
+                    Text(event.date.uppercased())
+                        .bold()
+                        .font(.system(size: 14))
+                    Text(event.description)
+                        .font(.system(size: 14))
+                    
+                }.foregroundColor(Color("secondaryColor"))
             }
-            .foregroundColor(Color("secondaryColor"))
             .frame(height: 55)
-            .padding(.leading, 40)
-            
-            FavoriteButton(isFavorited: $isFavorited)
+                
+                FavoriteButton(isFavorited: $isFavorited)
                 .padding(.leading, 290)
                 .padding(.top, 25)
             
+            }
         }
-        .padding(.top, 7)
-            .frame(width: 400)
-        
-        
-        
     }
-}
 
 
-
-struct miniatureSerie_Previews: PreviewProvider {
+struct miniatureEvent_Previews: PreviewProvider {
     static var previews: some View {
-        miniatureSerie(serie: SerieHome(title: "You", cover: "younetflix", episodeName: "Chapitre 1: La disparition", episodeNumber: 01, season: 01))
+        miniatureEvent(event: Event(title: "Stranger Things", description: "Evenement", adress: "Rue du portauloin", type: "Convention", image: "ST", date: "19/12/2022"))
     }
 }

@@ -17,13 +17,14 @@ struct VignetteFilm: View {
     
     var body: some View {
         
+        
         VStack{
             Text("Les meilleurs films sur Netflix").bold().font(.title2).offset(x: -10, y: 0)
                 .foregroundColor(Color("secondaryColor"))
                 .font(.system(size: 20))
                 .padding(.top, 30)
                 .padding(.bottom, -20)
-
+            
             
             ZStack {
                 LazyVGrid(columns: columns) {
@@ -49,26 +50,22 @@ struct VignetteFilm: View {
                 }
             }
             .frame(width: 352, height: 530)
-        }
-        .onAppear {
-            Task {
-                await viewModelFilm.fetchUsers()
-            }
-        }
-        .background(
-            Rectangle()
-                .fill(LinearGradient(
-                    gradient: .init(colors: [self.gradientTop, self.gradientBottom]),
-                    startPoint: .init(x: 0.5, y: 0),
-                    endPoint: .init(x: 0.5, y: 0.9)
-                ))
-                .cornerRadius(10)
-                .opacity(0.3)
-                .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
-                .frame(height: 550)
-        )
+        }.padding(.top, 20)
+            .background(
+                Rectangle()
+                    .fill(LinearGradient(
+                        gradient: .init(colors: [self.gradientTop, self.gradientBottom]),
+                        startPoint: .init(x: 0.5, y: 0),
+                        endPoint: .init(x: 0.5, y: 0.9)
+                    ))
+                    .cornerRadius(10)
+                    .opacity(0.3)
+                    .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+                    .frame(height: 550)
+            )
     }
 }
+
 
 struct VignetteFilm_Previews: PreviewProvider {
     static var previews: some View {
