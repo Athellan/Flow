@@ -28,10 +28,11 @@ struct VignetteSerie: View {
     var body: some View {
         
         VStack(alignment: .leading){
-                Text("Les séries tendances").bold().font(.title2).offset(x: -10, y: 0)
-                    .foregroundColor(Color("secondaryColor"))
-                    .font(.system(size: 20))
-                    .padding(.leading, 30)
+            Text("Les séries tendances").bold().font(.title2).offset(x: 15, y: -20)
+                .foregroundColor(Color("secondaryColor"))
+                .font(.system(size: 20))
+                .padding(.top, 30)
+                .padding(.bottom, -20)
                    
 
             ZStack {
@@ -44,7 +45,7 @@ struct VignetteSerie: View {
                                 .cornerRadius(15)
                                 .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
                                 .padding(1)
-//                            SelectedButton2(serie: serie)
+                            SelectedButton2(serie: serie)
                                 .padding(5)
                         }
                     }
@@ -56,21 +57,21 @@ struct VignetteSerie: View {
                         await viewModelSerie.fetchUsers()
                     }
                 }
-            }
-                .frame(width: 352, height: 480)
-        }.padding(.top, 20)
-            .background(
-                Rectangle()
-                    .fill(LinearGradient(
-                        gradient: .init(colors: [self.gradientTop, self.gradientBottom]),
-                        startPoint: .init(x: 0.5, y: 0),
-                        endPoint: .init(x: 0.5, y: 0.9)
-                    ))
-                    .cornerRadius(10)
-                    .opacity(0.3)
-                    .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
-                    .frame(height: 550)
-            )
+            }.frame(width: 352, height: 480)
+                
+        }
+        .background(
+            Rectangle()
+                .fill(LinearGradient(
+                    gradient: .init(colors: [self.gradientTop, self.gradientBottom]),
+                    startPoint: .init(x: 0.5, y: 0),
+                    endPoint: .init(x: 0.5, y: 0.9)
+                ))
+                .cornerRadius(10)
+                .opacity(0.3)
+                .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+                .frame(height: 550)
+        )
         }
     }
 
@@ -93,22 +94,21 @@ struct SerieDetails: View {
                 .cornerRadius(10)
                 .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
                 .padding(1)
-            SelectedButton2(isSelected: $isSelected)
+            SelectedButton2(serie: serie)
         }
     }
 }
 
 
 struct SelectedButton2: View {
-    @Binding var isSelected: Bool
+    @ObservedObject var serie : SerieParam
     var body: some View {
         Button {
-            isSelected.toggle()
+            serie.isSelected.toggle()
         } label: {
-            Image(systemName: isSelected ? "checkmark.circle.fill" : "checkmark.circle")
+            Image(systemName: serie.isSelected ? "checkmark.circle.fill" : "checkmark.circle")
                 .font(.largeTitle)
         }
-        
     }
 }
 

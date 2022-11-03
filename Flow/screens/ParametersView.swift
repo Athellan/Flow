@@ -62,6 +62,7 @@ struct ParametersView: View {
                         .font(.system(size: 11))
                         .foregroundColor(Color("secondaryColor"))
                         
+                        
                         Image(systemName: "greaterthan")
                             .resizable()
                             .frame(width: 5, height: 8)
@@ -69,10 +70,10 @@ struct ParametersView: View {
                             .foregroundColor(Color("secondaryColor"))
                     }
                     .padding(.leading, 200)
+
                 }
             }
             
-            .padding(.horizontal)
             
             VignetteTrending()
                 .padding()
@@ -96,15 +97,15 @@ struct ParametersView: View {
         .navigationBarBackButtonHidden(true)
         
         
-        Button("C'est parti") {
-            isConnected = true
-        }
-        .font(.headline)
-        .foregroundColor(.white)
-        .frame(width: 198,height: 32)
-        .background(Color("buttonColor"))
-        .cornerRadius(20)
-        .padding(.vertical, 50)
+//        Button("C'est parti") {
+//            isConnected = true
+//        }
+//        .font(.headline)
+//        .foregroundColor(.white)
+//        .frame(width: 198,height: 32)
+//        .background(Color("buttonColor"))
+//        .cornerRadius(20)
+//        .padding(.vertical, 50)
     }
 }
 

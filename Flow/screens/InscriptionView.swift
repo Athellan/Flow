@@ -120,9 +120,9 @@ struct InscriptionView: View {
                     })
 
                     
-                    NavigationLink(destination: ParametersView(isConnected: .constant(false), film: FilmHome(title: "", subTitle: "", opus: "", cover: "")), isActive: $showInscription, label: {
-                        Text("")
-                    })
+//                    NavigationLink(destination: ParametersView(isConnected: .constant(false), film: FilmHome(title: "", subTitle: "", opus: "", cover: "")), isActive: $showInscription, label: {
+//                        Text("")
+//                    })
 
                 }
                 // stack text de fin

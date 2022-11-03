@@ -20,7 +20,6 @@
 		636A43C42912857B0032D4F5 /* FilmParamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A43C32912857B0032D4F5 /* FilmParamModel.swift */; };
 		636A43C6291286340032D4F5 /* FilmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A43C5291286340032D4F5 /* FilmViewModel.swift */; };
 		636A43C829128D5F0032D4F5 /* SerieParamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A43C729128D5F0032D4F5 /* SerieParamModel.swift */; };
-		636A43CA29128DAB0032D4F5 /* VignetteSerie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A43C929128DAB0032D4F5 /* VignetteSerie.swift */; };
 		636A43CC29128DD90032D4F5 /* SerieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A43CB29128DD90032D4F5 /* SerieViewModel.swift */; };
 		636A43CE291293150032D4F5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A43CD291293150032D4F5 /* CardView.swift */; };
 		636A43D0291299500032D4F5 /* titleComponentDynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A43CF291299500032D4F5 /* titleComponentDynamic.swift */; };
@@ -51,6 +50,7 @@
 		6390791729092B2900FB8C02 /* TabViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6390791629092B2900FB8C02 /* TabViewView.swift */; };
 		63AAE68829102420003BF376 /* ChatVenueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AAE68729102420003BF376 /* ChatVenueView.swift */; };
 		63CA89B7290181F7006D9876 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA89B6290181F7006D9876 /* HomeView.swift */; };
+		63D609102913F6930008732E /* VignetteSerie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D6090F2913F6930008732E /* VignetteSerie.swift */; };
 		63FC90C12901966200135CFB /* miniatureFilm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FC90C02901966200135CFB /* miniatureFilm.swift */; };
 		63FC90C32901968800135CFB /* miniatureSerie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FC90C22901968800135CFB /* miniatureSerie.swift */; };
 		63FC90C52901973B00135CFB /* FilmHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FC90C42901973B00135CFB /* FilmHomeModel.swift */; };
@@ -74,7 +74,6 @@
 		C7220D6B2906B14E00EF5278 /* profilePreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7220D6A2906B14E00EF5278 /* profilePreference.swift */; };
 		C7220D6D2906C12500EF5278 /* profileAddPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7220D6C2906C12500EF5278 /* profileAddPreference.swift */; };
 		C7220D6F2906C1A100EF5278 /* profileCategoryPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7220D6E2906C1A100EF5278 /* profileCategoryPreference.swift */; };
-		C7366BF7290BF2E900E3F20A /* VignetteSerie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7366BF6290BF2E900E3F20A /* VignetteSerie.swift */; };
 		C7C0B2022907FD2F00094B26 /* titleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C0B2012907FD2F00094B26 /* titleComponent.swift */; };
 		C7E0355D29100FCC0077E977 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E0355C29100FCC0077E977 /* ContentView.swift */; };
 		C7E0355F2910237D0077E977 /* miniatureEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E0355E2910237D0077E977 /* miniatureEvent.swift */; };
@@ -97,7 +96,6 @@
 		636A43C32912857B0032D4F5 /* FilmParamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilmParamModel.swift; path = Flow/models/FilmParamModel.swift; sourceTree = SOURCE_ROOT; };
 		636A43C5291286340032D4F5 /* FilmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilmViewModel.swift; path = Flow/viewmodels/FilmViewModel.swift; sourceTree = SOURCE_ROOT; };
 		636A43C729128D5F0032D4F5 /* SerieParamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SerieParamModel.swift; path = Flow/models/SerieParamModel.swift; sourceTree = SOURCE_ROOT; };
-		636A43C929128DAB0032D4F5 /* VignetteSerie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VignetteSerie.swift; path = Flow/components/VignetteSerie.swift; sourceTree = SOURCE_ROOT; };
 		636A43CB29128DD90032D4F5 /* SerieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SerieViewModel.swift; path = Flow/viewmodels/SerieViewModel.swift; sourceTree = SOURCE_ROOT; };
 		636A43CD291293150032D4F5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardView.swift; path = Flow/components/CardView.swift; sourceTree = SOURCE_ROOT; };
 		636A43CF291299500032D4F5 /* titleComponentDynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = titleComponentDynamic.swift; path = Flow/components/titleComponentDynamic.swift; sourceTree = SOURCE_ROOT; };
@@ -129,6 +127,7 @@
 		6390791629092B2900FB8C02 /* TabViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabViewView.swift; path = Flow/screens/TabViewView.swift; sourceTree = SOURCE_ROOT; };
 		63AAE68729102420003BF376 /* ChatVenueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatVenueView.swift; path = Flow/screens/ChatVenueView.swift; sourceTree = SOURCE_ROOT; };
 		63CA89B6290181F7006D9876 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Flow/screens/HomeView.swift; sourceTree = SOURCE_ROOT; };
+		63D6090F2913F6930008732E /* VignetteSerie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VignetteSerie.swift; path = Flow/components/VignetteSerie.swift; sourceTree = SOURCE_ROOT; };
 		63FC90C02901966200135CFB /* miniatureFilm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = miniatureFilm.swift; path = Flow/components/miniatureFilm.swift; sourceTree = SOURCE_ROOT; };
 		63FC90C22901968800135CFB /* miniatureSerie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = miniatureSerie.swift; path = Flow/components/miniatureSerie.swift; sourceTree = SOURCE_ROOT; };
 		63FC90C42901973B00135CFB /* FilmHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilmHomeModel.swift; path = Flow/models/FilmHomeModel.swift; sourceTree = SOURCE_ROOT; };
@@ -152,7 +151,6 @@
 		C7220D6A2906B14E00EF5278 /* profilePreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profilePreference.swift; path = Flow/components/profilePreference.swift; sourceTree = SOURCE_ROOT; };
 		C7220D6C2906C12500EF5278 /* profileAddPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profileAddPreference.swift; path = Flow/components/profileAddPreference.swift; sourceTree = SOURCE_ROOT; };
 		C7220D6E2906C1A100EF5278 /* profileCategoryPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profileCategoryPreference.swift; path = Flow/components/profileCategoryPreference.swift; sourceTree = SOURCE_ROOT; };
-		C7366BF6290BF2E900E3F20A /* VignetteSerie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VignetteSerie.swift; path = Flow/components/VignetteSerie.swift; sourceTree = SOURCE_ROOT; };
 		C7C0B2012907FD2F00094B26 /* titleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = titleComponent.swift; path = Flow/components/titleComponent.swift; sourceTree = SOURCE_ROOT; };
 		C7E0355C29100FCC0077E977 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Flow/ContentView.swift; sourceTree = SOURCE_ROOT; };
 		C7E0355E2910237D0077E977 /* miniatureEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = miniatureEvent.swift; path = Flow/components/miniatureEvent.swift; sourceTree = SOURCE_ROOT; };
@@ -287,8 +285,7 @@
 				9C21CC0229068B3000F3BB26 /* ContinuewithApple.swift */,
 				9C1B061A2907EA3000B68E3D /* VignetteFilm.swift */,
 				636A43BF29125F4A0032D4F5 /* VignetteTrending.swift */,
-				636A43C929128DAB0032D4F5 /* VignetteSerie.swift */,
-				C7366BF6290BF2E900E3F20A /* VignetteSerie.swift */,
+				63D6090F2913F6930008732E /* VignetteSerie.swift */,
 				9C1B061E2908302800B68E3D /* ButtonInscriptionTwo.swift */,
 				C705501A29029C02006A316E /* profileButton.swift */,
 				C705501C2902BBDF006A316E /* profileInfo.swift */,
@@ -426,6 +423,7 @@
 				C7220D6929069D9200EF5278 /* profileEvents.swift in Sources */,
 				9C1B061B2907EA3000B68E3D /* VignetteFilm.swift in Sources */,
 				C705501B29029C02006A316E /* profileButton.swift in Sources */,
+				63D609102913F6930008732E /* VignetteSerie.swift in Sources */,
 				C7220D6F2906C1A100EF5278 /* profileCategoryPreference.swift in Sources */,
 				C705501F2902C9AF006A316E /* gradientRectangle.swift in Sources */,
 				C7FD1FB4290184BE001B5516 /* ProfileView.swift in Sources */,
@@ -448,7 +446,6 @@
 				9C21CC01290682A300F3BB26 /* ButtonInscription.swift in Sources */,
 				C7E0355D29100FCC0077E977 /* ContentView.swift in Sources */,
 				9C8357B42906C59C0066A725 /* ParametersView.swift in Sources */,
-				636A43CA29128DAB0032D4F5 /* VignetteSerie.swift in Sources */,
 				636A43D0291299500032D4F5 /* titleComponentDynamic.swift in Sources */,
 				63FC90E12906C57B00135CFB /* ChatView.swift in Sources */,
 				636A43C029125F4A0032D4F5 /* VignetteTrending.swift in Sources */,
@@ -476,7 +473,6 @@
 				636A43C229127F660032D4F5 /* TrendingParamModel.swift in Sources */,
 				636A43D82912BF9A0032D4F5 /* FilmAddedModel.swift in Sources */,
 				63FC90C72901974800135CFB /* SerieHomeModel.swift in Sources */,
-				C7366BF7290BF2E900E3F20A /* VignetteSerie.swift in Sources */,
 				63FC90CD2902939700135CFB /* plateformLogo.swift in Sources */,
 				63FC90CB290282ED00135CFB /* homeDetail.swift in Sources */,
 				63FC90C52901973B00135CFB /* FilmHomeModel.swift in Sources */,

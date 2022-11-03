@@ -38,6 +38,9 @@ struct FilmScroll: View {
                         await viewModelFilmAdded.fetchUsers()
                     }
                 }
+                .onTapGesture {
+                    DetailsView(film: FilmHome(title: "", subTitle: "", opus: "", cover: ""))
+                }
             }
         }
         .background(

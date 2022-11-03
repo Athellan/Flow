@@ -31,7 +31,7 @@ struct LibraryView: View {
                             .padding(10)
                     }
                 }.navigationBarHidden(true)
-            }.navigationViewStyle(StackNavigationViewStyle())
+            }
         }
     }
     

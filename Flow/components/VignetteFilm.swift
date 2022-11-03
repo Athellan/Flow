@@ -50,7 +50,7 @@ struct VignetteFilm: View {
                 }
             }
             .frame(width: 352, height: 530)
-        }.padding(.top, 20)
+        }
             .background(
                 Rectangle()
                     .fill(LinearGradient(

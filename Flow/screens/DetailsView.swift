@@ -52,8 +52,6 @@ struct DetailsView: View {
                                         plateFormButton(plateformLogo: plateformLogo)
                                     }
                                 }.frame(width: 352, height: 47)
-                                
-                                
                             }.padding(.top, 20)
                         }
                         
