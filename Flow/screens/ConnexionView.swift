@@ -10,13 +10,13 @@ import SwiftUI
 
 struct ConnexionView: View {
     
-    
+
     @State private var username = ""
     @State private var password = ""
-    
+    @Binding var isConnected: Bool
     @State private var failedConnexion : Bool = false
     @State private var succedConnexion : Bool = false
-    @State private var showLoginScreen : Bool = false
+    @State private var showParametersScreen : Bool = false
     
     
     var body: some View {
@@ -77,14 +77,25 @@ struct ConnexionView: View {
                         .frame(height: 50)
                     
                     if failedConnexion {
-                        Text("erreur de saisi")
+
+                        Text("Erreur de saisie")
+                            .foregroundColor(Color("secondaryColor"))
+                            .font(.system(size: 15))
                     }
-                    
-                    ButtonConnexion(username: $username, succedConnexion: $succedConnexion, password: $password, failedConnexion: $failedConnexion,showLoginScreen: $showLoginScreen)
-                    
-                    NavigationLink(destination: ParametersView(),   isActive: $showLoginScreen, label: {
-                        Text("")
+
+                   
+                    NavigationLink(destination: ParametersView(
+                        isConnected: $isConnected,
+                        film: FilmHome(title: "", subTitle: "", opus: "", cover: "")),
+                                   label: {
+                        Text("Connexion")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .frame(width: 198,height: 32)
+                            .background(Color("buttonColor"))
+                            .cornerRadius(20)
                     })
+                
                     
                     ButtonInscription()
                     
@@ -100,7 +111,7 @@ struct ConnexionView: View {
 
 struct ConnexionView_Previews: PreviewProvider {
     static var previews: some View {
-        ConnexionView()
+        ConnexionView(isConnected: .constant(false))
     }
 }
 

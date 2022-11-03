@@ -7,7 +7,7 @@
 import Foundation
 import MapKit
 
-// TEST
+
 
 struct Film: Identifiable {
     let id = UUID()
@@ -17,9 +17,6 @@ struct Film: Identifiable {
     let realisator: String
     let description: String
     let rate: Int
-//    let plateform: String
-//    let date: Date
-//    let actor: [Actor]
     var isFavorited: Bool
     var isSeen: Bool
 
@@ -30,9 +27,7 @@ struct Serie {
     let cover: String
     let description: String
     let rate: Int
-//    let plateform: String
     let date: Date
-//    let actor: [Actor]
     let isFavorited: Bool
 }
 
@@ -65,9 +60,6 @@ let actorComponents: [Actor] = [
 struct Venue {
     let name: String
     let adress: String
-    let rate: Int
-    let nextEvent: String
-    let event: [Event]
 }
 
 struct Event {
@@ -76,7 +68,8 @@ struct Event {
     let adress: String
     let type: String
     let image: String
-   // let date: Date
+    let date: String
+
 }
 
 struct MapLocation: Identifiable {
@@ -85,4 +78,4 @@ struct MapLocation: Identifiable {
     let coordinate: CLLocationCoordinate2D
 }
 
-// Enum pour Category
+

@@ -8,46 +8,71 @@
 import SwiftUI
 
 struct HomeView: View {
-    
     @State private var isDiscoverMode = false
     @State private var isFavorited = false
-    
     let film : FilmHome
     
     var body: some View {
-        VStack (spacing : 00) {
-            Picker(selection: $isDiscoverMode, label: EmptyView()) {
-                Text("A découvrir")
-                    .background(Color("primaryColor"))
-                    .foregroundColor(Color("secondaryColor"))
-                    .tag(true)
-                Text("Ce soir je regarde")
-                    .tag(false)
-                    .foregroundColor(Color("secondaryColor"))
-            }.pickerStyle(SegmentedPickerStyle())                    .padding(.top, 30)
-               
-                
-            VStack {
-                ScrollView {
-                    
-                    if isDiscoverMode == true {
-                        miniatureFilm(film: FilmHome(title: "Le Seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "VOL2", cover: ""))
-                        miniatureSerie(serie: SerieHome(title: "Strangers Things", cover: "", episodeName: "Chapitre 1: La disparition", episodeNumber: 01, season: 01))
-                    } else {
-                        homeDetail()
-                    }
-                    
-                    
-                }.background(Color("primaryColor"))
-                    
-                
-            }
-        }.background(Color("primaryColor"))
-    }
+        
+        VStack(spacing : 00) {
+            PickerView()
+                .padding(.top, 30)
+            
+    }.background(Color("primaryColor"))
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(film: FilmHome(title: "Le Seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "VOL2", cover: ""))
+        HomeView(film: FilmHome(title: "", subTitle: "", opus: "", cover: ""))
     }
 }
+
+struct PickerView: View {
+
+     @State private var isDiscoverMode = false
+
+    init() {
+        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(red: 0/255, green: 70/255, blue: 67/255, alpha: 1) ], for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(red: 0/255, green: 70/255, blue: 67/255, alpha: 1) ], for: .normal)
+    }
+
+    var body: some View {
+        VStack{
+            Picker(selection: $isDiscoverMode, label: EmptyView()) {
+                Text("A découvrir")
+                    .tag(true)
+                Text("Ce soir je regarde")
+                    .tag(false)
+            }.pickerStyle(SegmentedPickerStyle()).background(Color("primaryColor"))
+            
+            VStack{
+                ScrollView {
+                    if isDiscoverMode == true {
+                        miniatureFilm(film: FilmHome(title: "Le Seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "VOL2", cover: "LSDA2T"))
+                        miniatureFilm(film: FilmHome(title: "Gran Torino", subTitle: "Walt Kowalski est un ancien..", opus: "VOL 1", cover: "grantorino"))
+                        miniatureSerie(serie: SerieHome(title: "Wicked", cover: "wicked", episodeName: "Chapitre 1: La disparition", episodeNumber: 01, season: 01))
+                        miniatureSerie(serie: SerieHome(title: "Breaking Bad", cover: "breakingbad", episodeName: "Chute libre                             ", episodeNumber: 01, season: 01))
+                        miniatureSerie(serie: SerieHome(title: "Game of Throne", cover: "got", episodeName: "Winter is Coming          ", episodeNumber: 01, season: 01))
+                        miniatureSerie(serie: SerieHome(title: "Arcane", cover: "arcane", episodeName:"Welcome to the ...        ", episodeNumber: 01, season: 01))
+                        miniatureSerie(serie: SerieHome(title: "Vikings", cover: "vikings", episodeName: "Valhala", episodeNumber: 01, season: 01))
+                        miniatureFilm(film: FilmHome(title: "Coeurs Meurtris", subTitle: "Elizabeth Alen", opus: "", cover: "coeurmeurtri"))
+                        miniatureFilm(film: FilmHome(title: "Gladiator", subTitle: "Ridley Scott", opus: "", cover: "gladiator"))
+                        miniatureFilm(film: FilmHome(title: "Le Roi Lion", subTitle: "Disney", opus: "VOL.", cover: "leroilion"))
+                       
+                        
+                    } else {
+                        homeDetail(currentCard: Card(title: "Athena", subtitle: "Romain Gravas", image: "hxh"))
+                    }
+                    
+                    
+                }
+                
+                .navigationBarBackButtonHidden(true)
+                
+                }
+            }.background(Color("primaryColor"))
+        }
+    }
+}
+
