@@ -19,6 +19,10 @@ struct PostDto: Codable {
     struct FieldsDto: Codable {
         let name: String
         let email: String
+        let password : String
+
+        
+    
     }
     
 }

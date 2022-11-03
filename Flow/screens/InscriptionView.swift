@@ -13,6 +13,7 @@ struct InscriptionView: View {
     @State private var password = ""
     @State private var confirmedpassword = ""
     @State private var showInscription = false
+    @ObservedObject var viewModel = UserSignUpViewModel()
     
     var body: some View {
         
@@ -104,7 +105,25 @@ struct InscriptionView: View {
                     Spacer()
                         .frame(height: 50)
                     
-                    ButtonInscriptionTwo(username: $username, email: $email, password: $password, confirmedpassword: $confirmedpassword,showInscription: $showInscription)
+                    if  password == confirmedpassword{
+                        
+                        ButtonInscriptionTwo(username: $username, email: $email, password: $password, confirmedpassword: $confirmedpassword,showInscription: $showInscription, viewModel: viewModel)
+                    }
+                    
+                    else {
+                        
+                        
+                                        
+                        Button("S'inscrire"){
+                            
+                        }
+                        
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .frame(width: 198,height: 32)
+                        .background(Color("buttonColor"))
+                        .cornerRadius(20)
+                    }
                     
                   
                     

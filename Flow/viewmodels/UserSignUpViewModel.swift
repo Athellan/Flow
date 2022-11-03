@@ -6,14 +6,17 @@
 //
 
 import Foundation
-class UserLogin : ObservableObject{
+class UserSignUpViewModel : ObservableObject{
     
     
-    @Published var user = [UserLogin]()
+
+    @Published var users = [UserSignUp]()
     
+    var nameEnter : String = ""
+    var emailEnter : String = ""
+    var passwordEnter : String = ""
     
-    func fetchUsers() async {
-        
+    func suscription() async {
         
         // 1 - Url to fetch
         guard let url = URL(string: "https://api.airtable.com/v0/appwl2MJpMuuWOIhn/py-to-airtable") else {
@@ -31,27 +34,26 @@ class UserLogin : ObservableObject{
         )
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        
-        
         let newValueToSend = PostDto(
             records: [
                 PostDto.RecordDto(
                     fields: PostDto.FieldsDto(
-                        name : "aaa",
-                        email: "eee"
+                        name : nameEnter,
+                        email: emailEnter,
+                        password : passwordEnter
+                      
+                        
                     )
                 )
             ]
         )
+        print(newValueToSend)
         
         let jsonData = try? JSONEncoder().encode(newValueToSend)
-        
-        
+        print(jsonData)
         request.httpBody = jsonData
         
-        
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            
             
             if let error = error {
                 // handle error
@@ -64,26 +66,29 @@ class UserLogin : ObservableObject{
             }
             
             do {
-                let PostDto = try JSONDecoder().decode(PostDto.self, from: data)
-                
-                print("Response data : \n \(PostDto)")
-                print("Todo name : \n \(PostDto.records)")
+               
+                print("Response data : \n \(data)")
+               
                 
                 
             }
             
-            catch let jsonErr{
-                print(jsonErr)
-            }
+           
+            
+        
+            
             
             
         }
         
         task.resume()
-        
-    
-        
     }
 }
-            
+        
+
+        
+        
+      
+
+
 
