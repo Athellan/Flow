@@ -13,8 +13,12 @@ struct InscriptionView: View {
     @State private var password = ""
     @State private var confirmedpassword = ""
     @State private var showInscription = false
+
+    @ObservedObject var viewModel = UserSignUpViewModel()
+
     @State private var isGoingOnParam = false
     @State private var isLogged = false
+
     
    
     var body: some View {
@@ -78,7 +82,7 @@ struct InscriptionView: View {
                         HStack {
                             Image(systemName: "lock.circle")
                                 .foregroundColor(Color("secondaryColor"))
-                            TextField("Mot de passe", text: $password)
+                            SecureField("Mot de passe", text: $password)
                                 .font(.system(size: 14))
                                 .foregroundColor(Color("secondaryColor"))
                                 .frame(width: 270)
@@ -96,7 +100,11 @@ struct InscriptionView: View {
                         HStack {
                             Image(systemName: "lock.circle.fill")
                                 .foregroundColor(Color("secondaryColor"))
-                            TextField("Confirmer mot de passe", text: $confirmedpassword)
+
+                            SecureField("Confirmer mot de passe", text: $confirmedpassword)
+
+                           
+
                                 .font(.system(size: 14))
                                 .foregroundColor(Color("secondaryColor"))
                                 .frame(width: 270)
@@ -107,10 +115,28 @@ struct InscriptionView: View {
                     Spacer()
                         .frame(height: 50)
                     
-                        signButton
-                        Text(isLogged ? "Merci de votre inscription" : "")
-                            .foregroundColor(Color("secondaryColor"))
-                            .font(.system(size: 14))
+
+                    if  password == confirmedpassword{
+                        
+                        ButtonInscriptionTwo(username: $username, email: $email, password: $password, confirmedpassword: $confirmedpassword,showInscription: $showInscription, viewModel: viewModel)
+                    }
+                    
+                    else {
+                        
+                        Button("S'inscrire"){
+                            
+                        }
+                        
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .frame(width: 198,height: 32)
+                        .background(Color("buttonColor"))
+                        .cornerRadius(20)
+                    }
+
+                  
+                    
+
                     
                     NavigationLink(destination: ConnexionView(isConnected: .constant(false)), label: {
                         Text("Retour")
@@ -120,9 +146,14 @@ struct InscriptionView: View {
                     })
 
                     
+
+                    
+                
+
 //                    NavigationLink(destination: ParametersView(isConnected: .constant(false), film: FilmHome(title: "", subTitle: "", opus: "", cover: "")), isActive: $showInscription, label: {
 //                        Text("")
 //                    })
+
 
                 }
                 // stack text de fin
