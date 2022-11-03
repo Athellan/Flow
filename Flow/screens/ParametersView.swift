@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct ParametersView: View {
-    @Binding var isConnected: Bool
+    
     @State private var searchText = ""
     
     @State private var isShowingParametersView = false
-    let film: FilmHome
     
     
     var body: some View {
@@ -54,15 +53,12 @@ struct ParametersView: View {
                 
                 
                 
-                NavigationLink(destination: HomeView(film: film), isActive : $isShowingParametersView) {
+                NavigationLink(destination: HomeView(), isActive : $isShowingParametersView, label: {
                     HStack(alignment: .center) {
-                        Button("Passer à cette étape") {
-                            isConnected = true
-                        }
+                        Text("Passer à cette étape")
                         .font(.system(size: 11))
                         .foregroundColor(Color("secondaryColor"))
-                        
-                        
+ 
                         Image(systemName: "greaterthan")
                             .resizable()
                             .frame(width: 5, height: 8)
@@ -70,8 +66,9 @@ struct ParametersView: View {
                             .foregroundColor(Color("secondaryColor"))
                     }
                     .padding(.leading, 200)
+                })
 
-                }
+                
             }
             
             
@@ -82,7 +79,7 @@ struct ParametersView: View {
             VignetteSerie()
                 .padding()
             Button("C'est parti") {
-                isConnected = true
+                
             }
             .font(.headline)
             .foregroundColor(.white)
@@ -114,6 +111,6 @@ struct ParametersView: View {
 
 struct ParametersView_Previews: PreviewProvider {
     static var previews: some View {
-        ParametersView(isConnected: .constant(false), film: FilmHome(title: "", subTitle: "", opus: "", cover: ""))
+        ParametersView()
     }
 }

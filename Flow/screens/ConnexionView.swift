@@ -13,105 +13,124 @@ struct ConnexionView: View {
 
     @State private var username = ""
     @State private var password = ""
-    @Binding var isConnected: Bool
-    @State private var failedConnexion : Bool = false
-    @State private var succedConnexion : Bool = false
-    @State private var showParametersScreen : Bool = false
     
+    @State private var showingHomeScreen: Bool = false
+    @ObservedObject var viewModel = UsersViewModel()
+    @State var passwordIncorect: Int = 0
+    
+    @State var isConnected: Bool
     
     var body: some View {
-        NavigationView{
-            ZStack {
-                Color("primaryColor").ignoresSafeArea()
-                VStack{
-                    Text("Bienvenue.")
-                        .font(.system(size: 25))
-                        .foregroundColor(Color("secondaryColor"))
-                    
-                    Spacer()
-                        .frame(height: 600)
-                }
-                
-                VStack{
-                    ZStack{
-                        Rectangle()
-                            .frame(width: 309, height: 26)
-                            .cornerRadius(25)
-                            .foregroundColor(Color("titleBackgroundColor"))
-                            .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
-                        
-                        HStack {
-                            Image(systemName: "person.circle")
-                                .foregroundColor(Color("secondaryColor"))
-                            TextField("Identifiant", text: $username)
-                                .font(.system(size: 14))
-                                .foregroundColor(Color("secondaryColor"))
-                                .frame(width: 270)
-                        }
-                    }
-                    .padding()
-                    
-                    ZStack{
-                        Rectangle()
-                            .frame(width: 309, height: 26)
-                            .cornerRadius(25)
-                            .foregroundColor(Color("titleBackgroundColor"))
-                            .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
-                        
-                        HStack {
-                            Image(systemName: "lock.circle")
-                                .foregroundColor(Color("secondaryColor"))
-                            SecureField("Mot de passe ", text: $password)
-                                .font(.system(size: 14))
-                                .foregroundColor(Color("secondaryColor"))
-                                .frame(width: 270)
-                        }
-                    }
-                    
-                    Text("Mot de passe oublié ? ").bold()
-                        .offset(x: 95, y: 10)
-                        .font(.system(size: 10))
-                        .foregroundColor(Color("secondaryColor"))
-                    
-                    Spacer()
-                        .frame(height: 50)
-                    
-                    if failedConnexion {
-
-                        Text("Erreur de saisie")
+        if(isConnected == false){
+            NavigationView{
+                ZStack {
+                    Color("primaryColor").ignoresSafeArea()
+                    VStack{
+                        Text("Bienvenue.")
+                            .font(.system(size: 25))
                             .foregroundColor(Color("secondaryColor"))
-                            .font(.system(size: 15))
+                        
+                        Spacer()
+                            .frame(height: 600)
                     }
-
-                   
-                    NavigationLink(destination: ParametersView(
-                        isConnected: $isConnected,
-                        film: FilmHome(title: "", subTitle: "", opus: "", cover: "")),
-                                   label: {
-                        Text("Connexion")
-                            .font(.headline)
+                    
+                    VStack{
+                        ZStack{
+                            Rectangle()
+                                .frame(width: 309, height: 26)
+                                .cornerRadius(25)
+                                .foregroundColor(Color("titleBackgroundColor"))
+                                .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+                            
+                            HStack {
+                                Image(systemName: "person.circle")
+                                    .foregroundColor(Color("secondaryColor"))
+                                TextField("Identifiant", text: $username)
+                                    .font(.system(size: 14))
+                                    .foregroundColor(Color("secondaryColor"))
+                                    .frame(width: 270)
+                            }
+                        }
+                        .padding()
+                        
+                        ZStack{
+                            Rectangle()
+                                .frame(width: 309, height: 26)
+                                .cornerRadius(25)
+                                .foregroundColor(Color("titleBackgroundColor"))
+                                .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+                            
+                            HStack {
+                                Image(systemName: "lock.circle")
+                                    .foregroundColor(Color("secondaryColor"))
+                                SecureField("Mot de passe ", text: $password)
+                                    .font(.system(size: 14))
+                                    .foregroundColor(Color("secondaryColor"))
+                                    .frame(width: 270)
+                            }
+                        }
+                        
+                        Text("Mot de passe oublié ? ").bold()
+                            .offset(x: 95, y: 10)
+                            .font(.system(size: 10))
+                            .foregroundColor(Color("secondaryColor"))
+                        
+                        Spacer()
+                            .frame(height: 50)
+                        
+                        if(passwordIncorect == 1){
+                            Text("Nom d'utilisateur ou mot de passe incorrect, veuillez recommencer !")
+                                .font(.system(size: 15))
+                                .foregroundColor(.red)
+                        }
+                        
+                        Button("Connexion"){
+                            autheticateUser(username: username, password: password)
+                        }.font(.headline)
                             .foregroundColor(.white)
                             .frame(width: 198,height: 32)
                             .background(Color("buttonColor"))
                             .cornerRadius(20)
-                    })
-                
+                        NavigationLink(destination: TabViewView().environmentObject(LocationsViewModel()), isActive: $showingHomeScreen){
+                        }.padding(1)
+                        
+                        ButtonInscription()
+                        
+                        ButtonContinueWithApple()
+                    }
                     
-                    ButtonInscription()
-                    
-                    ButtonContinueWithApple()
                 }
-                
-            }
-            //fin Zstack
+                //fin Zstack
+            }.navigationBarBackButtonHidden(true)
+                .navigationBarHidden(true)
+                .onAppear() {
+                    Task {
+                        await viewModel.fetchUsers()
+                    }
+                }
+        }else{
+            TabViewView()
         }
-        .navigationBarBackButtonHidden(true)
     }
+    
+    func autheticateUser(username: String, password: String){
+        for user in viewModel.users{
+            if(username.lowercased() == user.name.lowercased()){
+                if(password.lowercased() == user.password.lowercased()){
+                        showingHomeScreen = true
+                    }else{
+                        passwordIncorect = 1
+                    }
+                }else{
+                   passwordIncorect = 1
+                }
+            }
+        }
 }
 
 struct ConnexionView_Previews: PreviewProvider {
     static var previews: some View {
-        ConnexionView(isConnected: .constant(false))
+        ConnexionView(isConnected: false)
     }
 }
 
