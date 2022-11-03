@@ -1,9 +1,3 @@
-//
-//  titleComponent.swift
-//  Flow
-//
-//  Created by Apprenant97 on 25/10/2022.
-//
 
 import SwiftUI
 

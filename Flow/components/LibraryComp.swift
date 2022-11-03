@@ -66,6 +66,6 @@ struct Category: View {
 
 struct LibraryComp_Previews: PreviewProvider {
     static var previews: some View {
-        LibraryView(film: FilmHome(title: "", subTitle: "", opus: "", cover: ""))
+        LibraryView()
     }
 }

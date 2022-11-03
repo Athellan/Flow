@@ -1,10 +1,3 @@
-//
-//  miniatureSerie.swift
-//  Flow
-//
-//  Created by Apprenant 63 on 20/10/2022.
-//
-
 import SwiftUI
 
 struct miniatureSerie: View {
@@ -21,7 +14,7 @@ struct miniatureSerie: View {
                 .cornerRadius(10)
             
             HStack {
-                Image("ST")
+                Image(serie.cover)
                     .resizable()
                     .frame(width: 92, height: 92)
                     .cornerRadius(10)
@@ -31,11 +24,9 @@ struct miniatureSerie: View {
             
             
             HStack(alignment: .bottom) {
-                
                 VStack(alignment: .leading) {
                     Text(serie.title.uppercased())
                         .font(.system(size: 14))
-                        
                     HStack {
                         Text("S0\(serie.season)  |").bold()
                         Text("E0\(serie.episodeNumber) ").bold()
@@ -43,22 +34,29 @@ struct miniatureSerie: View {
                     
                     Text(serie.episodeName)
                 }.font(.system(size: 14))
-                    .foregroundColor(Color("secondaryColor"))
+                
             }
+            .foregroundColor(Color("secondaryColor"))
             .frame(height: 55)
-            .padding(.leading, 15)
+            .padding(.leading, 40)
             
             FavoriteButton(isFavorited: $isFavorited)
                 .padding(.leading, 290)
                 .padding(.top, 25)
             
-        }.padding(.top, 7)
+        }
+        .padding(.top, 7)
+            .frame(width: 400)
+        
+        
+        
     }
 }
 
 
+
 struct miniatureSerie_Previews: PreviewProvider {
     static var previews: some View {
-        miniatureSerie(serie: SerieHome(title: "Strangers Things", cover: "", episodeName: "Chapitre 1: La disparition", episodeNumber: 01, season: 01))
+        miniatureSerie(serie: SerieHome(title: "You", cover: "younetflix", episodeName: "Chapitre 1: La disparition", episodeNumber: 01, season: 01))
     }
 }

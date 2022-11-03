@@ -1,13 +1,10 @@
-//
-//  VignetteFilm.swift
-//  Flow
-//
-//  Created by Adel Djelti on 25/10/2022.
-//
+
 
 import SwiftUI
 
 struct VignetteFilm: View {
+    
+    @ObservedObject var viewModelFilm = FilmsViewModel()
     
     var gradientTop: Color = Color(red: 0 / 255, green: 70 / 255, blue: 67 / 255)
     var gradientBottom: Color = Color(red: 149 / 255, green: 191 / 255, blue: 181 / 255)
@@ -18,23 +15,42 @@ struct VignetteFilm: View {
         GridItem(.fixed(100))
     ]
     
-   
-    
     var body: some View {
         
-        VStack(alignment: .leading){
-                Text("Les plus regardés sur Netflix").bold().font(.title2).offset(x: -10, y: 0)
-                    .foregroundColor(Color("secondaryColor"))
-                    .font(.system(size: 20))
-                    .padding(.leading, 30)
-
-                LazyVGrid(columns: columns){
-                    ForEach(films) { film in
-                        FilmDetails(film: film)
+        
+        VStack{
+            Text("Les meilleurs films sur Netflix").bold().font(.title2).offset(x: -10, y: 0)
+                .foregroundColor(Color("secondaryColor"))
+                .font(.system(size: 20))
+                .padding(.top, 30)
+                .padding(.bottom, -20)
+            
+            
+            ZStack {
+                LazyVGrid(columns: columns) {
+                    ForEach(viewModelFilm.films) { film in
+                        ZStack(alignment: .bottomTrailing) {
+                            Image(film.image ?? "test")
+                                .resizable()
+                                .frame(width: 97, height: 145)
+                                .cornerRadius(15)
+                                .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+                                .padding(1)
+                            SelectedButton1(film: film)
+                                .padding(5)
+                        }
                     }
                 }
                 .frame(width: 352, height: 480)
-            }.padding(.top, 20)
+                .padding(.top, 20)
+                .onAppear {
+                    Task {
+                        await viewModelFilm.fetchUsers()
+                    }
+                }
+            }
+            .frame(width: 352, height: 530)
+        }
             .background(
                 Rectangle()
                     .fill(LinearGradient(
@@ -47,8 +63,8 @@ struct VignetteFilm: View {
                     .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
                     .frame(height: 550)
             )
-        }
     }
+}
 
 
 struct VignetteFilm_Previews: PreviewProvider {
@@ -57,32 +73,15 @@ struct VignetteFilm_Previews: PreviewProvider {
     }
 }
 
-struct FilmDetails: View {
-    var film : FilmHome
-    @State private var isSelected = false
-    var body : some View {
-        ZStack(alignment: .bottomTrailing) {
-            Image(film.cover)
-                .resizable()
-                .frame(width: 97,height: 145)
-                .cornerRadius(10)
-                .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
-                .padding(1)
-            SelectedButton(isSelected: $isSelected)
-        }
-    }
-}
-
-struct SelectedButton: View {
-    @Binding var isSelected: Bool
+struct SelectedButton1: View {
+    @ObservedObject var film : FilmParam
     var body: some View {
         Button {
-            isSelected.toggle()
+            film.isSelected.toggle()
         } label: {
-            Image(systemName: isSelected ? "checkmark.circle.fill" : "checkmark.circle")
+            Image(systemName: film.isSelected ? "checkmark.circle.fill" : "checkmark.circle")
                 .font(.largeTitle)
         }
-        
     }
 }
 

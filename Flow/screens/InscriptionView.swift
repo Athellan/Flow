@@ -13,7 +13,10 @@ struct InscriptionView: View {
     @State private var password = ""
     @State private var confirmedpassword = ""
     @State private var showInscription = false
+    @State private var isGoingOnParam = false
+    @State private var isLogged = false
     
+   
     var body: some View {
         
         NavigationView{
@@ -93,7 +96,7 @@ struct InscriptionView: View {
                         HStack {
                             Image(systemName: "lock.circle.fill")
                                 .foregroundColor(Color("secondaryColor"))
-                            TextField("Confirmer mot de passe", text: $password)
+                            TextField("Confirmer mot de passe", text: $confirmedpassword)
                                 .font(.system(size: 14))
                                 .foregroundColor(Color("secondaryColor"))
                                 .frame(width: 270)
@@ -104,18 +107,23 @@ struct InscriptionView: View {
                     Spacer()
                         .frame(height: 50)
                     
-                    ButtonInscriptionTwo(username: $username, email: $email, password: $password, confirmedpassword: $confirmedpassword,showInscription: $showInscription)
+                        signButton
+                        Text(isLogged ? "Merci de votre inscription" : "")
+                            .foregroundColor(Color("secondaryColor"))
+                            .font(.system(size: 14))
                     
-                    NavigationLink(destination: ConnexionView(), label: {
+                    NavigationLink(destination: ConnexionView(isConnected: .constant(false)), label: {
                         Text("Retour")
                             .foregroundColor(Color("secondaryColor")).bold()
                             .font(.system(size: 10))
                             .padding(10)
                     })
+
                     
-                    NavigationLink(destination: ParametersView(film: FilmHome(title: "", subTitle: "", opus: "", cover: "")), isActive: $showInscription, label: {
-                        Text("")
-                    })
+//                    NavigationLink(destination: ParametersView(isConnected: .constant(false), film: FilmHome(title: "", subTitle: "", opus: "", cover: "")), isActive: $showInscription, label: {
+//                        Text("")
+//                    })
+
                 }
                 // stack text de fin
                 VStack{
@@ -140,3 +148,20 @@ struct Inscription_Previews: PreviewProvider {
     }
 }
 
+extension InscriptionView {
+    private var signButton: some View {
+        VStack {
+//            NavigationLink(destination: ParametersView(isConnected: $isGoingOnParam, film: FilmHome(title: "", subTitle: "", opus: "", cover: "")), isActive: $isGoingOnParam) { EmptyView() }
+            Button {
+                isLogged = true
+            } label: {
+                Text("S'inscrire")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(width: 198,height: 32)
+                    .background(Color("buttonColor"))
+                    .cornerRadius(20)
+            }
+        }
+    }
+}

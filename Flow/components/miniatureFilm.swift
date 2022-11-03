@@ -1,16 +1,8 @@
-//
-//  miniatureFilm.swift
-//  Flow
-//
-//  Created by Apprenant 63 on 20/10/2022.
-//
-
 import SwiftUI
 
 struct miniatureFilm: View {
     
     let film : FilmHome
-    
     @State private var isFavorited = false
     
     var body: some View {
@@ -23,7 +15,7 @@ struct miniatureFilm: View {
                 
             
             HStack {
-                Image("LSDA2T")
+                Image(film.cover)
                     .resizable()
                     .frame(width: 92, height: 92)
                     .cornerRadius(10)
@@ -71,6 +63,6 @@ struct FavoriteButton: View {
 
 struct miniatureFilm_Previews: PreviewProvider {
     static var previews: some View {
-        miniatureFilm(film: FilmHome(title: "Le Seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "VOL2", cover: ""))
+        miniatureFilm(film: FilmHome(title: "Le Seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "VOL2", cover: "LSDA2T"))
     }
 }
