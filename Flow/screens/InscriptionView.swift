@@ -10,13 +10,12 @@ import SwiftUI
 struct InscriptionView: View {
     @State private var username = ""
     @State private var email = ""
-    @State private var password = ""
-    @State private var confirmedpassword = ""
-    @State private var showInscription = false
-    @State private var isGoingOnParam = false
-    @State private var isLogged = false
+    @State private var enterPassword = ""
+    @State private var enterConfirmedPassword = ""
     
+    @State private var error: Int = 0
    
+    @State private var showingParametersScreen: Bool = false
     var body: some View {
         
         NavigationView{
@@ -78,7 +77,7 @@ struct InscriptionView: View {
                         HStack {
                             Image(systemName: "lock.circle")
                                 .foregroundColor(Color("secondaryColor"))
-                            TextField("Mot de passe", text: $password)
+                            TextField("Mot de passe", text: $enterPassword)
                                 .font(.system(size: 14))
                                 .foregroundColor(Color("secondaryColor"))
                                 .frame(width: 270)
@@ -96,7 +95,7 @@ struct InscriptionView: View {
                         HStack {
                             Image(systemName: "lock.circle.fill")
                                 .foregroundColor(Color("secondaryColor"))
-                            TextField("Confirmer mot de passe", text: $confirmedpassword)
+                            TextField("Confirmer mot de passe", text: $enterConfirmedPassword)
                                 .font(.system(size: 14))
                                 .foregroundColor(Color("secondaryColor"))
                                 .frame(width: 270)
@@ -107,19 +106,20 @@ struct InscriptionView: View {
                     Spacer()
                         .frame(height: 50)
                     
-                        signButton
-                        Text(isLogged ? "Merci de votre inscription" : "")
-                            .foregroundColor(Color("secondaryColor"))
-                            .font(.system(size: 14))
+                    if(error != 0){
+                        Text("Erreur ! Veuillez renseigner tout les champs et réessayer.")
+                    }
                     
-                    NavigationLink(destination: ConnexionView(isConnected: .constant(false)), label: {
-                        Text("Retour")
-                            .foregroundColor(Color("secondaryColor")).bold()
-                            .font(.system(size: 10))
-                            .padding(10)
-                    })
-
-                    
+                    Button("Inscription"){
+                        samePass(password: enterPassword, confirmedPassword: enterConfirmedPassword)
+                    }.font(.headline)
+                        .foregroundColor(.white)
+                        .frame(width: 198,height: 32)
+                        .background(Color("buttonColor"))
+                        .cornerRadius(20)
+                    NavigationLink(destination: ParametersView(), isActive: $showingParametersScreen){
+                    }
+                   
 //                    NavigationLink(destination: ParametersView(isConnected: .constant(false), film: FilmHome(title: "", subTitle: "", opus: "", cover: "")), isActive: $showInscription, label: {
 //                        Text("")
 //                    })
@@ -138,30 +138,24 @@ struct InscriptionView: View {
                 .frame(width: 300)
             }
         }
-        .navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden(false)
+    }
+    
+    func samePass(password: String, confirmedPassword: String){
+        if(!username.isEmpty && !email.isEmpty && !enterPassword.isEmpty && !enterConfirmedPassword.isEmpty){
+        if(enterConfirmedPassword == enterPassword){
+            showingParametersScreen = true
+                }else{
+                   error = 1
+                }
+        }else{
+            error = 1
+        }
     }
 }
 
 struct Inscription_Previews: PreviewProvider {
     static var previews: some View {
         InscriptionView()
-    }
-}
-
-extension InscriptionView {
-    private var signButton: some View {
-        VStack {
-//            NavigationLink(destination: ParametersView(isConnected: $isGoingOnParam, film: FilmHome(title: "", subTitle: "", opus: "", cover: "")), isActive: $isGoingOnParam) { EmptyView() }
-            Button {
-                isLogged = true
-            } label: {
-                Text("S'inscrire")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .frame(width: 198,height: 32)
-                    .background(Color("buttonColor"))
-                    .cornerRadius(20)
-            }
-        }
     }
 }

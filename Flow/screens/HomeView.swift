@@ -10,7 +10,6 @@ import SwiftUI
 struct HomeView: View {
     @State private var isDiscoverMode = false
     @State private var isFavorited = false
-    let film : FilmHome
     
     var body: some View {
         
@@ -19,11 +18,13 @@ struct HomeView: View {
                 .padding(.top, 30)
             
     }.background(Color("primaryColor"))
+            .navigationBarHidden(true)
+            
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(film: FilmHome(title: "", subTitle: "", opus: "", cover: ""))
+        HomeView()
     }
 }
 

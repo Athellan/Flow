@@ -19,9 +19,10 @@ struct TabViewView: View {
     var body: some View {
          //if connexion == 0 == true
         //else
+        VStack{
         TabView(selection: $selectedTab) {
             
-            HomeView(film: FilmHome(title: "", subTitle: "", opus: "", cover: ""))
+            HomeView()
                 .tabItem {
                     Label("À découvrir", systemImage: "binoculars.fill")
                 }
@@ -49,7 +50,8 @@ struct TabViewView: View {
             
         }
         .accentColor(Color("primaryColor"))
-        
+        }.navigationBarBackButtonHidden(true)
+        .navigationBarHidden(false)
     }
 }
 
