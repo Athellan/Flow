@@ -28,9 +28,9 @@ struct LocationDetailView: View {
                         descriptionSection
                             .padding(.vertical, 20)
                         Divider()
-                        miniatureEvent(event: Event(title: "Stranger Things", description: "Exposition miniatures", date: "29 nov. 2022"))
+                        miniatureEvent(event: Event(title: "", description: "", adress: "", type: "", image: "", date: ""))
                             .padding(.top, 10)
-                        miniatureEvent(event: Event(title: "Stranger Things", description: "Projection making-off", date: "30 nov. 2022"))
+                        miniatureEvent(event: Event(title: "", description: "", adress: "", type: "", image: "japanexpo", date: ""))
                             .padding(.vertical, 10)
                         Divider()
                     }.frame(width: 352)
@@ -153,7 +153,7 @@ extension LocationDetailView {
     
     private var chatButton: some View {
         VStack {
-            NavigationLink(destination: ChatView(film: FilmHome(title: "", subTitle: "", opus: "", cover: "")), isActive: $isShowingChatView) { EmptyView() }
+            NavigationLink(destination: ChatVenueView(venue: Venue(name: location.name, adress: location.cityName)), isActive: $isShowingChatView) { EmptyView() }
             Button {
                 isShowingChatView = true
             } label: {

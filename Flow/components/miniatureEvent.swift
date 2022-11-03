@@ -21,7 +21,7 @@ struct miniatureEvent: View {
                 .cornerRadius(10)
             
             HStack {
-                Image("ST")
+                Image(event.image)
                     .resizable()
                     .frame(width: 92, height: 92)
                     .cornerRadius(10)
@@ -56,6 +56,6 @@ struct miniatureEvent: View {
 
 struct miniatureEvent_Previews: PreviewProvider {
     static var previews: some View {
-        miniatureEvent(event: Event(title: "Stranger Things", description: "Exposition miniatures", date: "29 nov. 2022"))
+        miniatureEvent(event: Event(title: "Stranger Things", description: "Evenement", adress: "Rue du portauloin", type: "Convention", image: "ST", date: "19/12/2022"))
     }
 }

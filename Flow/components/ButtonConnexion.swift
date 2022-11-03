@@ -1,53 +1,56 @@
+////
+////  ButtonConnexion.swift
+////  Flow
+////
+////  Created by Adel Djelti on 24/10/2022.
+////
 //
-//  ButtonConnexion.swift
-//  Flow
+//import SwiftUI
 //
-//  Created by Adel Djelti on 24/10/2022.
+//struct ButtonConnexion: View {
+//    
+//    @Binding var username : String
+//    @Binding var succedConnexion : Bool
+//    @Binding var password : String
+//    @Binding var failedConnexion : Bool
+//    @Binding var showParametersScreen : Bool
+//    
+//    var body: some View {
+//        
+//        Button("Connexion") {
+//            
+//            if username == "User" && password == "user" {
 //
-
-import SwiftUI
-
-struct ButtonConnexion: View {
-    
-    @Binding var username : String
-    @Binding var succedConnexion : Bool
-    @Binding var password : String
-    @Binding var failedConnexion : Bool
-    @Binding var showParametersScreen : Bool
-    
-    var body: some View {
-        
-        Button("Connexion") {
-            
-            succedConnexion = true
-            failedConnexion = false
-            showParametersScreen = true
-            /*
-            if username == "Adel" && password == "adel" {
-                succedConnexion = true
-                failedConnexion = false
-                showLoginScreen = true
-            } else {
-                failedConnexion = true
-                succedConnexion = false
-                showLoginScreen = false
-            }*/
-        }
-        .font(.headline)
-        .foregroundColor(.white)
-        .frame(width: 198,height: 32)
-        .background(Color("buttonColor"))
-        .cornerRadius(20)
-    }
-}
-
-
-struct ButtonConnexion_Previews: PreviewProvider {
-    static var previews: some View {
-        ButtonConnexion(username: .constant(""), succedConnexion: .constant(false), password: .constant(""),failedConnexion: .constant(true),showParametersScreen: .constant(false))
-    }
-}
-
-
-
-
+//            succedConnexion = true
+//            failedConnexion = false
+//            showParametersScreen = true
+//            /*
+//            if username == "Adel" && password == "adel" {
+//>>>>>>> develop
+//                succedConnexion = true
+//                failedConnexion = false
+//                showLoginScreen = true
+//            } else {
+//                failedConnexion = true
+//                succedConnexion = false
+//                showLoginScreen = false
+//            }*/
+//        }
+//        .font(.headline)
+//        .foregroundColor(.white)
+//        .frame(width: 198,height: 32)
+//        .background(Color("buttonColor"))
+//        .cornerRadius(20)
+//    }
+//}
+//
+//
+//struct ButtonConnexion_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ButtonConnexion(username: .constant(""), succedConnexion: .constant(false), password: .constant(""),failedConnexion: .constant(true),showParametersScreen: .constant(false))
+//    }
+//}
+//
+//
+//
+//

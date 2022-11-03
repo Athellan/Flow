@@ -77,6 +77,7 @@ struct ConnexionView: View {
                         .frame(height: 50)
                     
                     if failedConnexion {
+
                         Text("Erreur de saisie")
                             .foregroundColor(Color("secondaryColor"))
                             .font(.system(size: 15))

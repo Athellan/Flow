@@ -48,12 +48,21 @@ struct PickerView: View {
             
             VStack{
                 ScrollView {
-                    
                     if isDiscoverMode == true {
-                        miniatureFilm(film: FilmHome(title: "Le Seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "VOL2", cover: ""))
-                        miniatureSerie(serie: SerieHome(title: "Strangers Things", cover: "", episodeName: "Chapitre 1: La disparition", episodeNumber: 01, season: 01))
+                        miniatureFilm(film: FilmHome(title: "Le Seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "VOL2", cover: "LSDA2T"))
+                        miniatureFilm(film: FilmHome(title: "Gran Torino", subTitle: "Walt Kowalski est un ancien..", opus: "VOL 1", cover: "grantorino"))
+                        miniatureSerie(serie: SerieHome(title: "Wicked", cover: "wicked", episodeName: "Chapitre 1: La disparition", episodeNumber: 01, season: 01))
+                        miniatureSerie(serie: SerieHome(title: "Breaking Bad", cover: "breakingbad", episodeName: "Chute libre                             ", episodeNumber: 01, season: 01))
+                        miniatureSerie(serie: SerieHome(title: "Game of Throne", cover: "got", episodeName: "Winter is Coming          ", episodeNumber: 01, season: 01))
+                        miniatureSerie(serie: SerieHome(title: "Arcane", cover: "arcane", episodeName:"Welcome to the ...        ", episodeNumber: 01, season: 01))
+                        miniatureSerie(serie: SerieHome(title: "Vikings", cover: "vikings", episodeName: "Valhala", episodeNumber: 01, season: 01))
+                        miniatureFilm(film: FilmHome(title: "Coeurs Meurtris", subTitle: "Elizabeth Alen", opus: "", cover: "coeurmeurtri"))
+                        miniatureFilm(film: FilmHome(title: "Gladiator", subTitle: "Ridley Scott", opus: "", cover: "gladiator"))
+                        miniatureFilm(film: FilmHome(title: "Le Roi Lion", subTitle: "Disney", opus: "VOL.", cover: "leroilion"))
+                       
+                        
                     } else {
-                        homeDetail()
+                        homeDetail(currentCard: Card(title: "Athena", subtitle: "Romain Gravas", image: "hxh"))
                     }
                     
                     
