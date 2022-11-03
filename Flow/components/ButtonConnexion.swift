@@ -13,12 +13,16 @@ struct ButtonConnexion: View {
     @Binding var succedConnexion : Bool
     @Binding var password : String
     @Binding var failedConnexion : Bool
-    @Binding var showLoginScreen : Bool
+    @Binding var showParametersScreen : Bool
     
     var body: some View {
         
         Button("Connexion") {
             
+            succedConnexion = true
+            failedConnexion = false
+            showParametersScreen = true
+            /*
             if username == "Adel" && password == "adel" {
                 succedConnexion = true
                 failedConnexion = false
@@ -27,7 +31,7 @@ struct ButtonConnexion: View {
                 failedConnexion = true
                 succedConnexion = false
                 showLoginScreen = false
-            }
+            }*/
         }
         .font(.headline)
         .foregroundColor(.white)
@@ -40,7 +44,7 @@ struct ButtonConnexion: View {
 
 struct ButtonConnexion_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonConnexion(username: .constant(""), succedConnexion: .constant(false), password: .constant(""),failedConnexion: .constant(true),showLoginScreen: .constant(false))
+        ButtonConnexion(username: .constant(""), succedConnexion: .constant(false), password: .constant(""),failedConnexion: .constant(true),showParametersScreen: .constant(false))
     }
 }
 

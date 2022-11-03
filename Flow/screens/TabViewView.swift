@@ -15,38 +15,41 @@ struct TabViewView: View {
     }
     
     @State var selectedTab: Int = 0
-    
+
     var body: some View {
-         
+         //if connexion == 0 == true
+        //else
         TabView(selection: $selectedTab) {
+            
             HomeView(film: FilmHome(title: "", subTitle: "", opus: "", cover: ""))
                 .tabItem {
-                    Image(systemName: "sparkles.tv.fill")
-                    Text("Suggestions")
+                    Label("À découvrir", systemImage: "binoculars.fill")
                 }
                 .tag(0)
+            
             ProfileView()
                 .tabItem {
-                    Image(systemName: "person.fill")
-                    Text("Profil")
+                    Label("Profil", systemImage: "person.fill")
                 }
                 .tag(1)
+            
             LibraryView(film: FilmHome(title: "Le seigneur des Toto", subTitle: "rbvdfvfvfe", opus: "fbfvbrtbr", cover: "seigneurDesAnneaux2"))
                 .tabItem {
-                    Image(systemName: "star.bubble.fill")
-                    Text("Bibliothèque")
+                    Label("Bibliothèque", systemImage: "star.bubble.fill")
                 }
                 .tag(2)
-//            testView()
+            
             LocationsView()
                 .tabItem {
-                    Image(systemName: "map.fill")
-                    Text("Carte")
+                    Label("Carte", systemImage: "map.fill")
+//                    Image(systemName: "map.fill")
+//                    Text("Carte")
                 }
                 .tag(3)
+            
         }
         .accentColor(Color("primaryColor"))
-        .padding(.horizontal, -4)
+        
     }
 }
 

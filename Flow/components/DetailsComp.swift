@@ -339,7 +339,7 @@ struct SimpleVideoButton: View {
                         .resizable()
                         .frame(width: 155, height: 89)
                         .cornerRadius(10)
-                        .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+                        .shadow(color: Color("secondaryColor").opacity(0.7), radius: 3, x: -2, y: 1)
                     
                     Text(durationClip)
                         .font(.system(size: 12))
