@@ -14,37 +14,36 @@ struct  ButtonInscriptionTwo: View {
     @Binding var password : String
     @Binding var confirmedpassword : String
     @Binding var showInscription : Bool
+    @ObservedObject var viewModel : UserSignUpViewModel
     var body: some View {
+        
         Button("S'inscrire"){
-            
-            if username.isEmpty &&  email.isEmpty  {
-                showInscription = false
+           
+            if !username.isEmpty && !password.isEmpty && !email.isEmpty {
+                    
+                    showInscription = true
+                    viewModel.nameEnter = username
+                    viewModel.emailEnter = email
+                viewModel.passwordEnter = password
                 
             }
             
-            else if  password.isEmpty && confirmedpassword.isEmpty{
-                showInscription = false
+            Task {
+                await viewModel.suscription()
             }
             
-            else if  password != confirmedpassword{
-                        showInscription = false
-                
-            }
-            else {
-                showInscription = true
-            }
         }
         .font(.headline)
         .foregroundColor(.white)
         .frame(width: 198,height: 32)
         .background(Color("buttonColor"))
         .cornerRadius(20)
-    }
 }
-
+      
+    }
 
 struct ButtonInscriptionTwo_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonInscriptionTwo(username: .constant(""), email:.constant(""), password: .constant(""), confirmedpassword: .constant(""),showInscription: .constant(false))
+        ButtonInscriptionTwo(username: .constant(""), email:.constant(""), password: .constant(""), confirmedpassword: .constant(""),showInscription: .constant(false), viewModel: UserSignUpViewModel())
     }
 }

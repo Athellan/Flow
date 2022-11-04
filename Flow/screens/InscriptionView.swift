@@ -95,7 +95,11 @@ struct InscriptionView: View {
                         HStack {
                             Image(systemName: "lock.circle.fill")
                                 .foregroundColor(Color("secondaryColor"))
-                            TextField("Confirmer mot de passe", text: $enterConfirmedPassword)
+
+                            SecureField("Confirmer mot de passe", text: $enterConfirmedPassword)
+
+                           
+
                                 .font(.system(size: 14))
                                 .foregroundColor(Color("secondaryColor"))
                                 .frame(width: 270)
@@ -119,10 +123,27 @@ struct InscriptionView: View {
                         .cornerRadius(20)
                     NavigationLink(destination: ParametersView(), isActive: $showingParametersScreen){
                     }
-                   
+
+                  
+                    
+
+                    
+                    NavigationLink(destination: ConnexionView(isConnected: .constant(false)), label: {
+                        Text("Retour")
+                            .foregroundColor(Color("secondaryColor")).bold()
+                            .font(.system(size: 10))
+                            .padding(10)
+                    })
+
+                    
+
+                    
+                
+
 //                    NavigationLink(destination: ParametersView(isConnected: .constant(false), film: FilmHome(title: "", subTitle: "", opus: "", cover: "")), isActive: $showInscription, label: {
 //                        Text("")
 //                    })
+
 
                 }
                 // stack text de fin
