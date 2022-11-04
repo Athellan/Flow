@@ -28,9 +28,9 @@ struct LocationDetailView: View {
                         descriptionSection
                             .padding(.vertical, 20)
                         Divider()
-                        miniatureEvent(event: Event(title: "", description: "", adress: "", type: "", image: "", date: ""))
+                        miniatureEvent(event: Event(title: "       retour sur angoulème", description: "       Projection", image: "angouleme", date: "       27 DÉC. 2022"))
                             .padding(.top, 10)
-                        miniatureEvent(event: Event(title: "", description: "", adress: "", type: "", image: "japanexpo", date: ""))
+                        miniatureEvent(event: Event(title: "   Japan expo is coming", description: "   Session Best Cosplay", image: "japanexpo", date: "   25 JUIN 2022"))
                             .padding(.vertical, 10)
                         Divider()
                     }.frame(width: 352)

@@ -37,6 +37,7 @@ struct VignetteTrending: View {
                                 .padding(1)
                             SelectedButton(trending: trending)
                                 .padding(5)
+                                .foregroundColor(Color("titleBackgroundColor"))
                         }
                     }
                 }

@@ -38,6 +38,7 @@ struct VignetteFilm: View {
                                 .padding(1)
                             SelectedButton1(film: film)
                                 .padding(5)
+                                .foregroundColor(Color("titleBackgroundColor"))
                         }
                     }
                 }

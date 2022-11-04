@@ -11,7 +11,7 @@ struct EventScroll: View {
     
     var body: some View {
         VStack(alignment: .leading){
-            Text("Evénements").bold().font(.title2).offset(x: -10, y: 0)
+            Text("Évènements").bold().font(.title2).offset(x: -10, y: 0)
                 .foregroundColor(Color("secondaryColor"))
                 .font(.system(size: 20))
                 .padding()

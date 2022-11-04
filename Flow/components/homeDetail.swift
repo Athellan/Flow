@@ -42,20 +42,26 @@ struct homeDetail: View {
                     }
                     
                     HStack {
-                        Image(systemName: "multiply.circle.fill")
+                        Image(systemName: "chevron.backward.circle.fill")
                             .resizable()
-                            .frame(width: 32.0, height: 32.0)
+                            .frame(width: 40.0, height: 40.0)
                             .foregroundColor(Color("titleBackgroundColor"))
-                        Image(systemName: "greaterthan.circle.fill")
+                            .background(Color("buttonGrey"))
+                            .cornerRadius(50)
+                            .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+                            .padding(.trailing, 110)
+                        Image(systemName: "chevron.right.circle.fill")
                             .resizable()
-                            .frame(width: 50, height: 50)
+                            .frame(width: 40.0, height: 40.0)
                             .foregroundColor(Color("titleBackgroundColor"))
-                        Image(systemName: "checkmark.circle.fill")
-                            .resizable()
-                            .frame(width: 32.0, height: 32.0)
-                            .foregroundColor(Color("titleBackgroundColor"))
-                    }.padding(.top, 370)
-                }
+                            .background(Color("buttonGrey"))
+                            .cornerRadius(50)
+                            .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+                            .padding(.leading, 110)
+                    }
+                    .frame(width: 280)
+
+                }.padding(.vertical, 15)
                 
                 VStack{
                     LazyHGrid(rows: rows, alignment: .top) {
@@ -63,9 +69,9 @@ struct homeDetail: View {
                             plateFormButton(plateformLogo: plateformLogo)
                         }
                     }.frame(height: 47)
-                }.padding(.top, 60)
+                }.padding(.top, 20)
 
-            }.padding(.top, 20)
+            }.padding(.top, 10)
         }
     }
 }

@@ -79,6 +79,7 @@
 		C7220D6B2906B14E00EF5278 /* profilePreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7220D6A2906B14E00EF5278 /* profilePreference.swift */; };
 		C7220D6D2906C12500EF5278 /* profileAddPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7220D6C2906C12500EF5278 /* profileAddPreference.swift */; };
 		C7220D6F2906C1A100EF5278 /* profileCategoryPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7220D6E2906C1A100EF5278 /* profileCategoryPreference.swift */; };
+		C77FDDF729141CD900BD1F21 /* miniatureTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77FDDF629141CD900BD1F21 /* miniatureTest.swift */; };
 		C7C0B2022907FD2F00094B26 /* titleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C0B2012907FD2F00094B26 /* titleComponent.swift */; };
 		C7E0355D29100FCC0077E977 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E0355C29100FCC0077E977 /* ContentView.swift */; };
 		C7E0355F2910237D0077E977 /* miniatureEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E0355E2910237D0077E977 /* miniatureEvent.swift */; };
@@ -161,6 +162,7 @@
 		C7220D6A2906B14E00EF5278 /* profilePreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profilePreference.swift; path = Flow/components/profilePreference.swift; sourceTree = SOURCE_ROOT; };
 		C7220D6C2906C12500EF5278 /* profileAddPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profileAddPreference.swift; path = Flow/components/profileAddPreference.swift; sourceTree = SOURCE_ROOT; };
 		C7220D6E2906C1A100EF5278 /* profileCategoryPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profileCategoryPreference.swift; path = Flow/components/profileCategoryPreference.swift; sourceTree = SOURCE_ROOT; };
+		C77FDDF629141CD900BD1F21 /* miniatureTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = miniatureTest.swift; path = Flow/components/miniatureTest.swift; sourceTree = SOURCE_ROOT; };
 		C7C0B2012907FD2F00094B26 /* titleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = titleComponent.swift; path = Flow/components/titleComponent.swift; sourceTree = SOURCE_ROOT; };
 		C7E0355C29100FCC0077E977 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Flow/ContentView.swift; sourceTree = SOURCE_ROOT; };
 		C7E0355E2910237D0077E977 /* miniatureEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = miniatureEvent.swift; path = Flow/components/miniatureEvent.swift; sourceTree = SOURCE_ROOT; };
@@ -312,6 +314,7 @@
 				63FC90C02901966200135CFB /* miniatureFilm.swift */,
 				63FC90C22901968800135CFB /* miniatureSerie.swift */,
 				C7E0355E2910237D0077E977 /* miniatureEvent.swift */,
+				C77FDDF629141CD900BD1F21 /* miniatureTest.swift */,
 				63FC90CA290282ED00135CFB /* homeDetail.swift */,
 				63FC90CC2902939700135CFB /* plateformLogo.swift */,
 				C7C0B2012907FD2F00094B26 /* titleComponent.swift */,
@@ -491,6 +494,7 @@
 				63FC90C72901974800135CFB /* SerieHomeModel.swift in Sources */,
 				636A43C229127F660032D4F5 /* TrendingParamModel.swift in Sources */,
 				636A43D82912BF9A0032D4F5 /* FilmAddedModel.swift in Sources */,
+				C77FDDF729141CD900BD1F21 /* miniatureTest.swift in Sources */,
 				63FC90C72901974800135CFB /* SerieHomeModel.swift in Sources */,
 				5FED812329140121007B04B6 /* UsersViewModel.swift in Sources */,
 				63FC90CD2902939700135CFB /* plateformLogo.swift in Sources */,

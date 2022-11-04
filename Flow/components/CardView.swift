@@ -13,7 +13,7 @@ struct CardView: View {
     var show:Card
     
     @State private var offset = CGSize.zero
-    @State private var color: Color = .white
+    @State private var color: Color = Color("titleBackgroundColor")
     @Binding var currentCard: Card
     
     var body: some View {
@@ -22,13 +22,13 @@ struct CardView: View {
                 .frame(width: 270, height: 370)
                 .cornerRadius(20)
                 .foregroundColor(color.opacity(1))
-                .shadow(radius: 2)
+//                .shadow(radius: 2)
                 .padding()
             Image(show.image)
                 .resizable()
                 .frame(width: 250, height: 350)
                 .cornerRadius(15)
-                .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
+//                .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4)
         }
         .offset(x: offset.width, y: offset.height * 0.4)
         .rotationEffect(.degrees(Double(offset.width / 40)))
@@ -70,7 +70,7 @@ struct CardView: View {
         case 130...500:
             color = .green
         default:
-            color = .white
+            color = Color("titleBackgroundColor")
         }
     }
 }

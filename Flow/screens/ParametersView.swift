@@ -55,7 +55,11 @@ struct ParametersView: View {
                 
                 NavigationLink(destination: HomeView(), isActive : $isShowingParametersView, label: {
                     HStack(alignment: .center) {
-                        Text("Passer à cette étape")
+
+                        Button("   Passer cette étape") {
+                            isConnected = true
+                        }
+
                         .font(.system(size: 11))
                         .foregroundColor(Color("secondaryColor"))
  
@@ -66,11 +70,15 @@ struct ParametersView: View {
                             .foregroundColor(Color("secondaryColor"))
                     }
                     .padding(.leading, 200)
+
                 })
+
 
                 
             }
             
+
+            VStack {
             
             VignetteTrending()
                 .padding()
@@ -79,7 +87,8 @@ struct ParametersView: View {
             VignetteSerie()
                 .padding()
             Button("C'est parti") {
-                
+                isConnected = true
+
             }
             .font(.headline)
             .foregroundColor(.white)

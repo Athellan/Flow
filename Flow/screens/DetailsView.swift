@@ -25,7 +25,7 @@ struct DetailsView: View {
                 Color("primaryColor")
                     .ignoresSafeArea()
                 chatButton
-                    .position(x: 330, y: 735)
+                    .position(x: 330, y: 610)
                     .zIndex(1)
                 ScrollView(showsIndicators: false){
                     VStack{
@@ -73,7 +73,7 @@ struct DetailsView: View {
                 }
                
             }
-        }
+        }.navigationBarBackButtonHidden(false)
     }
 }
 struct DetailsView_Previews: PreviewProvider {

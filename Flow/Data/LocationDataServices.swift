@@ -56,7 +56,7 @@ class LocationsDataService {
             ],
             link: "https://aquarium-cine-cafe.fr/"),
         Location(
-            name: "Le Dernier Bar avant la fin du monde",
+            name: "Le Dernier Bar",
             cityName: "Paris",
             coordinates: CLLocationCoordinate2D(latitude: 48.85808596574914, longitude: 2.346362723799845),
             description: "Le Dernier Bar avant la Fin du Monde est le premier espace d’expression des cultures de l’imaginaire en plein cœur de Paris, à deux pas du Théâtre du Châtelet. C’est un bar de plus de 400 m² pensé par des passionnés de science-fiction, de fantasy, de manga, de séries télévisées, de cinéma et de littérature fantastique. On peut s’y installer pour lire, partager un verre, jouer, se restaurer, partager sa passion pour les cultures de l’imaginaire.",
