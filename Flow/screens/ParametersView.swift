@@ -57,7 +57,7 @@ struct ParametersView: View {
                     HStack(alignment: .center) {
 
                         Button("   Passer cette étape") {
-                            isConnected = true
+                            
                         }
 
                         .font(.system(size: 11))
@@ -87,7 +87,7 @@ struct ParametersView: View {
             VignetteSerie()
                 .padding()
             Button("C'est parti") {
-                isConnected = true
+                
 
             }
             .font(.headline)
