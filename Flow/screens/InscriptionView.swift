@@ -15,9 +15,12 @@ struct InscriptionView: View {
     
     @State private var error: Int = 0
    
-    @State private var showingParametersScreen: Bool = false
+    @State private var isClicked: Bool = false
+    @State private var isRegistered: Bool = false
     var body: some View {
-        
+    
+        if(!isRegistered){
+        if(!isClicked){
         NavigationView{
             ZStack {
                 Color("primaryColor").ignoresSafeArea()
@@ -111,7 +114,9 @@ struct InscriptionView: View {
                         .frame(height: 50)
                     
                     if(error != 0){
-                        Text("Erreur ! Veuillez renseigner tout les champs et réessayer.")
+                        Text("Veuillez renseigner tout les champs et réessayer.")
+                            .font(.system(size: 12))
+                            .foregroundColor(Color("secondaryColor"))
                     }
                     
                     Button("Inscription"){
@@ -121,19 +126,18 @@ struct InscriptionView: View {
                         .frame(width: 198,height: 32)
                         .background(Color("buttonColor"))
                         .cornerRadius(20)
-                    NavigationLink(destination: ParametersView(), isActive: $showingParametersScreen){
-                    }
+                    
 
                   
-                    
-
-                    
-                    NavigationLink(destination: ConnexionView(isConnected: .constant(false)), label: {
+                    Button(action: {
+                        isClicked.toggle()
+                    }, label: {
                         Text("Retour")
                             .foregroundColor(Color("secondaryColor")).bold()
                             .font(.system(size: 10))
                             .padding(10)
                     })
+                    
 
                     
 
@@ -158,14 +162,19 @@ struct InscriptionView: View {
                 .foregroundColor(Color("secondaryColor"))
                 .frame(width: 300)
             }
+        }.navigationBarBackButtonHidden(true)
+        }else{
+            ConnexionView()
         }
-        .navigationBarBackButtonHidden(false)
+        }else{
+            ParametersView()
+        }
     }
     
     func samePass(password: String, confirmedPassword: String){
         if(!username.isEmpty && !email.isEmpty && !enterPassword.isEmpty && !enterConfirmedPassword.isEmpty){
-        if(enterConfirmedPassword == enterPassword){
-            showingParametersScreen = true
+            if(enterConfirmedPassword.lowercased() == enterPassword.lowercased()){
+            isRegistered = true
                 }else{
                    error = 1
                 }

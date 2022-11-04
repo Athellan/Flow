@@ -19,9 +19,11 @@ struct ConnexionView: View {
     @State var passwordIncorect: Int = 0
     
     @State var isConnected: Bool = false
+    @State var isClicked: Bool = false
     
     var body: some View {
         if(isConnected == false){
+            if(isClicked == false){
             NavigationView{
                 ZStack {
                     Color("primaryColor").ignoresSafeArea()
@@ -86,7 +88,6 @@ struct ConnexionView: View {
                         
                         Button("Connexion"){
                             autheticateUser(username: username, password: password)
-                            isConnected.toggle()
                         }.font(.headline)
                             .foregroundColor(.white)
                             .frame(width: 198,height: 32)
@@ -94,21 +95,31 @@ struct ConnexionView: View {
                             .cornerRadius(20)
                             .padding(1)
                         
-                        ButtonInscription()
+                        Button(action: {
+                            isClicked.toggle()
+                        }, label: {
+                            Text("Inscription")
+                        })
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .frame(width: 198,height: 32)
+                            .background(Color("buttonColor"))
+                            .cornerRadius(20)
+                        }
+                    }
                         
                         ButtonContinueWithApple()
-                    }
-                    
-                }
-                //fin Zstack
-            }.navigationBarBackButtonHidden(true)
+                    }.navigationBarBackButtonHidden(true)
                 .navigationBarHidden(true)
                 .onAppear() {
                     Task {
                         await viewModel.fetchUsers()
                     }
                 }
-        }else{
+            }else{
+                InscriptionView()
+            }
+                }else{
             TabViewView().environmentObject(LocationsViewModel())
         }
     }
@@ -118,6 +129,7 @@ struct ConnexionView: View {
             if(username.lowercased() == user.name.lowercased()){
                 if(password.lowercased() == user.password.lowercased()){
                         showingHomeScreen = true
+                        isConnected.toggle()
                     }else{
                         passwordIncorect = 1
                     }
