@@ -71,46 +71,149 @@ struct DetailsImage: View {
 }
 
 struct DetailsBar: View {
-    var isSeen : Bool
+    @State var isSeen : Bool
     let date:String
-    let rate: Int
+    @State var rate: Int
     var body: some View {
         HStack{
-            if isSeen{
-                Image(systemName: "eye.circle.fill")
-                    .resizable()
-                    .foregroundColor(Color("buttonColor"))
-                    .frame(width: 28, height: 28, alignment: .leading)
-            }else{
-                Image(systemName: "eye.slash.circle.fill")
-                    .resizable()
-                    .foregroundColor(Color("buttonColor"))
-                    .frame(width: 28, height: 28, alignment: .leading)
+            HStack{
+                if isSeen{
+                    Image(systemName: "eye.circle.fill")
+                        .resizable()
+                        .foregroundColor(Color("buttonColor"))
+                        .frame(width: 28, height: 28, alignment: .leading)
+                }else{
+                    Image(systemName: "eye.slash.circle.fill")
+                        .resizable()
+                        .foregroundColor(Color("buttonColor"))
+                        .frame(width: 28, height: 28, alignment: .leading)
+                }
+            }.onTapGesture {
+                isSeen = !isSeen
             }
+            
             VStack(alignment: .leading){
                 Text(date)
                     .font(.system(size: 10))
                     .foregroundColor(Color("secondaryColor"))
-                if isSeen{
-                    Text("Visionné")
-                        .font(.system(size: 10))
-                        .foregroundColor(Color("secondaryColor"))
-                        .bold()
-                }else{
-                    Text("Non-visionné")
-                        .font(.system(size: 10))
-                        .foregroundColor(Color("secondaryColor"))
-                        .bold()
-                }
                 
+                
+                Button {
+                    isSeen = !isSeen
+                } label: {
+                    Text(isSeen ? "Visionné": "Non-visionné")
+                        .font(.system(size: 10))
+                        .foregroundColor(Color("secondaryColor"))
+                        .bold()
+                    }
             }
+//                .onTapGesture {
+//    //                func increaseRating() {
+//                    if rate < 5 {
+//                        rate += 1
+//                    } else {
+//                        rate -= 2
+//                    }
+            
             Spacer()
-            switch rate{
-            case 1:
-                HStack{
+            
+            HStack {
+                if rate == 1 {
+                    HStack{
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.yellow)
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.gray)
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.gray)
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.gray)
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.gray)
+                    }
+                    
+                } else if rate == 2 {
+                    HStack{
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.yellow)
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.yellow)
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.gray)
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.gray)
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.gray)
+                    }
+                } else if rate == 3 {
+                    HStack{
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.yellow)
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.yellow)
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.yellow)
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.gray)
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.gray)
+                    }
+                } else if rate == 4 {
+                    HStack{
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.yellow)
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.yellow)
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.yellow)
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.yellow)
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.gray)
+                    }
+                } else if rate == 5 {
+                    HStack{
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.yellow)
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.yellow)
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.yellow)
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.yellow)
+                        Image(systemName: "star.fill")
+                            .frame(width: 17, height: 18)
+                            .foregroundColor(.yellow)
+                    }
+                    
+                } else {
                     Image(systemName: "star.fill")
                         .frame(width: 17, height: 18)
-                        .foregroundColor(.yellow)
+                        .foregroundColor(.gray)
                     Image(systemName: "star.fill")
                         .frame(width: 17, height: 18)
                         .foregroundColor(.gray)
@@ -124,99 +227,20 @@ struct DetailsBar: View {
                         .frame(width: 17, height: 18)
                         .foregroundColor(.gray)
                 }
-            case 2:
-                HStack{
-                    Image(systemName: "star.fill")
-                        .frame(width: 17, height: 18)
-                        .foregroundColor(.yellow)
-                    Image(systemName: "star.fill")
-                        .frame(width: 17, height: 18)
-                        .foregroundColor(.yellow)
-                    Image(systemName: "star.fill")
-                        .frame(width: 17, height: 18)
-                        .foregroundColor(.gray)
-                    Image(systemName: "star.fill")
-                        .frame(width: 17, height: 18)
-                        .foregroundColor(.gray)
-                    Image(systemName: "star.fill")
-                        .frame(width: 17, height: 18)
-                        .foregroundColor(.gray)
+            }.onTapGesture {
+//                func increaseRating() {
+                if rate < 5 {
+                    rate += 1
+                } else {
+                    rate -= 2
                 }
-            case 3:
-                HStack{
-                    Image(systemName: "star.fill")
-                        .frame(width: 17, height: 18)
-                        .foregroundColor(.yellow)
-                    Image(systemName: "star.fill")
-                        .frame(width: 17, height: 18)
-                        .foregroundColor(.yellow)
-                    Image(systemName: "star.fill")
-                        .frame(width: 17, height: 18)
-                        .foregroundColor(.yellow)
-                    Image(systemName: "star.fill")
-                        .frame(width: 17, height: 18)
-                        .foregroundColor(.gray)
-                    Image(systemName: "star.fill")
-                        .frame(width: 17, height: 18)
-                        .foregroundColor(.gray)
-                }
-            case 4:
-                HStack{
-                    Image(systemName: "star.fill")
-                        .frame(width: 17, height: 18)
-                        .foregroundColor(.yellow)
-                    Image(systemName: "star.fill")
-                        .frame(width: 17, height: 18)
-                        .foregroundColor(.yellow)
-                    Image(systemName: "star.fill")
-                        .frame(width: 17, height: 18)
-                        .foregroundColor(.yellow)
-                    Image(systemName: "star.fill")
-                        .frame(width: 17, height: 18)
-                        .foregroundColor(.yellow)
-                    Image(systemName: "star.fill")
-                        .frame(width: 17, height: 18)
-                        .foregroundColor(.gray)
-                }
-            case 5:
-                HStack{
-                    Image(systemName: "star.fill")
-                        .frame(width: 17, height: 18)
-                        .foregroundColor(.yellow)
-                    Image(systemName: "star.fill")
-                        .frame(width: 17, height: 18)
-                        .foregroundColor(.yellow)
-                    Image(systemName: "star.fill")
-                        .frame(width: 17, height: 18)
-                        .foregroundColor(.yellow)
-                    Image(systemName: "star.fill")
-                        .frame(width: 17, height: 18)
-                        .foregroundColor(.yellow)
-                    Image(systemName: "star.fill")
-                        .frame(width: 17, height: 18)
-                        .foregroundColor(.yellow)
-                }
-                
-            default:
-                Image(systemName: "star.fill")
-                    .frame(width: 17, height: 18)
-                    .foregroundColor(.gray)
-                Image(systemName: "star.fill")
-                    .frame(width: 17, height: 18)
-                    .foregroundColor(.gray)
-                Image(systemName: "star.fill")
-                    .frame(width: 17, height: 18)
-                    .foregroundColor(.gray)
-                Image(systemName: "star.fill")
-                    .frame(width: 17, height: 18)
-                    .foregroundColor(.gray)
-                Image(systemName: "star.fill")
-                    .frame(width: 17, height: 18)
-                    .foregroundColor(.gray)
+                    
+//                }
             }
         }.frame(width: 330)
             .padding(.bottom, 20)
     }
+
 }
 
 struct OpenSafari: View {

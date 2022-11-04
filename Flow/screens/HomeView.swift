@@ -53,7 +53,9 @@ struct PickerView: View {
             VStack{
                 ScrollView {
                     if isDiscoverMode == true {
+
                         NavigationLink(destination: DetailsView(),
+
                     label: {
                         miniatureTest(film: FilmHome(title: "Le Seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "VOL2", cover: "LSDA2T"))
                     })
@@ -70,6 +72,7 @@ struct PickerView: View {
                         miniatureFilm(film: FilmHome(title: "Coeurs Meurtris            ", subTitle: "Elizabeth Alen", opus: "VOL.", cover: "coeurmeurtri"))
                         miniatureFilm(film: FilmHome(title: "Gladiator", subTitle: "Ridley Scott                          ", opus: "VOL.", cover: "gladiator"))
                         miniatureFilm(film: FilmHome(title: "Le Roi Lion", subTitle: "Disney                                  ", opus: "VOL. 1", cover: "leroilion"))
+                            .padding(.bottom, 20)
                        
                         
                     } else {

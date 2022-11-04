@@ -25,7 +25,9 @@ struct FavoriteScroll: View {
                         HStack {
                             ForEach(viewModelFavorite.favorites) { favorite in
                                 ZStack(alignment: .bottomTrailing) {
+
                                     NavigationLink(destination: DetailsView(),
+
                                                    label: {
                                         Image(favorite.image ?? "test")
                                             .resizable()

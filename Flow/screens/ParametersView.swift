@@ -52,6 +52,7 @@ struct ParametersView: View {
                 }
                 
                 
+
                 HStack{
                     Spacer().frame(width: 200)
                 Button(action: {
@@ -88,26 +89,19 @@ struct ParametersView: View {
                 .background(Color("buttonColor"))
                 .cornerRadius(20)
                 .padding(.vertical, 50)
+
                 
                 
             }
             
-            
-            //        Button("C'est parti") {
-            //            isConnected = true
-            //        }
-            //        .font(.headline)
-            //        .foregroundColor(.white)
-            //        .frame(width: 198,height: 32)
-            //        .background(Color("buttonColor"))
-            //        .cornerRadius(20)
-            //        .padding(.vertical, 50)
+
         }   .ignoresSafeArea()
             .frame(width: 400)
             .background(Color("primaryColor"))
             .navigationBarBackButtonHidden(true)
         }else{
             TabViewView().environmentObject(LocationsViewModel())
+
         }
     }
     
