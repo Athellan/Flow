@@ -18,7 +18,7 @@ struct ConnexionView: View {
     @ObservedObject var viewModel = UsersViewModel()
     @State var passwordIncorect: Int = 0
     
-    @State var isConnected: Bool
+    @State var isConnected: Bool = false
     
     var body: some View {
         if(isConnected == false){
@@ -86,13 +86,13 @@ struct ConnexionView: View {
                         
                         Button("Connexion"){
                             autheticateUser(username: username, password: password)
+                            isConnected.toggle()
                         }.font(.headline)
                             .foregroundColor(.white)
                             .frame(width: 198,height: 32)
                             .background(Color("buttonColor"))
                             .cornerRadius(20)
-                        NavigationLink(destination: TabViewView().environmentObject(LocationsViewModel()), isActive: $showingHomeScreen){
-                        }.padding(1)
+                            .padding(1)
                         
                         ButtonInscription()
                         
@@ -109,7 +109,7 @@ struct ConnexionView: View {
                     }
                 }
         }else{
-            TabViewView()
+            TabViewView().environmentObject(LocationsViewModel())
         }
     }
     
