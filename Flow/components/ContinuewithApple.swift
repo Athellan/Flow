@@ -9,25 +9,20 @@ import SwiftUI
 
 struct ButtonContinueWithApple: View {
     var body: some View {
-
-                    
-                    Button {
-                        //
-                    }
-                    label : {
-                        Image(systemName: "apple.logo")
-                        Text("Continuer avec Apple ")
-                      
-                    }
-       
-                    
-                    .font(.headline)
-                    .foregroundColor(.black)
-                    .frame(width: 268,height: 49)
-                    .background(Color.white)
-                    .cornerRadius(100)
-                    .offset(x:0, y:150)
-                    
+        VStack{
+        Button(action: {
+            
+        }, label: {
+            HStack{
+            Image(systemName: "applelogo")
+            Text("Continuer avec Apple ")
+            }.font(.headline)
+                .foregroundColor(.black)
+                .frame(width: 268,height: 49)
+                .background(Color.white)
+                .cornerRadius(100)
+        })
+        }
                     
                 }
             }

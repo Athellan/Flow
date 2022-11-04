@@ -9,16 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var isConnected = false
+    @ObservedObject var viewModel = UsersViewModel()
+    
     
     var body: some View {
-        if !isConnected {
-            
-            ConnexionView(isConnected: $isConnected)
-            
-        } else {
-            TabViewView()
-            
+        VStack{
+            ConnexionView()
         }
     }
 }
