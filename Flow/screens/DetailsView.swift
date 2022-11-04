@@ -15,7 +15,7 @@ struct DetailsView: View {
     ]
     
     let film : FilmHome
-    
+    @Binding var rate: Int
     var elementViewed = Film(title: "Le seigneur des anneaux", subname: "Les Deux Tours", cover: "seigneurDesAnneaux2", realisator: "Peter Jackson", description: "Le Seigneur des anneaux est une trilogie cinématographique américano-néo-zélandaise de fantasy réalisée par Peter Jackson et fondée sur le roman du même nom en trois volumes de J. R. R. Tolkien. Les films composant cette trilogie sont La Communauté de l'anneau, Les Deux Tours et Le Retour du roi.", rate: 3, isFavorited: true, isSeen: true)
     
     var body: some View {
@@ -34,7 +34,7 @@ struct DetailsView: View {
                         
                         DetailsImage(isFavorited: elementViewed.isFavorited, image: elementViewed.cover)
                         
-                        DetailsBar(isSeen: true, date: "14 Oct. 2022", rate: 3)
+                        DetailsBar(isSeen: true, date: "14 Oct. 2022", rate: 0)
                             .padding(.bottom, 7)
                         
                         VStack(alignment: .leading){
@@ -78,7 +78,7 @@ struct DetailsView: View {
 }
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView(film: FilmHome(title: "Le seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "fbfvbrtbr", cover: "seigneurDesAnneaux2"))
+        DetailsView(film: FilmHome(title: "Le seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "fbfvbrtbr", cover: "seigneurDesAnneaux2"), rate: .constant(1))
     }
 }
 
