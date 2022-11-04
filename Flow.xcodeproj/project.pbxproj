@@ -17,7 +17,7 @@
 		5FED812529140169007B04B6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FED812429140169007B04B6 /* UserModel.swift */; };
 		5FED8127291401A3007B04B6 /* ResponseDtoUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FED8126291401A3007B04B6 /* ResponseDtoUser.swift */; };
 		6300A123290FC57100193738 /* TrendingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6300A122290FC57000193738 /* TrendingViewModel.swift */; };
-		6300A126290FC60000193738 /* ResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6300A125290FC60000193738 /* ResponseDto.swift */; };
+		6300A126290FC60000193738 /* ResponseDtoEnvironnement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6300A125290FC60000193738 /* ResponseDtoEnvironnement.swift */; };
 		636A43C029125F4A0032D4F5 /* VignetteTrending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A43BF29125F4A0032D4F5 /* VignetteTrending.swift */; };
 		636A43C229127F660032D4F5 /* TrendingParamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A43C129127F660032D4F5 /* TrendingParamModel.swift */; };
 		636A43C42912857B0032D4F5 /* FilmParamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A43C32912857B0032D4F5 /* FilmParamModel.swift */; };
@@ -70,7 +70,6 @@
 		9CACF35229019EBB00234452 /* InscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CACF35129019EBB00234452 /* InscriptionView.swift */; };
 		9CE92902291012F700D3AE19 /* UserSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE92901291012F700D3AE19 /* UserSignUpViewModel.swift */; };
 		9CE92904291013CD00D3AE19 /* PostDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE92903291013CD00D3AE19 /* PostDto.swift */; };
-		9CE92906291017E400D3AE19 /* UserSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE92905291017E400D3AE19 /* UserSignUp.swift */; };
 		C705501B29029C02006A316E /* profileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C705501A29029C02006A316E /* profileButton.swift */; };
 		C705501D2902BBDF006A316E /* profileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C705501C2902BBDF006A316E /* profileInfo.swift */; };
 		C705501F2902C9AF006A316E /* gradientRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C705501E2902C9AF006A316E /* gradientRectangle.swift */; };
@@ -98,7 +97,7 @@
 		5FED812429140169007B04B6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = Flow/models/UserModel.swift; sourceTree = SOURCE_ROOT; };
 		5FED8126291401A3007B04B6 /* ResponseDtoUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDtoUser.swift; sourceTree = "<group>"; };
 		6300A122290FC57000193738 /* TrendingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TrendingViewModel.swift; path = Flow/viewmodels/TrendingViewModel.swift; sourceTree = SOURCE_ROOT; };
-		6300A125290FC60000193738 /* ResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDto.swift; sourceTree = "<group>"; };
+		6300A125290FC60000193738 /* ResponseDtoEnvironnement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDtoEnvironnement.swift; sourceTree = "<group>"; };
 		636A43BF29125F4A0032D4F5 /* VignetteTrending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VignetteTrending.swift; path = Flow/components/VignetteTrending.swift; sourceTree = SOURCE_ROOT; };
 		636A43C129127F660032D4F5 /* TrendingParamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TrendingParamModel.swift; path = Flow/models/TrendingParamModel.swift; sourceTree = SOURCE_ROOT; };
 		636A43C32912857B0032D4F5 /* FilmParamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilmParamModel.swift; path = Flow/models/FilmParamModel.swift; sourceTree = SOURCE_ROOT; };
@@ -152,7 +151,6 @@
 		9CACF35129019EBB00234452 /* InscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InscriptionView.swift; path = Flow/screens/InscriptionView.swift; sourceTree = SOURCE_ROOT; };
 		9CE92901291012F700D3AE19 /* UserSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserSignUpViewModel.swift; path = Flow/viewmodels/UserSignUpViewModel.swift; sourceTree = SOURCE_ROOT; };
 		9CE92903291013CD00D3AE19 /* PostDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostDto.swift; path = Flow/dtos/PostDto.swift; sourceTree = SOURCE_ROOT; };
-		9CE92905291017E400D3AE19 /* UserSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserSignUp.swift; path = Flow/models/UserSignUp.swift; sourceTree = SOURCE_ROOT; };
 		C705501A29029C02006A316E /* profileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profileButton.swift; path = Flow/components/profileButton.swift; sourceTree = SOURCE_ROOT; };
 		C705501C2902BBDF006A316E /* profileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = profileInfo.swift; path = Flow/components/profileInfo.swift; sourceTree = SOURCE_ROOT; };
 		C705501E2902C9AF006A316E /* gradientRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = gradientRectangle.swift; path = Flow/Components/gradientRectangle.swift; sourceTree = SOURCE_ROOT; };
@@ -191,8 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				9CE92903291013CD00D3AE19 /* PostDto.swift */,
-				6300A125290FC60000193738 /* ResponseDto.swift */,
 				5FED8126291401A3007B04B6 /* ResponseDtoUser.swift */,
+				6300A125290FC60000193738 /* ResponseDtoEnvironnement.swift */,
 			);
 			path = dtos;
 			sourceTree = "<group>";
@@ -329,7 +327,6 @@
 		636A546C29016E0B009D7491 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9CE92905291017E400D3AE19 /* UserSignUp.swift */,
 				63FC90C42901973B00135CFB /* FilmHomeModel.swift */,
 				63FC90C62901974800135CFB /* SerieHomeModel.swift */,
 				639079042907FCF800FB8C02 /* LocationModel.swift */,
@@ -424,7 +421,7 @@
 				C7F8344A290A6E870003B3EB /* actorInfo.swift in Sources */,
 				636A43D62912B0830032D4F5 /* FavoriteScroll.swift in Sources */,
 				636A43C829128D5F0032D4F5 /* SerieParamModel.swift in Sources */,
-				6300A126290FC60000193738 /* ResponseDto.swift in Sources */,
+				6300A126290FC60000193738 /* ResponseDtoEnvironnement.swift in Sources */,
 				636A43DA2912BFC30032D4F5 /* FilmAddedViewModel.swift in Sources */,
 				636A43E42912CA960032D4F5 /* EventAddedModel.swift in Sources */,
 				C7E0355F2910237D0077E977 /* miniatureEvent.swift in Sources */,
@@ -443,7 +440,6 @@
 				C705501F2902C9AF006A316E /* gradientRectangle.swift in Sources */,
 				C7FD1FB4290184BE001B5516 /* ProfileView.swift in Sources */,
 				6390790F2908148A00FB8C02 /* LocationPreviewView.swift in Sources */,
-				9CE92906291017E400D3AE19 /* UserSignUp.swift in Sources */,
 				63AAE68829102420003BF376 /* ChatVenueView.swift in Sources */,
 				639079092907FEB400FB8C02 /* LocationsView.swift in Sources */,
 				9CE92904291013CD00D3AE19 /* PostDto.swift in Sources */,

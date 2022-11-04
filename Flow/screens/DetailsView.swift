@@ -14,9 +14,7 @@ struct DetailsView: View {
         GridItem(.fixed(47))
     ]
     
-    let film : FilmHome
-    
-    var elementViewed = Film(title: "Le seigneur des anneaux", subname: "Les Deux Tours", cover: "seigneurDesAnneaux2", realisator: "Peter Jackson", description: "Le Seigneur des anneaux est une trilogie cinématographique américano-néo-zélandaise de fantasy réalisée par Peter Jackson et fondée sur le roman du même nom en trois volumes de J. R. R. Tolkien. Les films composant cette trilogie sont La Communauté de l'anneau, Les Deux Tours et Le Retour du roi.", rate: 3, isFavorited: true, isSeen: true)
+    let film =  Film(title: "Le seigneur des anneaux", subname: "Les Deux Tours", cover: "seigneurDesAnneaux2", realisator: "Peter Jackson", description: "Le Seigneur des anneaux est une trilogie cinématographique américano-néo-zélandaise de fantasy réalisée par Peter Jackson et fondée sur le roman du même nom en trois volumes de J. R. R. Tolkien. Les films composant cette trilogie sont La Communauté de l'anneau, Les Deux Tours et Le Retour du roi.", rate: 3, isFavorited: true, isSeen: true)
     
     var body: some View {
         
@@ -32,7 +30,7 @@ struct DetailsView: View {
                         titleComponent(film: film)
                             .padding(.top, 40)
                         
-                        DetailsImage(isFavorited: elementViewed.isFavorited, image: elementViewed.cover)
+                        DetailsImage(isFavorited: film.isFavorited, image: film.cover)
                         
                         DetailsBar(isSeen: true, date: "14 Oct. 2022", rate: 3)
                             .padding(.bottom, 7)
@@ -57,7 +55,7 @@ struct DetailsView: View {
                         
                         
                         VStack {
-                            DetailsInfosWithTrailer(image: "videoLSDA",description: elementViewed.description, url: "https://www.disneyplus.com/fr-fr", urlName: "BA : \(elementViewed.title) : \(elementViewed.subname)", durationClip: "4:33")
+                            DetailsInfosWithTrailer(image: "videoLSDA",description: film.description, url: "https://www.disneyplus.com/fr-fr", urlName: "BA : \(film.title) : \(film.subname)", durationClip: "4:33")
                         }.padding(.top, 50)
                         
                         
@@ -72,13 +70,17 @@ struct DetailsView: View {
                     }
                 }
                
-            }
-        }.navigationBarBackButtonHidden(false)
+            }.navigationBarHidden(true)
+                .ignoresSafeArea()
+                .navigationBarBackButtonHidden(false)
+            
+        }
+            
     }
 }
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView(film: FilmHome(title: "Le seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "fbfvbrtbr", cover: "seigneurDesAnneaux2"))
+        DetailsView()
     }
 }
 

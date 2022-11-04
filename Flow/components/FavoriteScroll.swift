@@ -25,7 +25,7 @@ struct FavoriteScroll: View {
                         HStack {
                             ForEach(viewModelFavorite.favorites) { favorite in
                                 ZStack(alignment: .bottomTrailing) {
-                                    NavigationLink(destination: DetailsView(film: FilmHome(title: "Le Seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "VOL2", cover: "LSDA2T")),
+                                    NavigationLink(destination: DetailsView(),
                                                    label: {
                                         Image(favorite.image ?? "test")
                                             .resizable()

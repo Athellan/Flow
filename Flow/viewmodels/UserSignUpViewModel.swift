@@ -10,7 +10,7 @@ class UserSignUpViewModel : ObservableObject{
     
     
 
-    @Published var users = [UserSignUp]()
+    @Published var users = [User]()
     
     var nameEnter : String = ""
     var emailEnter : String = ""
@@ -50,7 +50,6 @@ class UserSignUpViewModel : ObservableObject{
         print(newValueToSend)
         
         let jsonData = try? JSONEncoder().encode(newValueToSend)
-        print(jsonData)
         request.httpBody = jsonData
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in

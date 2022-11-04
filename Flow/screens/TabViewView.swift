@@ -17,8 +17,6 @@ struct TabViewView: View {
     @State var selectedTab: Int = 0
 
     var body: some View {
-         //if connexion == 0 == true
-        //else
         VStack{
         TabView(selection: $selectedTab) {
             
@@ -43,14 +41,12 @@ struct TabViewView: View {
             LocationsView()
                 .tabItem {
                     Label("Carte", systemImage: "map.fill")
-//                    Image(systemName: "map.fill")
-//                    Text("Carte")
                 }
                 .tag(3)
             
+                .accentColor(Color("primaryColor"))
         }
 
-        .accentColor(Color("primaryColor"))
         }.navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
 

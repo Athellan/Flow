@@ -50,6 +50,7 @@ struct InscriptionView: View {
                                         .foregroundColor(Color("secondaryColor"))
                                         .frame(width: 270)
                                         .autocapitalization(.none)
+                                        .disableAutocorrection(true)
                                 }
                             }
                             .padding(7)
@@ -69,6 +70,7 @@ struct InscriptionView: View {
                                         .foregroundColor(Color("secondaryColor"))
                                         .frame(width: 270)
                                         .autocapitalization(.none)
+                                        .disableAutocorrection(true)
                                 }
                             }
                             .padding(7)
@@ -88,6 +90,7 @@ struct InscriptionView: View {
                                         .foregroundColor(Color("secondaryColor"))
                                         .frame(width: 270)
                                         .autocapitalization(.none)
+                                        .disableAutocorrection(true)
                                 }
                             }
                             .padding(7)
@@ -107,6 +110,7 @@ struct InscriptionView: View {
                                         .foregroundColor(Color("secondaryColor"))
                                         .frame(width: 270)
                                         .autocapitalization(.none)
+                                        .disableAutocorrection(true)
                                 }
                             }
                             .padding(7)
@@ -156,7 +160,7 @@ struct InscriptionView: View {
                             Spacer()
                                 .frame(height: 500)
                             
-                            Text("En continuant, vous acceptez les [Conditions d'utilisation](https://www.apple.com) et la [Politique de confidentialité](https://www.apple.com) de l'application.")
+                            Text("En continuant, vous acceptez les **Conditions d'utilisation** et la **Politique de confidentialité** de l'application.")
                                 .font(.system(size: 10))
                                 .foregroundColor(Color("secondaryColor"))
                                 .multilineTextAlignment(.center)

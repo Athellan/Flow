@@ -19,8 +19,8 @@ struct LibraryView: View {
                 Color("primaryColor")
                     .ignoresSafeArea()
                 VStack{
-                    ScrollView {
                         SearchbarLibrary()
+                    ScrollView {
                         FavoriteScroll()
                             .padding(10)
                         FilmScroll()
@@ -31,7 +31,7 @@ struct LibraryView: View {
                             .padding(10)
                     }
                 }
-            }
+            }.navigationBarHidden(true)
         }
     }
     
