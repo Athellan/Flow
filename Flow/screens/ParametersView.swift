@@ -55,14 +55,13 @@ struct ParametersView: View {
                 
                 NavigationLink(destination: HomeView(), isActive : $isShowingParametersView, label: {
                     HStack(alignment: .center) {
-
+                        
                         Button("   Passer cette étape") {
-                            isConnected = true
                         }
-
+                        
                         .font(.system(size: 11))
                         .foregroundColor(Color("secondaryColor"))
- 
+                        
                         Image(systemName: "greaterthan")
                             .resizable()
                             .frame(width: 5, height: 8)
@@ -70,51 +69,50 @@ struct ParametersView: View {
                             .foregroundColor(Color("secondaryColor"))
                     }
                     .padding(.leading, 200)
-
+                    
                 })
-
-
+                
+                
                 
             }
             
-
-            VStack {
             
-            VignetteTrending()
-                .padding()
-            VignetteFilm()
-                .padding()
-            VignetteSerie()
-                .padding()
-            Button("C'est parti") {
-                isConnected = true
-
+            VStack {
+                
+                VignetteTrending()
+                    .padding()
+                VignetteFilm()
+                    .padding()
+                VignetteSerie()
+                    .padding()
+                Button("C'est parti") {
+                    
+                }
+                .font(.headline)
+                .foregroundColor(.white)
+                .frame(width: 198,height: 32)
+                .background(Color("buttonColor"))
+                .cornerRadius(20)
+                .padding(.vertical, 50)
             }
-            .font(.headline)
-            .foregroundColor(.white)
-            .frame(width: 198,height: 32)
-            .background(Color("buttonColor"))
-            .cornerRadius(20)
-            .padding(.vertical, 50)
+            .ignoresSafeArea()
+            .frame(width: 400)
+            .background(Color("primaryColor"))
+            .navigationBarBackButtonHidden(true)
+            
+            
+            //        Button("C'est parti") {
+            //            isConnected = true
+            //        }
+            //        .font(.headline)
+            //        .foregroundColor(.white)
+            //        .frame(width: 198,height: 32)
+            //        .background(Color("buttonColor"))
+            //        .cornerRadius(20)
+            //        .padding(.vertical, 50)
         }
-        .ignoresSafeArea()
-        .frame(width: 400)
-        .background(Color("primaryColor"))
-        .navigationBarBackButtonHidden(true)
-        
-        
-//        Button("C'est parti") {
-//            isConnected = true
-//        }
-//        .font(.headline)
-//        .foregroundColor(.white)
-//        .frame(width: 198,height: 32)
-//        .background(Color("buttonColor"))
-//        .cornerRadius(20)
-//        .padding(.vertical, 50)
     }
 }
-
 
 
 
