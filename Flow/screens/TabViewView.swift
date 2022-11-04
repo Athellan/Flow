@@ -51,7 +51,7 @@ struct TabViewView: View {
         }
         .accentColor(Color("primaryColor"))
         }.navigationBarBackButtonHidden(true)
-        .navigationBarHidden(false)
+        .navigationBarHidden(true)
     }
 }
 
