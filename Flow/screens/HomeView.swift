@@ -10,21 +10,23 @@ import SwiftUI
 struct HomeView: View {
     @State private var isDiscoverMode = false
     @State private var isFavorited = false
-    let film : FilmHome
     
     var body: some View {
-        NavigationView {
-            VStack(spacing : 00) {
-                PickerView()
-                    .padding(.top, 30)
-                
-            }.background(Color("primaryColor"))
-        }
-    }
+
+        
+        VStack(spacing : 00) {
+            PickerView()
+                .padding(.top, 30)
+            
+    }.background(Color("primaryColor"))
+           
+            
+}
+
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(film: FilmHome(title: "", subTitle: "", opus: "", cover: ""))
+        HomeView()
     }
 }
 
