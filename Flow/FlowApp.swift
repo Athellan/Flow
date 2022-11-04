@@ -11,8 +11,8 @@ import SwiftUI
 @main
 struct FlowApp: App {
     @StateObject private var vm = LocationsViewModel()
-    @State var showOnce = 0
-    
+//    @State var showOnce = 0
+//    
     var body: some Scene {
         WindowGroup {
             ContentView()

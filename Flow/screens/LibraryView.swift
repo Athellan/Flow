@@ -30,7 +30,7 @@ struct LibraryView: View {
                         EventScroll()
                             .padding(10)
                     }
-                }.navigationBarHidden(true)
+                }
             }
         }
     }

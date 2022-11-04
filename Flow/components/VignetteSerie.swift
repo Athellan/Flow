@@ -47,6 +47,7 @@ struct VignetteSerie: View {
                                 .padding(1)
                             SelectedButton2(serie: serie)
                                 .padding(5)
+                                .foregroundColor(Color("titleBackgroundColor"))
                         }
                     }
                 }

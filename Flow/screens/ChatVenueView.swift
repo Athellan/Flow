@@ -111,6 +111,6 @@ struct ChatVenueView: View {
 
 struct ChatVenueView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView(film: FilmHome(title: "", subTitle: "", opus: "", cover: ""))
+        ChatVenueView(venue: Venue(name: "Le Louxor", adress: "35 rue Jsépaou, Paris"))
     }
 }

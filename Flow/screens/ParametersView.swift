@@ -56,7 +56,7 @@ struct ParametersView: View {
                 
                 NavigationLink(destination: HomeView(film: film), isActive : $isShowingParametersView) {
                     HStack(alignment: .center) {
-                        Button("Passer à cette étape") {
+                        Button("   Passer cette étape") {
                             isConnected = true
                         }
                         .font(.system(size: 11))
@@ -70,18 +70,20 @@ struct ParametersView: View {
                             .foregroundColor(Color("secondaryColor"))
                     }
                     .padding(.leading, 200)
+                    .padding(.top, 50)
 
                 }
             }
             
-            
-            VignetteTrending()
-                .padding()
-            VignetteFilm()
-                .padding()
-            VignetteSerie()
-                .padding()
-            Button("C'est parti") {
+            VStack {
+                VignetteTrending()
+                
+                VignetteFilm()
+                    .padding(.bottom, 8)
+                VignetteSerie()
+                    .padding()
+            }
+            Button("C'est parti !") {
                 isConnected = true
             }
             .font(.headline)

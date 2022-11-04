@@ -14,86 +14,88 @@ struct ChatView: View {
     let film: FilmHome
     
     var body: some View {
-        ZStack {
-            Color("primaryColor")
-                .ignoresSafeArea()
-            VStack {
-                HStack {
-                    VStack {
-                        Text(film.title)
-                            .bold()
-                            .font(.system(size: 20))
-                        Text(film.subTitle)
-                    }
-                    .foregroundColor(Color("secondaryColor"))
-                }
-                .background(RoundedRectangle(cornerRadius: 50)
-                    .frame(width: 354, height: 60)
-                    .foregroundColor(Color.white)
-                    .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4))
-                .padding(.top, 15)
-                
-                ScrollView {
-                    ForEach(messages, id: \.self) {message in
-                        if message.contains("[USER]") {
-                            let newMessage = message.replacingOccurrences(of: "[USER]", with: "")
-                            
-                            HStack {
-                                Spacer()
-                                Text(newMessage)
-                                    .padding()
-                                    .foregroundColor(Color.white)
-                                    .background(Color("secondaryColor").opacity(0.7))
-                                    .cornerRadius(30)
-                                    .padding(.horizontal, 16)
-                                    .padding(.bottom, 10)
-                                    
-                            }
-                        } else {
-                            HStack {
-                                Text(message)
-                                    .padding()
-                                    .background(Color("highlightColor").opacity(0.4))
-                                    .cornerRadius(30)
-                                    .foregroundColor(Color("secondaryColor"))
-                                    .padding(.horizontal, 16)
-                                    .padding(.bottom, 10)
-                                    
-                                Spacer()
-                            }
+        NavigationView {
+            ZStack {
+                Color("primaryColor")
+                    .ignoresSafeArea()
+                VStack {
+                    HStack {
+                        VStack {
+                            Text(film.title)
+                                .bold()
+                                .font(.system(size: 20))
+                            Text(film.subTitle)
                         }
-                    }.rotationEffect(.degrees(180))
-                }
-                .rotationEffect(.degrees(180))
-                
-                HStack {
-                    Image(systemName: "camera.circle.fill")
-                        .resizable()
-                        .frame(width: 35, height: 35)
                         .foregroundColor(Color("secondaryColor"))
+                    }
+                    .background(RoundedRectangle(cornerRadius: 50)
+                        .frame(width: 354, height: 60)
+                        .foregroundColor(Color.white)
+                        .shadow(color: Color("secondaryColor").opacity(0.7), radius: 4, x: -3, y: 4))
+                    .padding(.top, 15)
                     
-                    ZStack {
-                        TextField("Ton message", text: $messageText)
-                            .padding()
-                            .foregroundColor(Color("secondaryColor"))
-                            .background(Color("secondaryColor").opacity(0.1))
-                            .cornerRadius(30)
-                            .onSubmit {
-                                sendMessage(message: messageText)
+                    ScrollView {
+                        ForEach(messages, id: \.self) {message in
+                            if message.contains("[USER]") {
+                                let newMessage = message.replacingOccurrences(of: "[USER]", with: "")
+                                
+                                HStack {
+                                    Spacer()
+                                    Text(newMessage)
+                                        .padding()
+                                        .foregroundColor(Color.white)
+                                        .background(Color("secondaryColor").opacity(0.7))
+                                        .cornerRadius(30)
+                                        .padding(.horizontal, 16)
+                                        .padding(.bottom, 10)
+                                    
+                                }
+                            } else {
+                                HStack {
+                                    Text(message)
+                                        .padding()
+                                        .background(Color("highlightColor").opacity(0.4))
+                                        .cornerRadius(30)
+                                        .foregroundColor(Color("secondaryColor"))
+                                        .padding(.horizontal, 16)
+                                        .padding(.bottom, 10)
+                                    
+                                    Spacer()
+                                }
                             }
-                        
-                        Button {
-                            sendMessage(message: messageText)
-                        } label: {
-                            Image(systemName: "paperplane.fill")
-                        }
-                        .font(.system(size:25))
-                        .padding(.leading, 255)
-                        .foregroundColor(Color("secondaryColor"))
+                        }.rotationEffect(.degrees(180))
                     }
-                }.padding()
+                    .rotationEffect(.degrees(180))
+                    
+                    HStack {
+                        Image(systemName: "camera.circle.fill")
+                            .resizable()
+                            .frame(width: 35, height: 35)
+                            .foregroundColor(Color("secondaryColor"))
+                        
+                        ZStack {
+                            TextField("Ton message", text: $messageText)
+                                .padding()
+                                .foregroundColor(Color("secondaryColor"))
+                                .background(Color("secondaryColor").opacity(0.1))
+                                .cornerRadius(30)
+                                .onSubmit {
+                                    sendMessage(message: messageText)
+                                }
+                            
+                            Button {
+                                sendMessage(message: messageText)
+                            } label: {
+                                Image(systemName: "paperplane.fill")
+                            }
+                            .font(.system(size:25))
+                            .padding(.leading, 255)
+                            .foregroundColor(Color("secondaryColor"))
+                        }
+                    }.padding()
+                }
             }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
     func sendMessage(message: String) {
         withAnimation {

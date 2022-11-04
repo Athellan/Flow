@@ -56,6 +56,6 @@ struct miniatureEvent: View {
 
 struct miniatureEvent_Previews: PreviewProvider {
     static var previews: some View {
-        miniatureEvent(event: Event(title: "Stranger Things", description: "Evenement", adress: "Rue du portauloin", type: "Convention", image: "ST", date: "19/12/2022"))
+        miniatureEvent(event: Event(title: "Stranger Things", description: "Convention", image: "ST", date: "19/12/2022"))
     }
 }

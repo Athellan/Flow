@@ -65,8 +65,8 @@ struct Venue {
 struct Event {
     let title: String
     let description: String
-    let adress: String
-    let type: String
+//    let adress: String
+//    let type: String
     let image: String
     let date: String
 

@@ -11,7 +11,7 @@ struct TabViewView: View {
     
     init() {
     UITabBar.appearance().backgroundColor = UIColor(Color("titleBackgroundColor"))
-        UITabBar.appearance().unselectedItemTintColor = UIColor(Color("secondaryColor"))
+        UITabBar.appearance().unselectedItemTintColor = UIColor(Color("primaryColor"))
     }
     
     @State var selectedTab: Int = 0
@@ -48,7 +48,7 @@ struct TabViewView: View {
                 .tag(3)
             
         }
-        .accentColor(Color("primaryColor"))
+        .accentColor(Color("secondaryColor"))
         
     }
 }
