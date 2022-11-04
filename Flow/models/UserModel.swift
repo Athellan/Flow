@@ -12,8 +12,14 @@ struct User: Identifiable {
     let password : String
     let email : String
     let name : String
-}
-
-enum UserError: Error {
-    case usersNotFound
+    
+    enum SubscriptionError: Error {
+        case invalidUsername
+        case invalidPassword
+        case invalidEmail
+        case passwordsNotMatching
+    }
+    enum UserError: Error {
+        case usersNotFound
+    }
 }

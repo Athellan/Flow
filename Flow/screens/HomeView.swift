@@ -41,6 +41,7 @@ struct PickerView: View {
     }
 
     var body: some View {
+        NavigationView{
         VStack{
             Picker(selection: $isDiscoverMode, label: EmptyView()) {
                 Text("À découvrir")
@@ -52,7 +53,9 @@ struct PickerView: View {
             VStack{
                 ScrollView {
                     if isDiscoverMode == true {
-                        NavigationLink(destination: DetailsView(film: FilmHome(title: "Le Seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "VOL2", cover: "LSDA2T"), rate: .constant(1)),
+
+                        NavigationLink(destination: DetailsView(),
+
                     label: {
                         miniatureTest(film: FilmHome(title: "Le Seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "VOL2", cover: "LSDA2T"))
                     })
@@ -80,9 +83,11 @@ struct PickerView: View {
                 }
                 
                 .navigationBarBackButtonHidden(true)
+                .navigationBarHidden(true)
                 
                 }
             }.background(Color("primaryColor"))
+        }
         }
     }
 }

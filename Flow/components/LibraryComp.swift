@@ -43,7 +43,7 @@ struct SearchbarLibrary: View {
                 Image(systemName: "plus.circle.fill")
                     .font(.system(size: 30))
                     .foregroundColor(.white)
-            }).padding(40)
+            }).padding(20)
         }
     }
 }

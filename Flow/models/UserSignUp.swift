@@ -17,12 +17,7 @@ struct UserSignUp: Identifiable {
     
     
     
-    enum SubscriptionError: Error {
-        case invalidUsername
-        case invalidPassword
-        case invalidEmail
-        case passwordsNotMatching
-    }
+  
     
    
     
