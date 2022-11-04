@@ -14,7 +14,6 @@ struct ConnexionView: View {
     @State private var username = ""
     @State private var password = ""
     
-    @State private var showingHomeScreen: Bool = false
     @ObservedObject var viewModel = UsersViewModel()
     @State var passwordIncorect: Int = 0
     
@@ -51,6 +50,8 @@ struct ConnexionView: View {
                                     .font(.system(size: 14))
                                     .foregroundColor(Color("secondaryColor"))
                                     .frame(width: 270)
+                                    .autocapitalization(.none)
+                                    .disableAutocorrection(true)
                             }
                         }
                         .padding()
@@ -69,6 +70,8 @@ struct ConnexionView: View {
                                     .font(.system(size: 14))
                                     .foregroundColor(Color("secondaryColor"))
                                     .frame(width: 270)
+                                    .autocapitalization(.none)
+                                    .disableAutocorrection(true)
                             }
                         }
                         
@@ -78,12 +81,13 @@ struct ConnexionView: View {
                             .foregroundColor(Color("secondaryColor"))
                         
                         Spacer()
-                            .frame(height: 50)
+                            .frame(height: 35)
                         
                         if(passwordIncorect == 1){
-                            Text("Nom d'utilisateur ou mot de passe incorrect, veuillez recommencer !")
-                                .font(.system(size: 15))
+                            Text("Nom d'utilisateur ou mot de passe incorrect, veuillez réesayer !")
+                                .font(.system(size: 12))
                                 .foregroundColor(.red)
+                                .padding(3)
                         }
                         
                         Button("Connexion"){
@@ -108,7 +112,19 @@ struct ConnexionView: View {
                         }
                     }
                         
-                        ButtonContinueWithApple()
+                Button(action: {
+                    
+                }, label: {
+                    HStack{
+                    Image(systemName: "applelogo")
+                    Text("Continuer avec Apple ")
+                    }.font(.headline)
+                        .foregroundColor(.black)
+                        .frame(width: 268,height: 49)
+                        .background(Color.white)
+                        .cornerRadius(100)
+                })
+                
                     }.navigationBarBackButtonHidden(true)
                 .navigationBarHidden(true)
                 .onAppear() {
@@ -126,9 +142,8 @@ struct ConnexionView: View {
     
     func autheticateUser(username: String, password: String){
         for user in viewModel.users{
-            if(username.lowercased() == user.name.lowercased()){
-                if(password.lowercased() == user.password.lowercased()){
-                        showingHomeScreen = true
+            if(username == user.name || username == user.email){
+                if(password == user.password){
                         isConnected.toggle()
                     }else{
                         passwordIncorect = 1
