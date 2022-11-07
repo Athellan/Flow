@@ -18,10 +18,9 @@ struct VignetteTrending: View {
     var body: some View {
         
         VStack{
-            Text("Les plus regardés sur Netflix").bold().font(.title2).offset(x: -10, y: 0)
+            Text("Les plus regardés sur Netflix").bold().font(.title2).offset(x: -10, y: 15)
                 .foregroundColor(Color("secondaryColor"))
                 .font(.system(size: 20))
-                .padding(.top, 30)
                 .padding(.bottom, -20)
 
             

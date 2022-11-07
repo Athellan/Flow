@@ -85,7 +85,7 @@ struct InscriptionView: View {
                                 HStack {
                                     Image(systemName: "lock.circle")
                                         .foregroundColor(Color("secondaryColor"))
-                                    SecureField("Mot de passe", text: $enterPassword)
+                                    TextField("Mot de passe", text: $enterPassword)
                                         .font(.system(size: 14))
                                         .foregroundColor(Color("secondaryColor"))
                                         .frame(width: 270)
@@ -105,7 +105,7 @@ struct InscriptionView: View {
                                 HStack {
                                     Image(systemName: "lock.circle.fill")
                                         .foregroundColor(Color("secondaryColor"))
-                                    SecureField("Confirmer mot de passe", text: $enterConfirmedPassword)
+                                    TextField("Confirmer mot de passe", text: $enterConfirmedPassword)
                                         .font(.system(size: 14))
                                         .foregroundColor(Color("secondaryColor"))
                                         .frame(width: 270)
@@ -121,7 +121,7 @@ struct InscriptionView: View {
                             if(error != 0){
                                 Text("Veuillez renseigner tout les champs et réessayer.")
                                     .font(.system(size: 12))
-                                    .foregroundColor(.red)
+                                    .foregroundColor(Color("secondaryColor"))
                             }
                             
                             Button("Inscription"){

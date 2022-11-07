@@ -70,16 +70,19 @@ struct ParametersView: View {
                         .frame(width: 5, height: 8)
                         .foregroundColor(Color("secondaryColor"))
                 })
-                }
+                }.padding(.top, 50)
+                    .ignoresSafeArea()
                 
                 VignetteTrending()
-                    .padding()
+                    .padding(.bottom, 10)
+                    .padding(.top, 5)
                 VignetteFilm()
                     .padding()
                 VignetteSerie()
-                    .padding()
+                    .padding(.top, 35)
+                    .padding(.bottom, 15)
                 
-                Button("C'est parti") {
+                Button("C'est parti !") {
                     if(!skip){
                         skip.toggle()
                     }

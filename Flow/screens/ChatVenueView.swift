@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ChatVenueView: View {
     @State private var messageText = ""
-    @State var messages : [String] = ["Bienvenue sur le JBot ! 😄"]
+    @State var messages : [String] = ["Bienvenue sur le FlowBot ! 😄"]
     
     let venue: Venue
     

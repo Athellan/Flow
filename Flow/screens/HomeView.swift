@@ -54,11 +54,12 @@ struct PickerView: View {
                 ScrollView {
                     if isDiscoverMode == true {
 
-                        NavigationLink(destination: DetailsView(),
+                        NavigationLink(destination: DetailsView(rate: .constant(1)),
 
                     label: {
                         miniatureTest(film: FilmHome(title: "Le Seigneur des Anneaux", subTitle: "Les Deux Tours", opus: "VOL2", cover: "LSDA2T"))
-                    })
+                        })
+                   
                         
 //                            .onTapGesture {
 //                                DetailsView(film: FilmHome(title: "", subTitle: "", opus: "", cover: ""))
@@ -73,7 +74,7 @@ struct PickerView: View {
                         miniatureFilm(film: FilmHome(title: "Gladiator", subTitle: "Ridley Scott                          ", opus: "VOL.", cover: "gladiator"))
                         miniatureFilm(film: FilmHome(title: "Le Roi Lion", subTitle: "Disney                                  ", opus: "VOL. 1", cover: "leroilion"))
                             .padding(.bottom, 20)
-                       
+                            
                         
                     } else {
                         homeDetail(currentCard: Card(title: "Athena", subtitle: "Romain Gravas", image: "hxh"))
@@ -82,11 +83,10 @@ struct PickerView: View {
                     
                 }
                 
-                .navigationBarBackButtonHidden(true)
-                .navigationBarHidden(true)
+            }
+            }
+        .background(Color("primaryColor"))
                 
-                }
-            }.background(Color("primaryColor"))
         }
         }
     }

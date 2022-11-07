@@ -28,10 +28,9 @@ struct VignetteSerie: View {
     var body: some View {
         
         VStack(alignment: .leading){
-            Text("Les séries tendances").bold().font(.title2).offset(x: 15, y: -20)
+            Text("Les séries tendances").bold().font(.title2).offset(x: 20, y: -15)
                 .foregroundColor(Color("secondaryColor"))
                 .font(.system(size: 20))
-                .padding(.top, 30)
                 .padding(.bottom, -20)
                    
 

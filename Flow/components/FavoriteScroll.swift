@@ -26,7 +26,7 @@ struct FavoriteScroll: View {
                             ForEach(viewModelFavorite.favorites) { favorite in
                                 ZStack(alignment: .bottomTrailing) {
 
-                                    NavigationLink(destination: DetailsView(),
+                                    NavigationLink(destination: DetailsView(rate: .constant(1)),
 
                                                    label: {
                                         Image(favorite.image ?? "test")

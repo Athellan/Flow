@@ -85,8 +85,10 @@ struct ConnexionView: View {
                         
                         if(passwordIncorect == 1){
                             Text("Nom d'utilisateur ou mot de passe incorrect, veuillez réesayer !")
+                                .multilineTextAlignment(.center)
+                                .frame(width: 300)
                                 .font(.system(size: 12))
-                                .foregroundColor(.red)
+                                .foregroundColor(Color("secondaryColor"))
                                 .padding(3)
                         }
                         

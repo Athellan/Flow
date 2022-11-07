@@ -19,10 +19,10 @@ struct VignetteFilm: View {
         
         
         VStack{
-            Text("Les meilleurs films sur Netflix").bold().font(.title2).offset(x: -10, y: 0)
+            Text("Les meilleurs films sur Netflix").bold().font(.title2).offset(x: -10, y: 15)
                 .foregroundColor(Color("secondaryColor"))
                 .font(.system(size: 20))
-                .padding(.top, 30)
+                
                 .padding(.bottom, -20)
             
             

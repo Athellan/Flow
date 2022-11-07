@@ -29,55 +29,57 @@ struct DetailsView: View {
                 chatButton
                     .position(x: 330, y: 610)
                     .zIndex(1)
-                ScrollView(showsIndicators: false){
-                    VStack{
-                        titleComponent(film: film)
-                            .padding(.top, 40)
-                        
-                        DetailsImage(isFavorited: film.isFavorited, image: film.cover)
-                        
-                        DetailsBar(isSeen: true, date: "14 Oct. 2022", rate: 0)
-                            .padding(.bottom, 7)
-                        
-                        VStack(alignment: .leading){
-                            Text("À regarder sur")
-                                .font(.system(size: 12))
-                                .bold()
-                                .foregroundColor(Color("secondaryColor"))
-                                .padding(.leading, 15)
-                                .padding(.bottom, 20)
+                
+                VStack{
+                    ScrollView(showsIndicators: false){
+                        VStack{
+                            titleComponent(film: film)
+                                .padding(.top, 40)
+                            
+                            DetailsImage(isFavorited: film.isFavorited, image: film.cover)
+                            
+                            DetailsBar(isSeen: true, date: "14 Oct. 2022", rate: 0)
+                                .padding(.bottom, 7)
+                            
+                            VStack(alignment: .leading){
+                                Text("À regarder sur")
+                                    .font(.system(size: 12))
+                                    .bold()
+                                    .foregroundColor(Color("secondaryColor"))
+                                    .padding(.leading, 15)
+                                    .padding(.bottom, 20)
+                                
+                                
+                                HStack {
+                                    LazyHGrid(rows: rows, alignment: .top) {
+                                        ForEach(plateformLogos) { plateformLogo in
+                                            plateFormButton(plateformLogo: plateformLogo)
+                                        }
+                                    }.frame(width: 352, height: 47)
+                                }.padding(.top, 20)
+                            }
                             
                             
-                            HStack {
-                                LazyHGrid(rows: rows, alignment: .top) {
-                                    ForEach(plateformLogos) { plateformLogo in
-                                        plateFormButton(plateformLogo: plateformLogo)
-                                    }
-                                }.frame(width: 352, height: 47)
+                            VStack {
+                                DetailsInfosWithTrailer(image: "videoLSDA",description: film.description, url: "https://www.disneyplus.com/fr-fr", urlName: "BA : \(film.title) : \(film.subname)", durationClip: "4:33")
+                            }.padding(.top, 50)
+                            
+                            
+                            //                    .navigationBarHidden(true)
+                            
+                            
+                            HStack{
+                                actorInfoGrid(gradientRectangleTitle2: "Casting")
+                                
                             }.padding(.top, 20)
+                                .padding(.bottom, 70)
                         }
-                        
-                        
-                        VStack {
-                            DetailsInfosWithTrailer(image: "videoLSDA",description: film.description, url: "https://www.disneyplus.com/fr-fr", urlName: "BA : \(film.title) : \(film.subname)", durationClip: "4:33")
-                        }.padding(.top, 50)
-                        
-                        
-                        //                    .navigationBarHidden(true)
-                        
-                        
-                        HStack{
-                            actorInfoGrid(gradientRectangleTitle2: "Casting")
-                            
-                        }.padding(.top, 20)
-                            .padding(.bottom, 40)
-                    }
+                    }.padding(.top, 70)
+                        .ignoresSafeArea()
+                    
                 }
-               
             }.navigationBarHidden(true)
                 .ignoresSafeArea()
-                .navigationBarBackButtonHidden(false)
-            
         }
             
     }
@@ -85,7 +87,7 @@ struct DetailsView: View {
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
 
-        DetailsView()
+        DetailsView(rate: .constant(1))
 
     }
 }
